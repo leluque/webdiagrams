@@ -142,86 +142,58 @@ class Circle extends GeometricShape {
 
 class Ellipse extends GeometricShape {
 
-    // TODO: Remove center and radius.
-
     constructor(centerX = 0, centerY = 0, radiusX = 50, radiusY = 25, stylingAttributes) {
         super(centerX - radiusX, centerY - radiusY, radiusX * 2, radiusY * 2, stylingAttributes);
-        this._centerX = centerX;
-        this._centerY = centerY;
-        this._radiusX = radiusX;
-        this._radiusY = radiusY;
-    }
-
-    get x() {
-        return this.x;
-    }
-
-    set x(value) {
-        this.centerX = value + this.radius;
-        this.x = value;
-    }
-
-    get x() {
-        return this.y;
-    }
-
-    set y(value) {
-        this.centerY = value + this.radius;
-        return this.y = value;
     }
 
     get width() {
-        return this.width;
+        return super.width;
     }
 
     set width(value) {
-        this.radiusX = value / 2;
+        this.width = value;
         this.changerListener.changeRadiusX(this);
-        return this.width = value;
     }
 
     get height() {
-        return this.height;
+        return super.height;
     }
 
     set height(value) {
-        this.radiusY = value / 2;
+        this.height = value;
         this.changerListener.changeRadiusY(this);
-        return this.height = value;
     }
 
     get centerX() {
-        return this._centerX;
+        return this.x + (this.width / 2);
     }
 
     set centerX(value) {
-        this.x = value - this._radiusX;
-        this._centerX = value;
+        this.x = value - (this.width / 2);
     }
 
     get centerY() {
-        return this._centerY;
+        return this.y + (this.height / 2);
     }
 
     set centerY(value) {
-        this.y = value - this._radiusY;
-        this._centerY = value;
+        this.y = value - (this.height / 2);
     }
 
     get radiusX() {
-        return this._radiusX;
+        return this.width / 2;
     }
 
     set radiusX(value) {
-        this._radiusX = value;
+        this.width = value * 2;
     }
 
     get radiusY() {
-        return this._radiusY;
+        return this.height / 2;
     }
 
     set radiusY(value) {
-        this._radiusY = value;
+        this.height = value * 2;
     }
 
 }
