@@ -14,7 +14,7 @@ class SVGArea {
         this._idCount = 1;
         this._svg = document.querySelector(svgSelector);
         this._namespace = "http://www.w3.org/2000/svg";
-        this._elements = new Map();
+        this._elements = [];
     }
 
     get idCount() {
@@ -53,8 +53,8 @@ class SVGArea {
         this._elements = value;
     }
 
-    addElement(key, value) {
-        this._elements.set(key, value);
+    addElement(element) {
+        return this._elements.push(element);
     }
 
     circle(centerX = 50, centerY = 50, radius = 100) {
@@ -67,7 +67,9 @@ class SVGArea {
         var drawedCircle = drawer.draw(newCircle);
         this.svg.appendChild(drawedCircle);
 
-        return this.addElement(drawedCircle, newCircle);
+        newCircle.drawed = drawedCircle;
+
+        return this.addElement(newCircle);
     }
 
 }

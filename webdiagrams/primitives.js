@@ -17,6 +17,7 @@ class Primitive {
         this._height = height;
         this._stylingAttributes = stylingAttributes;
         this._id = id;
+        this._drawed = null;
     }
 
     get x() {
@@ -66,6 +67,15 @@ class Primitive {
     set id(value) {
         this._id = value;
     }
+
+    get drawed() {
+        return this._drawed;
+    }
+
+    set drawed(value) {
+        this._drawed = value;
+    }
+
 }
 
 class Circle extends Primitive {
