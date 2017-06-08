@@ -72,4 +72,34 @@ class SVGArea {
         return this.addElement(newCircle);
     }
 
+    ellipse(centerX = 50, centerY = 50, radiusX = 100, radiusY = 50) {
+        let newEllipse = new Ellipse(centerX, centerY, radiusX, radiusY);
+        newEllipse.id = this.generateId();
+
+        let lookAndFeel = new LookAndFeel();
+        let drawer = lookAndFeel.getDrawerFor(newEllipse);
+        drawer.svgArea = this;
+        var drawedEllipse = drawer.draw(newEllipse);
+        this.svg.appendChild(drawedEllipse);
+
+        newEllipse.drawed = drawedEllipse;
+
+        return this.addElement(newEllipse);
+    }
+
+    rect(x1 = 10, y1 = 10, x2 = 100, y2 = 20) {
+        let newRectangle = new Rectangle(x1, y1, x2, y2);
+        newRectangle.id = this.generateId();
+
+        let lookAndFeel = new LookAndFeel();
+        let drawer = lookAndFeel.getDrawerFor(newRectangle);
+        drawer.svgArea = this;
+        var drawedRectangle = drawer.draw(newRectangle);
+        this.svg.appendChild(drawedRectangle);
+
+        newRectangle.drawed = drawedRectangle;
+
+        return this.addElement(newRectangle);
+    }
+
 }

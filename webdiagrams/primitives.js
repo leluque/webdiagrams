@@ -139,7 +139,7 @@ class Circle extends Primitive {
 class Ellipse extends Primitive {
 
     constructor(centerX = 0, centerY = 0, radiusX = 50, radiusY = 25, stylingAttributes) {
-        super(centerX - radius, centerY - radius, radiusX * 2, radiusY * 2, stylingAttributes);
+        super(centerX - radiusX, centerY - radiusY, radiusX * 2, radiusY * 2, stylingAttributes);
         this._centerX = centerX;
         this._centerY = centerY;
         this._radiusX = radiusX;
@@ -198,6 +198,14 @@ class Ellipse extends Primitive {
 
     set radiusY(value) {
         this._radiusY = value;
+    }
+
+}
+
+class Rectangle extends Primitive {
+
+    constructor(x1 = 10, y1 = 10, x2 = 100, y2 = 20, stylingAttributes) {
+        super(x1, y1, x2-x1, y2-y1, stylingAttributes);
     }
 
 }
