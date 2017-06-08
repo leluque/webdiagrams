@@ -109,22 +109,24 @@ class Circle extends Primitive {
     }
 
     set x(value) {
-        this._centerX = value + this._radius;
+        this.centerX = value + this._radius;
         return super.x = value;
     }
 
     set y(value) {
-        this._centerY = value + this._radius;
+        this.centerY = value + this._radius;
         return super.y = value;
     }
 
     set width(value) {
-        this._radius = value / 2;
+        this.radius = value / 2;
+        this.changerListener.changeRadius(this, this.radius);
         return super.width = value;
     }
 
     set height(value) {
-        this._radius = value / 2;
+        this.radius = value / 2;
+        this.changerListener.changeRadius(this, this.radius);
         return super.height = value;
     }
 
@@ -168,22 +170,24 @@ class Ellipse extends Primitive {
     }
 
     set x(value) {
-        this._centerX = value + this._radius;
+        this.centerX = value + this.radius;
         return super.x = value;
     }
 
     set y(value) {
-        this._centerY = value + this._radius;
+        this.centerY = value + this.radius;
         return super.y = value;
     }
 
     set width(value) {
-        this._radiusX = value / 2;
+        this.radiusX = value / 2;
+        this.changerListener.changeRadiusX(this, this.radiusX);
         return super.width = value;
     }
 
     set height(value) {
-        this._radiusY = value / 2;
+        this.radiusY = value / 2;
+        this.changerListener.changeRadiusY(this, this.radiusY);
         return super.height = value;
     }
 
@@ -259,9 +263,111 @@ class Text extends Primitive {
 
 }
 
+class VerticalGroup extends Primitive {
+
+    constructor(x = 10, y = 10, stylingAttributes, groupStylingAttributes = new GroupStylingAttributes()) {
+        super(x, y, undefined, undefined, stylingAttributes);
+        this._groupStylingAttributes = groupStylingAttributes;
+        this._children = [];
+    }
+
+
+    get x() {
+        return super.x;
+    }
+
+    set x(value) {
+        // Recalculate all children x coordinate.
+        let i = 0;
+        let newX = value + this.groupStylingAttributes.horMargin;
+        for(i = 0; i < element.countChildren(); i++) {
+            let child = element.getChildAt(i);
+            child.x = newX;
+        }
+        return super.x = value;
+    }
+
+    get y() {
+        return super.y;
+    }
+
+    set y(value) {
+        // Recalculate all children y coordinate.
+        let i = 0;
+        let currentY = value + this.groupStylingAttributes.verMargin;
+        for(i = 0; i < element.countChildren(); i++) {
+            let child = element.getChildAt(i);
+            child.y = currentY;
+            currentY += child.height + this.groupStylingAttributes.verMargin;
+        }
+        return super.y = value;
+    }
+
+    get width() {
+        let maxWidth = 0;
+        let i = 0;
+        for(i = 0; i < this.countChildren(); i++) {
+            if(this.getChildAt(i).width > maxWidth) {
+                maxWidth = this.getChildAt(i).width;
+            }
+        }
+        return maxWidth + 2 * this.groupStylingAttributes.horMargin;
+    }
+
+    get height() {
+        let totalHeight = 0;
+        let i = 0;
+        for(i = 0; i < this.countChildren(); i++) {
+            totalHeight += this.groupStylingAttributes.verMargin + this.getChildAt(i).height;
+        }
+        totalHeight += this.groupStylingAttributes.verMargin;
+        return totalHeight;
+    }
+
+    get groupStylingAttributes() {
+        return this._groupStylingAttributes;
+    }
+
+    set groupStylingAttributes(value) {
+        this._groupStylingAttributes = value;
+    }
+
+    get children() {
+        return this._children;
+    }
+
+    set children(value) {
+        this._children = value;
+    }
+
+    addChild(child) {
+        this._children.push(child);
+        child.x = this.x;
+        if(this.countChildren() == 1) {
+            child.y = this.y + this.groupStylingAttributes.verMargin;
+        } else {
+            var previousChild = this.getChildAt(this.countChildren()-2);
+            child.y = previousChild.y + previousChild.height + this.groupStylingAttributes.verMargin;
+        }
+        this.changerListener.changePosition(child, child.x, child.y);
+    }
+
+    countChildren() {
+        return this._children.length;
+    }
+
+    getChildAt(i) {
+        return this._children[i];
+    }
+
+    // TODO.
+    // Change elements positioning when the group position is changed.
+
+}
+
 class StylingAttributes {
 
-    constructor(strokeWidth = 1, strokeColor = 'black', fillColor = 'blue') {
+    constructor(strokeWidth = 1, strokeColor = 'black', fillColor = 'white') {
         this._strokeWidth = strokeWidth;
         this._strokeColor = strokeColor;
         this._fillColor = fillColor;
@@ -293,6 +399,31 @@ class StylingAttributes {
 
     toString() {
         return "stroke:" + this.strokeColor + "; fill: " + this.fillColor + "; stroke-width: " + this.strokeWidth;
+    }
+
+}
+
+class GroupStylingAttributes {
+
+    constructor(horMargin = 0, verMargin = 10) {
+        this._horMargin = horMargin;
+        this._verMargin = verMargin;
+    }
+
+    get horMargin() {
+        return this._horMargin;
+    }
+
+    set horMargin(value) {
+        this._horMargin = value;
+    }
+
+    get verMargin() {
+        return this._verMargin;
+    }
+
+    set verMargin(value) {
+        this._verMargin = value;
     }
 
 }

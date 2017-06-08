@@ -124,6 +124,22 @@ class SVGArea {
         return this.addElement(newText);
     }
 
+    vgroup(x = 10, y = 10) {
+        let newVGroup = new VerticalGroup(x, y);
+        newVGroup.id = this.generateId();
+        newVGroup.changerListener = new SVGChanger();
+
+        let lookAndFeel = new LookAndFeel();
+        let drawer = lookAndFeel.getDrawerFor(newVGroup);
+        drawer.svgArea = this;
+        var drawedVGroup = drawer.draw(newVGroup);
+        this.svg.appendChild(drawedVGroup);
+
+        newVGroup.drawed = drawedVGroup;
+
+        return this.addElement(newVGroup);
+    }
+
 }
 
 class SVGChanger {
@@ -155,6 +171,18 @@ class SVGChanger {
 
     changeHeight(element, newHeight) {
         element.drawed.setAttribute("height", newHeight);
+    }
+
+    changeRadius(element, newRadius) {
+        element.drawed.setAttribute("r", newRadius);
+    }
+
+    changeRadiusX(element, newRadiusX) {
+        element.drawed.setAttribute("rx", newRadiusX);
+    }
+
+    changeRadiusY(element, newRadiusY) {
+        element.drawed.setAttribute("ry", newRadiusY);
     }
 
     changeStylingAttributes(element, json) {

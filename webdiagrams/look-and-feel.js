@@ -47,6 +47,8 @@ class DefaultLookAndFeelFactory {
             return new DefaultRectangleDrawer();
         } else if(element instanceof Text) {
             return new DefaultTextDrawer();
+        } else if(element instanceof VerticalGroup) {
+            return new DefaultVerticalGroupDrawer();
         }
     }
 
@@ -125,6 +127,30 @@ class DefaultTextDrawer extends DefaultDrawer {
         newText.appendChild(textNode);
 
         return newText;
+    }
+
+}
+
+class DefaultVerticalGroupDrawer extends DefaultDrawer {
+
+    draw(element) {
+        var newGroup = document.createElementNS(super.svgArea.namespace, "g");
+        newGroup.setAttributeNS(null, "id", element.id);
+        newGroup.setAttribute('shape-rendering', 'inherit');
+        newGroup.setAttribute('pointer-events', 'all');
+
+        let lookAndFeel = new LookAndFeel();
+
+        let i = 0;
+        for(i = 0; i < element.countChildren(); i++) {
+            let child = element.getChildAt(i);
+            let drawer = lookAndFeel.getDrawerFor(child);
+            drawer.svgArea = this;
+            var drawedChild = drawer.draw(child);
+            child.drawed = drawedChild;
+        }
+
+        return newGroup;
     }
 
 }
