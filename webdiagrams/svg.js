@@ -8,6 +8,8 @@
 
 'use strict';
 
+let svgChanger = null;
+
 class SVGArea {
 
     constructor(svgSelector = "#svg") {
@@ -54,12 +56,14 @@ class SVGArea {
     }
 
     addElement(element) {
-        return this._elements.push(element);
+        this._elements.push(element);
+        return element;
     }
 
     circle(centerX = 50, centerY = 50, radius = 100) {
         let newCircle = new Circle(centerX, centerY, radius);
         newCircle.id = this.generateId();
+        newCircle.changerListener = new SVGChanger();
 
         let lookAndFeel = new LookAndFeel();
         let drawer = lookAndFeel.getDrawerFor(newCircle);
@@ -75,6 +79,7 @@ class SVGArea {
     ellipse(centerX = 50, centerY = 50, radiusX = 100, radiusY = 50) {
         let newEllipse = new Ellipse(centerX, centerY, radiusX, radiusY);
         newEllipse.id = this.generateId();
+        newEllipse.changerListener = new SVGChanger();
 
         let lookAndFeel = new LookAndFeel();
         let drawer = lookAndFeel.getDrawerFor(newEllipse);
@@ -90,6 +95,7 @@ class SVGArea {
     rect(x1 = 10, y1 = 10, x2 = 100, y2 = 20) {
         let newRectangle = new Rectangle(x1, y1, x2, y2);
         newRectangle.id = this.generateId();
+        newRectangle.changerListener = new SVGChanger();
 
         let lookAndFeel = new LookAndFeel();
         let drawer = lookAndFeel.getDrawerFor(newRectangle);
@@ -100,6 +106,26 @@ class SVGArea {
         newRectangle.drawed = drawedRectangle;
 
         return this.addElement(newRectangle);
+    }
+
+}
+
+class SVGChanger {
+
+    constructor() {
+        if(!svgChanger) {
+            svgChanger = this;
+        }
+
+        return svgChanger;
+    }
+
+    changeWidth(element, newWidth) {
+        element.drawed.setAttribute("width", newWidth);
+    }
+
+    changeHeight(element, newHeight) {
+        element.drawed.setAttribute("height", newHeight);
     }
 
 }

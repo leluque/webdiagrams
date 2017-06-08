@@ -21,10 +21,10 @@
       <file leaf-file-name="look-and-feel.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/look-and-feel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="100" column="82" lean-forward="false" selection-start-line="100" selection-start-column="82" selection-end-line="100" selection-end-column="82" />
+            <state relative-caret-position="340">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
-                <element signature="n#LookAndFeel#0" expanded="false" />
+                <element signature="n#DefaultLookAndFeelFactory#0" expanded="false" />
                 <element signature="n#DefaultDrawer#0" expanded="false" />
                 <element signature="n#DefaultCircleDrawer#0" expanded="false" />
                 <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
@@ -36,14 +36,14 @@
       <file leaf-file-name="primitives.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/primitives.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="209" column="0" lean-forward="true" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+            <state relative-caret-position="88">
+              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="n#Primitive#0" expanded="false" />
                 <element signature="n#Circle#0" expanded="false" />
+                <element signature="n#Rectangle#0" expanded="false" />
                 <element signature="n#StylingAttributes#0" expanded="false" />
-                <marker date="1496948574252" expanded="false" signature="2534:3840" ph="{...}" />
+                <marker date="1496949238052" expanded="false" signature="2835:4141" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -52,8 +52,8 @@
       <file leaf-file-name="svg.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/svg.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="90" column="40" lean-forward="false" selection-start-line="90" selection-start-column="40" selection-end-line="90" selection-end-column="40" />
+            <state relative-caret-position="120">
+              <caret line="59" column="23" lean-forward="false" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -64,8 +64,8 @@
       <file leaf-file-name="PrimitiveTest.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PrimitiveTest.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="27" column="51" lean-forward="false" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+            <state relative-caret-position="206">
+              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -90,10 +90,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/primitives.js" />
-        <option value="$PROJECT_DIR$/PrimitiveTest.html" />
-        <option value="$PROJECT_DIR$/svg.js" />
         <option value="$PROJECT_DIR$/look-and-feel.js" />
+        <option value="$PROJECT_DIR$/primitives.js" />
+        <option value="$PROJECT_DIR$/svg.js" />
+        <option value="$PROJECT_DIR$/PrimitiveTest.html" />
       </list>
     </option>
   </component>
@@ -236,12 +236,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1496941536108</updated>
-      <workItem from="1496941537407" duration="7231000" />
+      <workItem from="1496941537407" duration="7988000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7231000" />
+    <option name="totallyTimeSpent" value="7988000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -256,7 +256,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39905363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39905363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -273,41 +273,31 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/primitives.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="209" column="0" lean-forward="true" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+        <state relative-caret-position="88">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="n#Primitive#0" expanded="false" />
             <element signature="n#Circle#0" expanded="false" />
+            <element signature="n#Rectangle#0" expanded="false" />
             <element signature="n#StylingAttributes#0" expanded="false" />
-            <marker date="1496948574252" expanded="false" signature="2534:3840" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/svg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="90" column="40" lean-forward="false" selection-start-line="90" selection-start-column="40" selection-end-line="90" selection-end-column="40" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <marker date="1496949238052" expanded="false" signature="2835:4141" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/look-and-feel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="100" column="82" lean-forward="false" selection-start-line="100" selection-start-column="82" selection-end-line="100" selection-end-column="82" />
+        <state relative-caret-position="340">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <element signature="n#LookAndFeel#0" expanded="false" />
+            <element signature="n#DefaultLookAndFeelFactory#0" expanded="false" />
             <element signature="n#DefaultDrawer#0" expanded="false" />
             <element signature="n#DefaultCircleDrawer#0" expanded="false" />
             <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
@@ -315,10 +305,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/svg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="59" column="23" lean-forward="false" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PrimitiveTest.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="27" column="51" lean-forward="false" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
+        <state relative-caret-position="206">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>

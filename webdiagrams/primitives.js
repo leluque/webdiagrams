@@ -18,6 +18,7 @@ class Primitive {
         this._stylingAttributes = stylingAttributes;
         this._id = id;
         this._drawed = null;
+        this._changerListener = null;
     }
 
     get x() {
@@ -42,6 +43,7 @@ class Primitive {
 
     set width(value) {
         this._width = value;
+        this.changerListener.changeWidth(this, value);
     }
 
     get height() {
@@ -50,6 +52,7 @@ class Primitive {
 
     set height(value) {
         this._height = value;
+        this.changerListener.changeHeight(this, value);
     }
 
     get stylingAttributes() {
@@ -74,6 +77,14 @@ class Primitive {
 
     set drawed(value) {
         this._drawed = value;
+    }
+
+    get changerListener() {
+        return this._changerListener;
+    }
+
+    set changerListener(value) {
+        this._changerListener = value;
     }
 
 }
