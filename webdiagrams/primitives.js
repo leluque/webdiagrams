@@ -231,6 +231,33 @@ class Rectangle extends Primitive {
 
 }
 
+class Text extends Primitive {
+
+    constructor(x = 10, y = 10, text = "Text", stylingAttributes) {
+        super(x, y, undefined, undefined, stylingAttributes);
+        this._text = text;
+    }
+
+    get width() {
+        let boundingBox = this.drawed.getBBox();
+        return boundingBox.width;
+    }
+
+    get height() {
+        let boundingBox = this.drawed.getBBox();
+        return boundingBox.height;
+    }
+
+    get text() {
+        return this._text;
+    }
+
+    set text(value) {
+        this._text = value;
+    }
+
+}
+
 class StylingAttributes {
 
     constructor(strokeWidth = 1, strokeColor = 'black', fillColor = 'blue') {

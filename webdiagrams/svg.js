@@ -108,6 +108,22 @@ class SVGArea {
         return this.addElement(newRectangle);
     }
 
+    text(x = 10, y = 10, text = "Text") {
+        let newText = new Text(x, y, "This is an example text");
+        newText.id = this.generateId();
+        newText.changerListener = new SVGChanger();
+
+        let lookAndFeel = new LookAndFeel();
+        let drawer = lookAndFeel.getDrawerFor(newText);
+        drawer.svgArea = this;
+        var drawedText = drawer.draw(newText);
+        this.svg.appendChild(drawedText);
+
+        newText.drawed = drawedText;
+
+        return this.addElement(newText);
+    }
+
 }
 
 class SVGChanger {

@@ -45,6 +45,8 @@ class DefaultLookAndFeelFactory {
             return new DefaultEllipseDrawer();
         } else if(element instanceof Rectangle) {
             return new DefaultRectangleDrawer();
+        } else if(element instanceof Text) {
+            return new DefaultTextDrawer();
         }
     }
 
@@ -106,6 +108,23 @@ class DefaultRectangleDrawer extends DefaultDrawer {
         newRectangle.setAttributeNS(null, "height", element.height);
         newRectangle.setAttributeNS(null, "style", element.stylingAttributes.toString());
         return newRectangle;
+    }
+
+}
+
+class DefaultTextDrawer extends DefaultDrawer {
+
+    draw(element) {
+        let newText = document.createElementNS(super.svgArea.namespace, "text");
+        newText.setAttributeNS(null, "id", element.id);
+        newText.setAttributeNS(null, "x", element.x);
+        newText.setAttributeNS(null, "y", element.y);
+        newText.setAttributeNS(null, "style", element.stylingAttributes.toString());
+
+        var textNode = document.createTextNode(element.text);
+        newText.appendChild(textNode);
+
+        return newText;
     }
 
 }
