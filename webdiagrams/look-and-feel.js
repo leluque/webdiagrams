@@ -66,7 +66,7 @@ class DefaultCircleDrawer {
         newCircle.setAttributeNS(null, "cx", element.centerX);
         newCircle.setAttributeNS(null, "cy", element.centerY);
         newCircle.setAttributeNS(null, "r", element.radius);
-        newCircle.setAttributeNS(null, "fill", element.stylingAttributes.fillColor);
+        newCircle.setAttributeNS(null, "style", element.stylingAttributes.toString());
         return newCircle;
     }
 

@@ -98,12 +98,12 @@ class Circle extends Primitive {
     }
 
     set width(value) {
-        this._radius = value/2;
+        this._radius = value / 2;
         return super.width = value;
     }
 
     set height(value) {
-        this._radius = value/2;
+        this._radius = value / 2;
         return super.height = value;
     }
 
@@ -157,12 +157,12 @@ class Ellipse extends Primitive {
     }
 
     set width(value) {
-        this._radiusX = value/2;
+        this._radiusX = value / 2;
         return super.width = value;
     }
 
     set height(value) {
-        this._radiusY = value/2;
+        this._radiusY = value / 2;
         return super.height = value;
     }
 
@@ -232,6 +232,10 @@ class StylingAttributes {
 
     set fillColor(value) {
         this._fillColor = value;
+    }
+
+    toString() {
+        return "stroke:" + this.strokeColor + "; fill: " + this.fillColor + "; stroke-width: " + this.strokeWidth;
     }
 
 }
