@@ -22,13 +22,14 @@
     <script>
 
         var rect;
+        var text;
 
         (function(){
             let svgArea = new SVGArea("#svg");
             var circle = svgArea.circle(50, 50, 20);
             var ellipse = svgArea.ellipse(150, 150, 50, 25);
             rect = svgArea.rect(10, 10, 100, 50);
-            var text = svgArea.text(50, 50, "Test text");
+            text = svgArea.text(50, 50, "Test text");
         })();
 
         function changeDimensions() {
@@ -47,11 +48,16 @@
                 strokeWidth: 10});
         }
 
+        function changeText() {
+            text.text = "New text";
+        }
+
     </script>
 
     <button type="button" onclick="changeDimensions()">Change dimensions</button>
     <button type="button" onclick="move()">Move</button>
     <button type="button" onclick="changeStyle()">Change style</button>
+    <button type="button" onclick="changeText()">Change text</button>
 
 </body>
 </html>

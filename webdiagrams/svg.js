@@ -161,4 +161,8 @@ class SVGChanger {
         Object.assign(element.drawed.style, json);
     }
 
+    changeText(element, newText) {
+        element.drawed.textContent = newText;
+    }
+
 }

@@ -254,6 +254,7 @@ class Text extends Primitive {
 
     set text(value) {
         this._text = value;
+        this.changerListener.changeText(this, value);
     }
 
 }
