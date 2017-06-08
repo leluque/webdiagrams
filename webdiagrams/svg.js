@@ -113,11 +113,24 @@ class SVGArea {
 class SVGChanger {
 
     constructor() {
-        if(!svgChanger) {
+        if (!svgChanger) {
             svgChanger = this;
         }
 
         return svgChanger;
+    }
+
+    changePosition(element, newX, newY) {
+        this.changeX(element, newX);
+        this.changeY(element, newY);
+    }
+
+    changeX(element, newX) {
+        element.drawed.setAttribute("x", newX);
+    }
+
+    changeY(element, newY) {
+        element.drawed.setAttribute("y", newY);
     }
 
     changeWidth(element, newWidth) {
@@ -126,6 +139,10 @@ class SVGChanger {
 
     changeHeight(element, newHeight) {
         element.drawed.setAttribute("height", newHeight);
+    }
+
+    changeStylingAttributes(element, json) {
+        Object.assign(element.drawed.style, json);
     }
 
 }

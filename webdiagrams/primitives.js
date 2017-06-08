@@ -27,6 +27,7 @@ class Primitive {
 
     set x(value) {
         this._x = value;
+        this.changerListener.changeX(this, value);
     }
 
     get y() {
@@ -35,6 +36,7 @@ class Primitive {
 
     set y(value) {
         this._y = value;
+        this.changerListener.changeY(this, value);
     }
 
     get width() {
@@ -85,6 +87,14 @@ class Primitive {
 
     set changerListener(value) {
         this._changerListener = value;
+    }
+
+    move(newX, newY) {
+        this.changerListener.changePosition(this, newX, newY);
+    }
+
+    attr(json) {
+        this.changerListener.changeStylingAttributes(this, json);
     }
 
 }

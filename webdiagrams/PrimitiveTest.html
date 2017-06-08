@@ -35,9 +35,22 @@
             rect.height = 20;
         }
 
+        function move() {
+            rect.move(50, 50);
+        }
+
+        function changeStyle() {
+            rect.attr({
+                fill: "none",
+                stroke: "red",
+                strokeWidth: 10});
+        }
+
     </script>
 
     <button type="button" onclick="changeDimensions()">Change dimensions</button>
+    <button type="button" onclick="move()">Move</button>
+    <button type="button" onclick="changeStyle()">Change style</button>
 
 </body>
 </html>
