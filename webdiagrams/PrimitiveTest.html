@@ -34,9 +34,12 @@
             text = svgArea.text(50, 50, "Test text");
 
             vgroup = svgArea.vgroup(50, 50);
+            vgroup.frame = svgArea.rect();
             vgroup.addChild(svgArea.text(undefined, undefined, "Atributo 1"));
             vgroup.addChild(svgArea.text(undefined, undefined, "Atributo 2"));
             vgroup.addChild(svgArea.text(undefined, undefined, "Atributo 3"));
+
+            var line = svgArea.line(20, 20, 100, 50);
         })();
 
         function changeDimensions() {

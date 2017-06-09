@@ -140,6 +140,22 @@ class SVGArea {
         return this.addElement(newVGroup);
     }
 
+    line(x1 = 10, y1 = 10, x2 = 100, y2 = 10) {
+        let newLine = new Line(x1, y1, x2, y2);
+        newLine.id = this.generateId();
+        newLine.changerListener = new SVGChanger();
+
+        let lookAndFeel = new LookAndFeel();
+        let drawer = lookAndFeel.getDrawerFor(newLine);
+        drawer.svgArea = this;
+        var drawedLine = drawer.draw(newLine);
+        this.svg.appendChild(drawedLine);
+
+        newLine.drawed = drawedLine;
+
+        return this.addElement(newLine);
+    }
+
 }
 
 class SVGChanger {
@@ -152,45 +168,50 @@ class SVGChanger {
         return svgChanger;
     }
 
-    changePosition(element, newX, newY) {
-        this.changeX(element, newX);
-        this.changeY(element, newY);
+    changePosition(element) {
+        this.changeX(element);
+        this.changeY(element);
     }
 
-    changeX(element, newX) {
-        element.drawed.setAttribute("x", newX);
+    changeX(element) {
+        element.drawed.setAttribute("x", element.x);
     }
 
-    changeY(element, newY) {
-        element.drawed.setAttribute("y", newY);
+    changeY(element) {
+        element.drawed.setAttribute("y", element.y);
     }
 
-    changeWidth(element, newWidth) {
-        element.drawed.setAttribute("width", newWidth);
+    changeWidth(element) {
+        element.drawed.setAttribute("width", element.width);
     }
 
-    changeHeight(element, newHeight) {
-        element.drawed.setAttribute("height", newHeight);
+    changeHeight(element) {
+        element.drawed.setAttribute("height", element.height);
     }
 
-    changeRadius(element, newRadius) {
-        element.drawed.setAttribute("r", newRadius);
+    changeDimensions(element) {
+        this.changeWidth(element);
+        this.changeHeight(element);
     }
 
-    changeRadiusX(element, newRadiusX) {
-        element.drawed.setAttribute("rx", newRadiusX);
+    changeRadius(element) {
+        element.drawed.setAttribute("r", element.radius);
     }
 
-    changeRadiusY(element, newRadiusY) {
-        element.drawed.setAttribute("ry", newRadiusY);
+    changeRadiusX(element) {
+        element.drawed.setAttribute("rx", element.radiusX);
+    }
+
+    changeRadiusY(element) {
+        element.drawed.setAttribute("ry", element.radiusY);
     }
 
     changeStylingAttributes(element, json) {
         Object.assign(element.drawed.style, json);
     }
 
-    changeText(element, newText) {
-        element.drawed.textContent = newText;
+    changeText(element) {
+        element.drawed.textContent = element.text;
     }
 
 }

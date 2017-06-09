@@ -8,7 +8,7 @@
 
 'use strict';
 
-class Primitive {
+class GeometricShape {
 
     constructor(x = 0, y = 0, width = 50, height = 50, stylingAttributes = new StylingAttributes(), id) {
         this._x = x;
@@ -27,7 +27,7 @@ class Primitive {
 
     set x(value) {
         this._x = value;
-        this.changerListener.changeX(this, value);
+        this.changerListener.changeX(this);
     }
 
     get y() {
@@ -36,7 +36,7 @@ class Primitive {
 
     set y(value) {
         this._y = value;
-        this.changerListener.changeY(this, value);
+        this.changerListener.changeY(this);
     }
 
     get width() {
@@ -45,7 +45,7 @@ class Primitive {
 
     set width(value) {
         this._width = value;
-        this.changerListener.changeWidth(this, value);
+        this.changerListener.changeWidth(this);
     }
 
     get height() {
@@ -54,7 +54,7 @@ class Primitive {
 
     set height(value) {
         this._height = value;
-        this.changerListener.changeHeight(this, value);
+        this.changerListener.changeHeight(this);
     }
 
     get stylingAttributes() {
@@ -99,67 +99,48 @@ class Primitive {
 
 }
 
-class Circle extends Primitive {
+class Circle extends GeometricShape {
 
     constructor(centerX = 0, centerY = 0, radius = 50, stylingAttributes) {
         super(centerX - radius, centerY - radius, radius * 2, radius * 2, stylingAttributes);
-        this._centerX = centerX;
-        this._centerY = centerY;
-        this._radius = radius;
-    }
-
-    set x(value) {
-        this.centerX = value + this._radius;
-        return super.x = value;
-    }
-
-    set y(value) {
-        this.centerY = value + this._radius;
-        return super.y = value;
-    }
-
-    set width(value) {
-        this.radius = value / 2;
-        this.changerListener.changeRadius(this, this.radius);
-        return super.width = value;
-    }
-
-    set height(value) {
-        this.radius = value / 2;
-        this.changerListener.changeRadius(this, this.radius);
-        return super.height = value;
     }
 
     get centerX() {
-        return this._centerX;
-    }
-
-    set centerX(value) {
-        super.x = value - this._radius;
-        this._centerX = value;
+        return this.x + (this.radius / 2);
     }
 
     get centerY() {
-        return this._centerY;
-    }
-
-    set centerY(value) {
-        super.y = value - this._radius;
-        this._centerY = value;
+        return this.y + (this.radius / 2);
     }
 
     get radius() {
-        return this._radius;
+        return this.width / 2;
     }
 
-    set radius(value) {
-        super.width = value * 2;
-        super.height = value * 2;
-        this._radius = value;
+    get halfSquare() {
+        let diagonal = this.radius - this.stylingAttributes.strokeWidth;
+        return Math.sqrt(diagonal * diagonal / 2);
     }
+
+    get contentX1() {
+        return this.x + this.radius - this.halfSquare;
+    }
+
+    get contentY1() {
+        return this.contentX1;
+    }
+
+    get contentX2() {
+        return this.contentX1 + 2 * this.halfSquare;
+    }
+
+    get contentY2() {
+        return this.contentX2();
+    }
+
 }
 
-class Ellipse extends Primitive {
+class Ellipse extends GeometricShape {
 
     constructor(centerX = 0, centerY = 0, radiusX = 50, radiusY = 25, stylingAttributes) {
         super(centerX - radiusX, centerY - radiusY, radiusX * 2, radiusY * 2, stylingAttributes);
@@ -181,13 +162,13 @@ class Ellipse extends Primitive {
 
     set width(value) {
         this.radiusX = value / 2;
-        this.changerListener.changeRadiusX(this, this.radiusX);
+        this.changerListener.changeRadiusX(this);
         return super.width = value;
     }
 
     set height(value) {
         this.radiusY = value / 2;
-        this.changerListener.changeRadiusY(this, this.radiusY);
+        this.changerListener.changeRadiusY(this);
         return super.height = value;
     }
 
@@ -227,15 +208,31 @@ class Ellipse extends Primitive {
 
 }
 
-class Rectangle extends Primitive {
+class Rectangle extends GeometricShape {
 
     constructor(x1 = 10, y1 = 10, x2 = 100, y2 = 20, stylingAttributes) {
-        super(x1, y1, x2-x1, y2-y1, stylingAttributes);
+        super(x1, y1, x2 - x1, y2 - y1, stylingAttributes);
+    }
+
+    get contentX1() {
+        return super.x + this.stylingAttributes.strokeWidth;
+    }
+
+    get contentY1() {
+        return super.y + this.stylingAttributes.strokeWidth;
+    }
+
+    get contentX2() {
+        return super.x + super.width - this.stylingAttributes.strokeWidth;
+    }
+
+    get contentY2() {
+        return super.y + super.height - this.stylingAttributes.strokeWidth;
     }
 
 }
 
-class Text extends Primitive {
+class Text extends GeometricShape {
 
     constructor(x = 10, y = 10, text = "Text", stylingAttributes) {
         super(x, y, undefined, undefined, stylingAttributes);
@@ -258,19 +255,48 @@ class Text extends Primitive {
 
     set text(value) {
         this._text = value;
-        this.changerListener.changeText(this, value);
+        this.changerListener.changeText(this);
     }
 
 }
 
-class VerticalGroup extends Primitive {
+class Line extends GeometricShape {
+
+    constructor(x1 = 10, y1 = 10, x2 = 100, y2 = 10, stylingAttributes) {
+        super(x1, y1, x2 - x1, y2 - y1, stylingAttributes);
+    }
+
+    get x1() {
+        return super.x;
+    }
+
+    get y1() {
+        return super.y;
+    }
+
+    get x2() {
+        return this.x1 + super.width;
+    }
+
+    get y2() {
+        return this.y1 + super.height;
+    }
+
+}
+
+class VerticalGroup extends GeometricShape {
+
+    // TODO: Correct circle as VerticalGroup frame.
+    // TODO: Correct rectangle as VerticalGroup frame.
+    // TODO: Implement resizingPolicy.
 
     constructor(x = 10, y = 10, stylingAttributes, groupStylingAttributes = new GroupStylingAttributes()) {
         super(x, y, undefined, undefined, stylingAttributes);
         this._groupStylingAttributes = groupStylingAttributes;
         this._children = [];
+        this._resizingPolicy = [];
+        this._frame = null;
     }
-
 
     get x() {
         return super.x;
@@ -279,8 +305,15 @@ class VerticalGroup extends Primitive {
     set x(value) {
         // Recalculate all children x coordinate.
         let i = 0;
-        let newX = value + this.groupStylingAttributes.horMargin;
-        for(i = 0; i < element.countChildren(); i++) {
+        let newX = value;
+
+        if (this.frame !== null) {
+            this.frame.x = this.x;
+            newX = this.frame.contentX1();
+        }
+        newX += this.groupStylingAttributes.horMargin;
+
+        for (i = 0; i < element.countChildren(); i++) {
             let child = element.getChildAt(i);
             child.x = newX;
         }
@@ -294,8 +327,15 @@ class VerticalGroup extends Primitive {
     set y(value) {
         // Recalculate all children y coordinate.
         let i = 0;
-        let currentY = value + this.groupStylingAttributes.verMargin;
-        for(i = 0; i < element.countChildren(); i++) {
+        let currentY = value;
+
+        if (this.frame !== null) {
+            this.frame.y = this.y;
+            currentY = this.frame.contentY1();
+        }
+        currentY += this.groupStylingAttributes.verMargin;
+
+        for (i = 0; i < element.countChildren(); i++) {
             let child = element.getChildAt(i);
             child.y = currentY;
             currentY += child.height + this.groupStylingAttributes.verMargin;
@@ -306,22 +346,33 @@ class VerticalGroup extends Primitive {
     get width() {
         let maxWidth = 0;
         let i = 0;
-        for(i = 0; i < this.countChildren(); i++) {
-            if(this.getChildAt(i).width > maxWidth) {
+        for (i = 0; i < this.countChildren(); i++) {
+            if (this.getChildAt(i).width > maxWidth) {
                 maxWidth = this.getChildAt(i).width;
             }
         }
-        return maxWidth + 2 * this.groupStylingAttributes.horMargin;
+        maxWidth += 2 * (this.groupStylingAttributes.horMargin + this.stylingAttributes.strokeWidth);
+        this.frame.width = maxWidth;
+        return maxWidth;
     }
 
     get height() {
         let totalHeight = 0;
         let i = 0;
-        for(i = 0; i < this.countChildren(); i++) {
+        for (i = 0; i < this.countChildren(); i++) {
             totalHeight += this.groupStylingAttributes.verMargin + this.getChildAt(i).height;
         }
-        totalHeight += this.groupStylingAttributes.verMargin;
+        totalHeight += this.groupStylingAttributes.verMargin + 2 * this.stylingAttributes.strokeWidth;
+        this.frame.height = totalHeight;
         return totalHeight;
+    }
+
+    static get MATCH_PARENT() {
+        return true;
+    }
+
+    static get WRAP_CONTENT() {
+        return false;
     }
 
     get groupStylingAttributes() {
@@ -340,16 +391,31 @@ class VerticalGroup extends Primitive {
         this._children = value;
     }
 
-    addChild(child) {
-        this._children.push(child);
+    get resizePolicy() {
+        return this._resizingPolicy;
+    }
+
+    set resizePolicy(value) {
+        this._resizingPolicy = value;
+    }
+
+    addChild(child, resizePolicy = this.WRAP_CONTENT) {
+        this.children.push(child);
+        this.resizePolicy.push(resizePolicy);
         child.x = this.x;
-        if(this.countChildren() == 1) {
+        if (this.countChildren() == 1) {
             child.y = this.y + this.groupStylingAttributes.verMargin;
         } else {
-            var previousChild = this.getChildAt(this.countChildren()-2);
+            var previousChild = this.getChildAt(this.countChildren() - 2);
             child.y = previousChild.y + previousChild.height + this.groupStylingAttributes.verMargin;
         }
-        this.changerListener.changePosition(child, child.x, child.y);
+        this.changerListener.changePosition(child);
+
+        if (this.frame !== null) {
+            this.frame.width = this.width;
+            this.frame.height = this.height;
+            this.changerListener.changeDimensions(this.frame);
+        }
     }
 
     countChildren() {
@@ -360,8 +426,17 @@ class VerticalGroup extends Primitive {
         return this._children[i];
     }
 
-    // TODO.
-    // Change elements positioning when the group position is changed.
+    get frame() {
+        return this._frame;
+    }
+
+    set frame(value) {
+        this._frame = value;
+        this._frame.x = this.x;
+        this._frame.y = this.y;
+        this._frame.width = this.width;
+        this._frame.height = this.height;
+    }
 
 }
 

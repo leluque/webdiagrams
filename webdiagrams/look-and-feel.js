@@ -13,7 +13,7 @@ let lookAndFeelSingleton = null;
 class LookAndFeel {
 
     constructor() {
-        if(!lookAndFeelSingleton) {
+        if (!lookAndFeelSingleton) {
             lookAndFeelSingleton = this;
 
             this._lookAndFeelFactory = new DefaultLookAndFeelFactory();
@@ -39,16 +39,18 @@ class LookAndFeel {
 class DefaultLookAndFeelFactory {
 
     getDrawerFor(element) {
-        if(element instanceof Circle) {
+        if (element instanceof Circle) {
             return new DefaultCircleDrawer();
-        } else if(element instanceof Ellipse) {
+        } else if (element instanceof Ellipse) {
             return new DefaultEllipseDrawer();
-        } else if(element instanceof Rectangle) {
+        } else if (element instanceof Rectangle) {
             return new DefaultRectangleDrawer();
-        } else if(element instanceof Text) {
+        } else if (element instanceof Text) {
             return new DefaultTextDrawer();
-        } else if(element instanceof VerticalGroup) {
+        } else if (element instanceof VerticalGroup) {
             return new DefaultVerticalGroupDrawer();
+        } else if (element instanceof Line) {
+            return new DefaultLineDrawer();
         }
     }
 
@@ -131,6 +133,21 @@ class DefaultTextDrawer extends DefaultDrawer {
 
 }
 
+class DefaultLineDrawer extends DefaultDrawer {
+
+    draw(element) {
+        let newLine = document.createElementNS(super.svgArea.namespace, "line");
+        newLine.setAttributeNS(null, "id", element.id);
+        newLine.setAttributeNS(null, "x1", element.x1);
+        newLine.setAttributeNS(null, "y1", element.y1);
+        newLine.setAttributeNS(null, "x2", element.x2);
+        newLine.setAttributeNS(null, "y2", element.y2);
+        newLine.setAttributeNS(null, "style", element.stylingAttributes.toString());
+        return newLine;
+    }
+
+}
+
 class DefaultVerticalGroupDrawer extends DefaultDrawer {
 
     draw(element) {
@@ -141,8 +158,15 @@ class DefaultVerticalGroupDrawer extends DefaultDrawer {
 
         let lookAndFeel = new LookAndFeel();
 
+        if (element.frame !== null) {
+            let drawer = lookAndFeel.getDrawerFor(element.frame);
+            drawer.svgArea = this;
+            var drawedChild = drawer.draw(element.frame);
+            child.drawed = drawedChild;
+        }
+
         let i = 0;
-        for(i = 0; i < element.countChildren(); i++) {
+        for (i = 0; i < element.countChildren(); i++) {
             let child = element.getChildAt(i);
             let drawer = lookAndFeel.getDrawerFor(child);
             drawer.svgArea = this;
