@@ -75,7 +75,7 @@ class DefaultDrawer {
 class DefaultCircleDrawer extends DefaultDrawer {
 
     draw(element) {
-        let newCircle = document.createElementNS(super.svgArea.namespace, "circle");
+        let newCircle = document.createElementNS(this.svgArea.namespace, "circle");
         newCircle.setAttributeNS(null, "id", element.id);
         newCircle.setAttributeNS(null, "cx", element.centerX);
         newCircle.setAttributeNS(null, "cy", element.centerY);
@@ -89,7 +89,7 @@ class DefaultCircleDrawer extends DefaultDrawer {
 class DefaultEllipseDrawer extends DefaultDrawer {
 
     draw(element) {
-        let newEllipse = document.createElementNS(super.svgArea.namespace, "ellipse");
+        let newEllipse = document.createElementNS(this.svgArea.namespace, "ellipse");
         newEllipse.setAttributeNS(null, "id", element.id);
         newEllipse.setAttributeNS(null, "cx", element.centerX);
         newEllipse.setAttributeNS(null, "cy", element.centerY);
@@ -104,7 +104,7 @@ class DefaultEllipseDrawer extends DefaultDrawer {
 class DefaultRectangleDrawer extends DefaultDrawer {
 
     draw(element) {
-        let newRectangle = document.createElementNS(super.svgArea.namespace, "rect");
+        let newRectangle = document.createElementNS(this.svgArea.namespace, "rect");
         newRectangle.setAttributeNS(null, "id", element.id);
         newRectangle.setAttributeNS(null, "x", element.x);
         newRectangle.setAttributeNS(null, "y", element.y);
@@ -119,7 +119,7 @@ class DefaultRectangleDrawer extends DefaultDrawer {
 class DefaultTextDrawer extends DefaultDrawer {
 
     draw(element) {
-        let newText = document.createElementNS(super.svgArea.namespace, "text");
+        let newText = document.createElementNS(this.svgArea.namespace, "text");
         newText.setAttributeNS(null, "id", element.id);
         newText.setAttributeNS(null, "x", element.x);
         newText.setAttributeNS(null, "y", element.y);
@@ -136,7 +136,7 @@ class DefaultTextDrawer extends DefaultDrawer {
 class DefaultLineDrawer extends DefaultDrawer {
 
     draw(element) {
-        let newLine = document.createElementNS(super.svgArea.namespace, "line");
+        let newLine = document.createElementNS(this.svgArea.namespace, "line");
         newLine.setAttributeNS(null, "id", element.id);
         newLine.setAttributeNS(null, "x1", element.x1);
         newLine.setAttributeNS(null, "y1", element.y1);
@@ -151,7 +151,7 @@ class DefaultLineDrawer extends DefaultDrawer {
 class DefaultVerticalGroupDrawer extends DefaultDrawer {
 
     draw(element) {
-        var newGroup = document.createElementNS(super.svgArea.namespace, "g");
+        var newGroup = document.createElementNS(this.svgArea.namespace, "g");
         newGroup.setAttributeNS(null, "id", element.id);
         newGroup.setAttribute('shape-rendering', 'inherit');
         newGroup.setAttribute('pointer-events', 'all');
@@ -160,7 +160,7 @@ class DefaultVerticalGroupDrawer extends DefaultDrawer {
 
         if (element.frame !== null) {
             let drawer = lookAndFeel.getDrawerFor(element.frame);
-            drawer.svgArea = this;
+            drawer.svgArea = this.svgArea;
             var drawedChild = drawer.draw(element.frame);
             child.drawed = drawedChild;
         }
@@ -169,7 +169,7 @@ class DefaultVerticalGroupDrawer extends DefaultDrawer {
         for (i = 0; i < element.countChildren(); i++) {
             let child = element.getChildAt(i);
             let drawer = lookAndFeel.getDrawerFor(child);
-            drawer.svgArea = this;
+            drawer.svgArea = this.svgArea;
             var drawedChild = drawer.draw(child);
             child.drawed = drawedChild;
         }

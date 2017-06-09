@@ -108,8 +108,8 @@ class SVGArea {
         return this.addElement(newRectangle);
     }
 
-    text(x = 10, y = 10, text = "Text") {
-        let newText = new Text(x, y, "This is an example text");
+    text(x = 10, y = 10, text = "This is an example text") {
+        let newText = new Text(x, y, text);
         newText.id = this.generateId();
         newText.changerListener = new SVGChanger();
 
@@ -169,16 +169,29 @@ class SVGChanger {
     }
 
     changePosition(element) {
-        this.changeX(element);
-        this.changeY(element);
+        if (element instanceof Circle) {
+            element.drawed.setAttribute("cx", element.centerX);
+            element.drawed.setAttribute("cy", element.centerY);
+        } else {
+            this.changeX(element);
+            this.changeY(element);
+        }
     }
 
     changeX(element) {
-        element.drawed.setAttribute("x", element.x);
+        if (element instanceof Circle) {
+            element.drawed.setAttribute("cx", element.centerX);
+        } else {
+            element.drawed.setAttribute("x", element.x);
+        }
     }
 
     changeY(element) {
-        element.drawed.setAttribute("y", element.y);
+        if (element instanceof Circle) {
+            element.drawed.setAttribute("cy", element.centerY);
+        } else {
+            element.drawed.setAttribute("y", element.y);
+        }
     }
 
     changeWidth(element) {

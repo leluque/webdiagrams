@@ -23,42 +23,46 @@
 
         var rect;
         var text;
-        var circle;
+       // var circle;
         var vgroup;
 
         (function(){
             let svgArea = new SVGArea("#svg");
-            circle = svgArea.circle(50, 50, 20);
-            var ellipse = svgArea.ellipse(150, 150, 50, 25);
-            rect = svgArea.rect(10, 10, 100, 50);
-            text = svgArea.text(50, 50, "Test text");
+         //   circle = svgArea.circle(50, 50, 20);
+            //var ellipse = svgArea.ellipse(150, 150, 50, 25);
+            //rect = svgArea.rect(10, 10, 100, 50);
+            //text = svgArea.text(50, 50, "Test text");
 
             vgroup = svgArea.vgroup(50, 50);
-            vgroup.frame = svgArea.rect();
-            vgroup.addChild(svgArea.text(undefined, undefined, "Atributo 1"));
+            console.log(vgroup.width + ";" + vgroup.height);
+            vgroup.frame = svgArea.circle();
+            vgroup.addChild(svgArea.text(undefined, undefined, "Atribo 1"));
+            console.log(vgroup.width + ";" + vgroup.height);
             vgroup.addChild(svgArea.text(undefined, undefined, "Atributo 2"));
-            vgroup.addChild(svgArea.text(undefined, undefined, "Atributo 3"));
+            console.log(vgroup.width + ";" + vgroup.height);
+            vgroup.addChild(svgArea.text(undefined, undefined, "Atrib222uto 3"));
+            console.log(vgroup.width + ";" + vgroup.height);
 
-            var line = svgArea.line(20, 20, 100, 50);
+          //  var line = svgArea.line(20, 20, 100, 50);
         })();
 
         function changeDimensions() {
-            circle.width = 200;
+//            circle.width = 200;
         }
 
         function move() {
-            rect.move(50, 50);
+            //rect.move(50, 50);
         }
 
         function changeStyle() {
-            rect.attr({
+            /*rect.attr({
                 fill: "none",
                 stroke: "red",
-                strokeWidth: 10});
+                strokeWidth: 10});*/
         }
 
         function changeText() {
-            text.text = "New text";
+            //text.text = "New text";
         }
 
     </script>

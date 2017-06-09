@@ -18,39 +18,18 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="look-and-feel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/look-and-feel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="150" column="55" lean-forward="false" selection-start-line="150" selection-start-column="55" selection-end-line="150" selection-end-column="55" />
-              <folding>
-                <element signature="n#LookAndFeel#0" expanded="false" />
-                <element signature="n#DefaultDrawer#0" expanded="false" />
-                <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
-                <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
-                <element signature="n#DefaultTextDrawer#0" expanded="false" />
-                <element signature="n#DefaultLineDrawer#0" expanded="false" />
-                <element signature="n#DefaultVerticalGroupDrawer#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="primitives.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/primitives.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="290" column="29" lean-forward="true" selection-start-line="290" selection-start-column="29" selection-end-line="290" selection-end-column="29" />
+            <state relative-caret-position="1009">
+              <caret line="464" column="44" lean-forward="true" selection-start-line="464" selection-start-column="44" selection-end-line="464" selection-end-column="44" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="n#GeometricShape#0" expanded="false" />
-                <element signature="n#Circle#0" expanded="false" />
                 <element signature="n#Ellipse#0" expanded="false" />
-                <element signature="n#Rectangle#0" expanded="false" />
                 <element signature="n#Text#0" expanded="false" />
+                <element signature="n#Line#0" expanded="false" />
                 <element signature="n#StylingAttributes#0" expanded="false" />
                 <element signature="n#GroupStylingAttributes#0" expanded="false" />
-                <marker date="1496967438044" expanded="false" signature="5325:5683" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -59,8 +38,8 @@
       <file leaf-file-name="svg.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/svg.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-49">
-              <caret line="170" column="26" lean-forward="false" selection-start-line="170" selection-start-column="26" selection-end-line="170" selection-end-column="26" />
+            <state relative-caret-position="125">
+              <caret line="172" column="14" lean-forward="true" selection-start-line="172" selection-start-column="14" selection-end-line="172" selection-end-column="14" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -71,9 +50,27 @@
       <file leaf-file-name="PrimitiveTest.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PrimitiveTest.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+            <state relative-caret-position="126">
+              <caret line="40" column="12" lean-forward="false" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="look-and-feel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/look-and-feel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="159" column="0" lean-forward="true" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+              <folding>
+                <element signature="n#LookAndFeel#0" expanded="false" />
+                <element signature="n#DefaultLookAndFeelFactory#0" expanded="false" />
+                <element signature="n#DefaultDrawer#0" expanded="false" />
+                <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
+                <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
+                <element signature="n#DefaultTextDrawer#0" expanded="false" />
+                <element signature="n#DefaultLineDrawer#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,14 +91,30 @@
       <find>setDatarect.setAttributeNS(&quot;http://www.example.com/yourcustomnamespace&quot;, &quot;data&quot;, &quot;whatever-data-you-want-here&quot;);</find>
       <find>TODO</find>
       <find>changeDimen</find>
+      <find>content</find>
+      <find>super</find>
+      <find>this</find>
+      <find>this.</find>
+      <find>super.</find>
+      <find>console.log</find>
+      <find>return this.</find>
+      <find>alert</find>
+      <find>ale</find>
     </findStrings>
+    <replaceStrings>
+      <replace>this.</replace>
+    </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="extensions::messaging" />
+        <option value="chrome-extension://elicpjhcidhpjomhibiffojpinpmmpil/video/content.js" />
+        <option value="chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/js/bundle.js" />
+        <option value="chrome-extension://kfhkikpdmehlpkaiplafjkaicdljldcf/contentscript-common.js" />
         <option value="$PROJECT_DIR$/look-and-feel.js" />
-        <option value="$PROJECT_DIR$/svg.js" />
         <option value="$PROJECT_DIR$/PrimitiveTest.html" />
+        <option value="$PROJECT_DIR$/svg.js" />
         <option value="$PROJECT_DIR$/primitives.js" />
       </list>
     </option>
@@ -139,7 +152,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -155,6 +167,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -252,18 +265,19 @@
       <option name="presentableId" value="Default" />
       <updated>1496941536108</updated>
       <workItem from="1496941537407" duration="12121000" />
-      <workItem from="1496964069260" duration="3354000" />
+      <workItem from="1496964069260" duration="3951000" />
+      <workItem from="1497027144993" duration="6757000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15475000" />
+    <option name="totallyTimeSpent" value="22829000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -280,6 +294,24 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39905363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -289,23 +321,23 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="18" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/look-and-feel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="136" column="47" lean-forward="false" selection-start-line="136" selection-start-column="47" selection-end-line="136" selection-end-column="47" />
+        <state relative-caret-position="2550">
+          <caret line="150" column="55" lean-forward="false" selection-start-line="150" selection-start-column="55" selection-end-line="150" selection-end-column="55" />
           <folding>
             <element signature="n#LookAndFeel#0" expanded="false" />
+            <element signature="n#DefaultLookAndFeelFactory#0" expanded="false" />
             <element signature="n#DefaultDrawer#0" expanded="false" />
             <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
             <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
             <element signature="n#DefaultTextDrawer#0" expanded="false" />
             <element signature="n#DefaultLineDrawer#0" expanded="false" />
-            <element signature="n#DefaultVerticalGroupDrawer#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -316,14 +348,60 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="n#GeometricShape#0" expanded="false" />
-            <element signature="n#Circle#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
-            <element signature="n#Rectangle#0" expanded="false" />
             <element signature="n#Text#0" expanded="false" />
+            <element signature="n#Line#0" expanded="false" />
             <element signature="n#StylingAttributes#0" expanded="false" />
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
-            <marker date="1496967438044" expanded="false" signature="5325:5683" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2890">
+          <caret line="170" column="26" lean-forward="false" selection-start-line="170" selection-start-column="26" selection-end-line="170" selection-end-column="26" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PrimitiveTest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/look-and-feel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="136" column="47" lean-forward="false" selection-start-line="136" selection-start-column="47" selection-end-line="136" selection-end-column="47" />
+          <folding>
+            <element signature="n#LookAndFeel#0" expanded="false" />
+            <element signature="n#DefaultLookAndFeelFactory#0" expanded="false" />
+            <element signature="n#DefaultDrawer#0" expanded="false" />
+            <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
+            <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
+            <element signature="n#DefaultTextDrawer#0" expanded="false" />
+            <element signature="n#DefaultLineDrawer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/primitives.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#Ellipse#0" expanded="false" />
+            <element signature="n#Text#0" expanded="false" />
+            <element signature="n#Line#0" expanded="false" />
+            <element signature="n#StylingAttributes#0" expanded="false" />
+            <element signature="n#GroupStylingAttributes#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -348,52 +426,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/look-and-feel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="150" column="55" lean-forward="false" selection-start-line="150" selection-start-column="55" selection-end-line="150" selection-end-column="55" />
+        <state relative-caret-position="205">
+          <caret line="159" column="0" lean-forward="true" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
           <folding>
             <element signature="n#LookAndFeel#0" expanded="false" />
+            <element signature="n#DefaultLookAndFeelFactory#0" expanded="false" />
             <element signature="n#DefaultDrawer#0" expanded="false" />
             <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
             <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
             <element signature="n#DefaultTextDrawer#0" expanded="false" />
             <element signature="n#DefaultLineDrawer#0" expanded="false" />
-            <element signature="n#DefaultVerticalGroupDrawer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/svg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-49">
-          <caret line="170" column="26" lean-forward="false" selection-start-line="170" selection-start-column="26" selection-end-line="170" selection-end-column="26" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PrimitiveTest.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        <state relative-caret-position="126">
+          <caret line="40" column="12" lean-forward="false" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="172" column="14" lean-forward="true" selection-start-line="172" selection-start-column="14" selection-end-line="172" selection-end-column="14" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/primitives.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="290" column="29" lean-forward="true" selection-start-line="290" selection-start-column="29" selection-end-line="290" selection-end-column="29" />
+        <state relative-caret-position="1009">
+          <caret line="464" column="44" lean-forward="true" selection-start-line="464" selection-start-column="44" selection-end-line="464" selection-end-column="44" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="n#GeometricShape#0" expanded="false" />
-            <element signature="n#Circle#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
-            <element signature="n#Rectangle#0" expanded="false" />
             <element signature="n#Text#0" expanded="false" />
+            <element signature="n#Line#0" expanded="false" />
             <element signature="n#StylingAttributes#0" expanded="false" />
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
-            <marker date="1496967438044" expanded="false" signature="5325:5683" ph="{...}" />
           </folding>
         </state>
       </provider>

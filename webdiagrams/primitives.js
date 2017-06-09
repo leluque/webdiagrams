@@ -106,11 +106,11 @@ class Circle extends GeometricShape {
     }
 
     get centerX() {
-        return this.x + (this.radius / 2);
+        return this.x + (this.width / 2);
     }
 
     get centerY() {
-        return this.y + (this.radius / 2);
+        return this.y + (this.height / 2);
     }
 
     get radius() {
@@ -142,6 +142,8 @@ class Circle extends GeometricShape {
 
 class Ellipse extends GeometricShape {
 
+    // TODO: Remove center and radius.
+
     constructor(centerX = 0, centerY = 0, radiusX = 50, radiusY = 25, stylingAttributes) {
         super(centerX - radiusX, centerY - radiusY, radiusX * 2, radiusY * 2, stylingAttributes);
         this._centerX = centerX;
@@ -150,26 +152,42 @@ class Ellipse extends GeometricShape {
         this._radiusY = radiusY;
     }
 
+    get x() {
+        return this.x;
+    }
+
     set x(value) {
         this.centerX = value + this.radius;
-        return super.x = value;
+        this.x = value;
+    }
+
+    get x() {
+        return this.y;
     }
 
     set y(value) {
         this.centerY = value + this.radius;
-        return super.y = value;
+        return this.y = value;
+    }
+
+    get width() {
+        return this.width;
     }
 
     set width(value) {
         this.radiusX = value / 2;
         this.changerListener.changeRadiusX(this);
-        return super.width = value;
+        return this.width = value;
+    }
+
+    get height() {
+        return this.height;
     }
 
     set height(value) {
         this.radiusY = value / 2;
         this.changerListener.changeRadiusY(this);
-        return super.height = value;
+        return this.height = value;
     }
 
     get centerX() {
@@ -177,7 +195,7 @@ class Ellipse extends GeometricShape {
     }
 
     set centerX(value) {
-        super.x = value - this._radiusX;
+        this.x = value - this._radiusX;
         this._centerX = value;
     }
 
@@ -186,7 +204,7 @@ class Ellipse extends GeometricShape {
     }
 
     set centerY(value) {
-        super.y = value - this._radiusY;
+        this.y = value - this._radiusY;
         this._centerY = value;
     }
 
@@ -215,19 +233,19 @@ class Rectangle extends GeometricShape {
     }
 
     get contentX1() {
-        return super.x + this.stylingAttributes.strokeWidth;
+        return this.x + this.stylingAttributes.strokeWidth;
     }
 
     get contentY1() {
-        return super.y + this.stylingAttributes.strokeWidth;
+        return this.y + this.stylingAttributes.strokeWidth;
     }
 
     get contentX2() {
-        return super.x + super.width - this.stylingAttributes.strokeWidth;
+        return this.x + this.width - this.stylingAttributes.strokeWidth;
     }
 
     get contentY2() {
-        return super.y + super.height - this.stylingAttributes.strokeWidth;
+        return this.y + this.height - this.stylingAttributes.strokeWidth;
     }
 
 }
@@ -244,9 +262,17 @@ class Text extends GeometricShape {
         return boundingBox.width;
     }
 
+    set width(value) {
+        super.width = value;
+    }
+
     get height() {
         let boundingBox = this.drawed.getBBox();
         return boundingBox.height;
+    }
+
+    set height(value) {
+        super.height = value;
     }
 
     get text() {
@@ -267,19 +293,19 @@ class Line extends GeometricShape {
     }
 
     get x1() {
-        return super.x;
+        return this.x;
     }
 
     get y1() {
-        return super.y;
+        return this.y;
     }
 
     get x2() {
-        return this.x1 + super.width;
+        return this.x1 + this.width;
     }
 
     get y2() {
-        return this.y1 + super.height;
+        return this.y1 + this.height;
     }
 
 }
@@ -299,7 +325,7 @@ class VerticalGroup extends GeometricShape {
     }
 
     get x() {
-        return super.x;
+        return this._x;
     }
 
     set x(value) {
@@ -309,19 +335,21 @@ class VerticalGroup extends GeometricShape {
 
         if (this.frame !== null) {
             this.frame.x = this.x;
-            newX = this.frame.contentX1();
+            //newX = this.frame.contentX1();
         }
         newX += this.groupStylingAttributes.horMargin;
 
         for (i = 0; i < element.countChildren(); i++) {
             let child = element.getChildAt(i);
             child.x = newX;
+            this.changerListener.changePosition(child);
         }
-        return super.x = value;
+        this.x = value;
+        this.changerListener.changePosition(this);
     }
 
     get y() {
-        return super.y;
+        return this._y;
     }
 
     set y(value) {
@@ -331,7 +359,7 @@ class VerticalGroup extends GeometricShape {
 
         if (this.frame !== null) {
             this.frame.y = this.y;
-            currentY = this.frame.contentY1();
+            //currentY = this.frame.contentY1();
         }
         currentY += this.groupStylingAttributes.verMargin;
 
@@ -339,8 +367,10 @@ class VerticalGroup extends GeometricShape {
             let child = element.getChildAt(i);
             child.y = currentY;
             currentY += child.height + this.groupStylingAttributes.verMargin;
+            this.changerListener.changePosition(child);
         }
-        return super.y = value;
+        this.y = value;
+        this.changerListener.changePosition(this);
     }
 
     get width() {
@@ -352,8 +382,17 @@ class VerticalGroup extends GeometricShape {
             }
         }
         maxWidth += 2 * (this.groupStylingAttributes.horMargin + this.stylingAttributes.strokeWidth);
-        this.frame.width = maxWidth;
         return maxWidth;
+    }
+
+    set width(value) {
+        let requiredWidth = this.width;
+        if (requiredWidth < value) {
+            return;
+        }
+        this.frame.width += (value - requiredWidth);
+        this.changerListener.changeDimensions(this.frame);
+        super.width = value;
     }
 
     get height() {
@@ -363,8 +402,17 @@ class VerticalGroup extends GeometricShape {
             totalHeight += this.groupStylingAttributes.verMargin + this.getChildAt(i).height;
         }
         totalHeight += this.groupStylingAttributes.verMargin + 2 * this.stylingAttributes.strokeWidth;
-        this.frame.height = totalHeight;
         return totalHeight;
+    }
+
+    set height(value) {
+        let requiredHeight = this.height;
+        if (requiredHeight > value) {
+            return;
+        }
+        this.frame.height += (value - requiredHeight);
+        this.changerListener.changeDimensions(this.frame);
+        super.height = value;
     }
 
     static get MATCH_PARENT() {
@@ -409,11 +457,13 @@ class VerticalGroup extends GeometricShape {
             var previousChild = this.getChildAt(this.countChildren() - 2);
             child.y = previousChild.y + previousChild.height + this.groupStylingAttributes.verMargin;
         }
+
         this.changerListener.changePosition(child);
 
         if (this.frame !== null) {
             this.frame.width = this.width;
             this.frame.height = this.height;
+            this.changerListener.changePosition(this.frame);
             this.changerListener.changeDimensions(this.frame);
         }
     }
@@ -432,10 +482,12 @@ class VerticalGroup extends GeometricShape {
 
     set frame(value) {
         this._frame = value;
-        this._frame.x = this.x;
-        this._frame.y = this.y;
-        this._frame.width = this.width;
-        this._frame.height = this.height;
+        this.frame.x = this.x;
+        this.frame.y = this.y;
+        this.frame.width = this.width;
+        this.frame.height = this.height;
+        this.changerListener.changePosition(this._frame);
+        this.changerListener.changeDimensions(this._frame);
     }
 
 }
