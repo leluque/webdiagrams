@@ -251,7 +251,6 @@ class Text extends GeometricShape {
 
 class Line extends GeometricShape {
 
-    // TODO: change stroke width (StylingAttributes) and check the drawing problem.
     constructor(x1 = 10, y1 = 10, x2 = 100, y2 = 10, stylingAttributes = new StylingAttributes(1)) {
         super(x1, y1, x2 - x1, y2 - y1, stylingAttributes);
     }
@@ -356,10 +355,12 @@ class VerticalGroup extends GeometricShape {
         let i = 0;
         for (i = 0; i < this.countChildren(); i++) {
             if (this.getChildAt(i).width > maxWidth) {
-                maxWidth = this.getChildAt(i).width;
+                maxWidth = this.getChildAt(i).width
+                if(this.resizePolicy[i] !== VerticalGroup.MATCH_PARENT) {
+                    maxWidth += 2 * this.groupStylingAttributes.horMargin;
+                }
             }
         }
-        maxWidth += 2 * this.groupStylingAttributes.horMargin;
         return maxWidth;
     }
 
