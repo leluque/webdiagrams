@@ -200,11 +200,19 @@ class SVGChanger {
     }
 
     changeWidth(element) {
-        element.drawed.setAttribute("width", element.width);
+        if (element instanceof Line) {
+            element.drawed.setAttribute("x2", element.x2);
+        } else {
+            element.drawed.setAttribute("width", element.width);
+        }
     }
 
     changeHeight(element) {
-        element.drawed.setAttribute("height", element.height);
+        if (element instanceof Line) {
+            element.drawed.setAttribute("y2", element.y2);
+        } else {
+            element.drawed.setAttribute("height", element.height);
+        }
     }
 
     changeDimensions(element) {

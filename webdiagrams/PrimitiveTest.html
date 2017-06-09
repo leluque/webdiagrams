@@ -35,14 +35,15 @@
 
             vgroup = svgArea.vgroup(10, 10);
             vgroup.frame = svgArea.rect();
-            vgroup.addChild(svgArea.text(undefined, undefined, "Nome da Classe"));
+            vgroup.addChild(svgArea.text(undefined, undefined, "Cliente"));
             vgroup.addChild(svgArea.line(), VerticalGroup.MATCH_PARENT);
-            vgroup.addChild(svgArea.text(undefined, undefined, "Atributo 1"));
-            vgroup.addChild(svgArea.text(undefined, undefined, "Atributo 2"));
+            vgroup.addChild(svgArea.text(undefined, undefined, "- cpf: String"));
+            vgroup.addChild(svgArea.text(undefined, undefined, "- nome: String"));
+            vgroup.addChild(svgArea.text(undefined, undefined, "- dataNascimento: Date"));
             vgroup.addChild(svgArea.line(), VerticalGroup.MATCH_PARENT);
-            vgroup.addChild(svgArea.text(undefined, undefined, "Método 1"));
-            vgroup.addChild(svgArea.text(undefined, undefined, "Método 2"));
-            vgroup.addChild(svgArea.text(undefined, undefined, "Método 3"));
+            vgroup.addChild(svgArea.text(undefined, undefined, "+ salvar(): void"));
+            vgroup.addChild(svgArea.text(undefined, undefined, "+ atualizar(): void"));
+            vgroup.addChild(svgArea.text(undefined, undefined, "+ consultarPorCpf(cpf: String): List<Cliente>"));
 
           //  var line = svgArea.line(20, 20, 100, 50);
         })();

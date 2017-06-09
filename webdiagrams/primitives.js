@@ -196,6 +196,7 @@ class Rectangle extends GeometricShape {
     }
 
     adjustTo(innerContent) {
+        // The stroke width is divided by 2 because its thickness is divided 50% to the left and 50% to the right.
         this.x = innerContent.x - innerContent.stylingAttributes.strokeWidth / 2;
         this.y = innerContent.y - innerContent.stylingAttributes.strokeWidth / 2;
         this.width = innerContent.width + 2 * (innerContent.stylingAttributes.strokeWidth / 2);
@@ -374,9 +375,9 @@ class VerticalGroup extends GeometricShape {
         // Adjust children's width (for children with certain resizing policies).
         let i = 0;
         for (i = 0; i < this.countChildren(); i++) {
-            if (this.resizePolicy[i] == VerticalGroup.FILL_SPACE) {
+            if (this.resizePolicy[i] === VerticalGroup.FILL_SPACE) {
                 this.children[i].width = value - 2 * this.groupStylingAttributes.horMargin;
-            } else if (this.resizePolicy[i] == VerticalGroup.MATCH_PARENT) {
+            } else if (this.resizePolicy[i] === VerticalGroup.MATCH_PARENT) {
                 this.children[i].width = value;
             }
         }
