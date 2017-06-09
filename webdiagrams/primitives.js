@@ -196,10 +196,10 @@ class Rectangle extends GeometricShape {
     }
 
     adjustTo(innerContent) {
-        this.x = innerContent.x - innerContent.stylingAttributes.strokeWidth;
-        this.y = innerContent.y - innerContent.stylingAttributes.strokeWidth;
-        this.width = innerContent.width + 2 * innerContent.stylingAttributes.strokeWidth;
-        this.height = innerContent.height + 2 * innerContent.stylingAttributes.strokeWidth;
+        this.x = innerContent.x - innerContent.stylingAttributes.strokeWidth / 2;
+        this.y = innerContent.y - innerContent.stylingAttributes.strokeWidth / 2;
+        this.width = innerContent.width + 2 * (innerContent.stylingAttributes.strokeWidth / 2);
+        this.height = innerContent.height + 2 * (innerContent.stylingAttributes.strokeWidth / 2);
     }
 
 }

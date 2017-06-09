@@ -31,16 +31,16 @@
       <file leaf-file-name="primitives.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/primitives.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="253" column="96" lean-forward="false" selection-start-line="253" selection-start-column="96" selection-end-line="253" selection-end-column="96" />
+            <state relative-caret-position="492">
+              <caret line="501" column="31" lean-forward="false" selection-start-line="501" selection-start-column="31" selection-end-line="501" selection-end-column="31" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="n#GeometricShape#0" expanded="false" />
                 <element signature="n#Circle#0" expanded="false" />
                 <element signature="n#Ellipse#0" expanded="false" />
-                <element signature="n#Rectangle#0" expanded="false" />
                 <element signature="n#Text#0" expanded="false" />
-                <element signature="n#StylingAttributes#0" expanded="false" />
+                <element signature="n#Line#0" expanded="false" />
+                <element signature="n#VerticalGroup#0" expanded="false" />
                 <element signature="n#GroupStylingAttributes#0" expanded="false" />
                 <element signature="n#FontStylingAttributes#0" expanded="false" />
               </folding>
@@ -270,12 +270,12 @@
       <workItem from="1496941537407" duration="12121000" />
       <workItem from="1496964069260" duration="3951000" />
       <workItem from="1497027144993" duration="12520000" />
-      <workItem from="1497042997005" duration="334000" />
+      <workItem from="1497042997005" duration="506000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28926000" />
+    <option name="totallyTimeSpent" value="29098000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -347,9 +347,9 @@
             <element signature="n#GeometricShape#0" expanded="false" />
             <element signature="n#Circle#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
-            <element signature="n#Rectangle#0" expanded="false" />
             <element signature="n#Text#0" expanded="false" />
-            <element signature="n#StylingAttributes#0" expanded="false" />
+            <element signature="n#Line#0" expanded="false" />
+            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
             <element signature="n#FontStylingAttributes#0" expanded="false" />
           </folding>
@@ -407,9 +407,9 @@
             <element signature="n#GeometricShape#0" expanded="false" />
             <element signature="n#Circle#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
-            <element signature="n#Rectangle#0" expanded="false" />
             <element signature="n#Text#0" expanded="false" />
-            <element signature="n#StylingAttributes#0" expanded="false" />
+            <element signature="n#Line#0" expanded="false" />
+            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
             <element signature="n#FontStylingAttributes#0" expanded="false" />
           </folding>
@@ -459,9 +459,9 @@
             <element signature="n#GeometricShape#0" expanded="false" />
             <element signature="n#Circle#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
-            <element signature="n#Rectangle#0" expanded="false" />
             <element signature="n#Text#0" expanded="false" />
-            <element signature="n#StylingAttributes#0" expanded="false" />
+            <element signature="n#Line#0" expanded="false" />
+            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
             <element signature="n#FontStylingAttributes#0" expanded="false" />
           </folding>
@@ -522,16 +522,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/primitives.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="253" column="96" lean-forward="false" selection-start-line="253" selection-start-column="96" selection-end-line="253" selection-end-column="96" />
+        <state relative-caret-position="492">
+          <caret line="501" column="31" lean-forward="false" selection-start-line="501" selection-start-column="31" selection-end-line="501" selection-end-column="31" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="n#GeometricShape#0" expanded="false" />
             <element signature="n#Circle#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
-            <element signature="n#Rectangle#0" expanded="false" />
             <element signature="n#Text#0" expanded="false" />
-            <element signature="n#StylingAttributes#0" expanded="false" />
+            <element signature="n#Line#0" expanded="false" />
+            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
             <element signature="n#FontStylingAttributes#0" expanded="false" />
           </folding>
