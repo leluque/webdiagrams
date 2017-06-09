@@ -169,7 +169,12 @@ class SVGChanger {
     }
 
     changePosition(element) {
-        if (element instanceof Circle) {
+        if (element instanceof Line) {
+            element.drawed.setAttribute("x1", element.x1);
+            element.drawed.setAttribute("y1", element.y1);
+            element.drawed.setAttribute("x2", element.x2);
+            element.drawed.setAttribute("y2", element.y2);
+        } else if (element instanceof Circle) {
             element.drawed.setAttribute("cx", element.centerX);
             element.drawed.setAttribute("cy", element.centerY);
         } else {

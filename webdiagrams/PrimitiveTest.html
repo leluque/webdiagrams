@@ -33,15 +33,16 @@
             //rect = svgArea.rect(10, 10, 100, 50);
             //text = svgArea.text(50, 50, "Test text");
 
-            vgroup = svgArea.vgroup(50, 50);
-            console.log(vgroup.width + ";" + vgroup.height);
-            vgroup.frame = svgArea.circle();
-            vgroup.addChild(svgArea.text(undefined, undefined, "Atribo 1"));
-            console.log(vgroup.width + ";" + vgroup.height);
+            vgroup = svgArea.vgroup(10, 10);
+            vgroup.frame = svgArea.rect();
+            vgroup.addChild(svgArea.text(undefined, undefined, "Nome da Classe"));
+            vgroup.addChild(svgArea.line(), VerticalGroup.WRAP_CONTENT);
+            vgroup.addChild(svgArea.text(undefined, undefined, "Atributo 1"));
             vgroup.addChild(svgArea.text(undefined, undefined, "Atributo 2"));
-            console.log(vgroup.width + ";" + vgroup.height);
-            vgroup.addChild(svgArea.text(undefined, undefined, "Atrib222uto 3"));
-            console.log(vgroup.width + ";" + vgroup.height);
+            vgroup.addChild(svgArea.line(), VerticalGroup.WRAP_CONTENT);
+            vgroup.addChild(svgArea.text(undefined, undefined, "Método 1"));
+            vgroup.addChild(svgArea.text(undefined, undefined, "Método 2"));
+            vgroup.addChild(svgArea.text(undefined, undefined, "Método 3"));
 
           //  var line = svgArea.line(20, 20, 100, 50);
         })();

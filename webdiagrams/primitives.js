@@ -117,25 +117,16 @@ class Circle extends GeometricShape {
         return this.width / 2;
     }
 
-    get halfSquare() {
-        let diagonal = this.radius - this.stylingAttributes.strokeWidth;
-        return Math.sqrt(diagonal * diagonal / 2);
-    }
+    adjustTo(innerContent) {
+        let halfSquare = innerContent.width / 2 + innerContent.stylingAttributes.strokeWidth;
+        let newRadius = Math.sqrt(2 * halfSquare * halfSquare);
 
-    get contentX1() {
-        return this.x + this.radius - this.halfSquare;
-    }
+        this.width = newRadius * 2;
+        this.height = newRadius * 2;
 
-    get contentY1() {
-        return this.contentX1;
-    }
-
-    get contentX2() {
-        return this.contentX1 + 2 * this.halfSquare;
-    }
-
-    get contentY2() {
-        return this.contentX2();
+        let difference = (newRadius - halfSquare);
+        this.x = innerContent.x - difference;
+        this.y = innerContent.y - difference;
     }
 
 }
@@ -204,29 +195,21 @@ class Rectangle extends GeometricShape {
         super(x1, y1, x2 - x1, y2 - y1, stylingAttributes);
     }
 
-    get contentX1() {
-        return this.x + this.stylingAttributes.strokeWidth;
-    }
-
-    get contentY1() {
-        return this.y + this.stylingAttributes.strokeWidth;
-    }
-
-    get contentX2() {
-        return this.x + this.width - this.stylingAttributes.strokeWidth;
-    }
-
-    get contentY2() {
-        return this.y + this.height - this.stylingAttributes.strokeWidth;
+    adjustTo(innerContent) {
+        this.x = innerContent.x - innerContent.stylingAttributes.strokeWidth;
+        this.y = innerContent.y - innerContent.stylingAttributes.strokeWidth;
+        this.width = innerContent.width + 2 * innerContent.stylingAttributes.strokeWidth;
+        this.height = innerContent.height + 2 * innerContent.stylingAttributes.strokeWidth;
     }
 
 }
 
 class Text extends GeometricShape {
 
-    constructor(x = 10, y = 10, text = "Text", stylingAttributes) {
+    constructor(x = 10, y = 10, text = "Text", stylingAttributes = new StylingAttributes(1, "black", "black"), fontStylingAttributes = new FontStylingAttributes()) {
         super(x, y, undefined, undefined, stylingAttributes);
         this._text = text;
+        this._fontStylingAttributes = fontStylingAttributes;
     }
 
     get width() {
@@ -256,11 +239,20 @@ class Text extends GeometricShape {
         this.changerListener.changeText(this);
     }
 
+    get fontStylingAttributes() {
+        return this._fontStylingAttributes;
+    }
+
+    set fontStylingAttributes(value) {
+        this._fontStylingAttributes = value;
+    }
+
 }
 
 class Line extends GeometricShape {
 
-    constructor(x1 = 10, y1 = 10, x2 = 100, y2 = 10, stylingAttributes) {
+    // TODO: change stroke width (StylingAttributes) and check the drawing problem.
+    constructor(x1 = 10, y1 = 10, x2 = 100, y2 = 10, stylingAttributes = new StylingAttributes(1)) {
         super(x1, y1, x2 - x1, y2 - y1, stylingAttributes);
     }
 
@@ -268,31 +260,43 @@ class Line extends GeometricShape {
         return this.x;
     }
 
+    set x1(value) {
+        this.x = value;
+    }
+
     get y1() {
         return this.y;
+    }
+
+    set y1(value) {
+        this.y = value;
     }
 
     get x2() {
         return this.x1 + this.width;
     }
 
+    set x2(value) {
+        this.width = value - this.x;
+    }
+
     get y2() {
         return this.y1 + this.height;
+    }
+
+    set y2(value) {
+        this.height = value - this.y;
     }
 
 }
 
 class VerticalGroup extends GeometricShape {
 
-    // TODO: Correct circle as VerticalGroup frame.
-    // TODO: Correct rectangle as VerticalGroup frame.
-    // TODO: Implement resizingPolicy.
-
     constructor(x = 10, y = 10, stylingAttributes, groupStylingAttributes = new GroupStylingAttributes()) {
         super(x, y, undefined, undefined, stylingAttributes);
         this._groupStylingAttributes = groupStylingAttributes;
         this._children = [];
-        this._resizingPolicy = [];
+        this._resizePolicy = [];
         this._frame = null;
     }
 
@@ -304,11 +308,6 @@ class VerticalGroup extends GeometricShape {
         // Recalculate all children x coordinate.
         let i = 0;
         let newX = value;
-
-        if (this.frame !== null) {
-            this.frame.x = this.x;
-            //newX = this.frame.contentX1();
-        }
         newX += this.groupStylingAttributes.horMargin;
 
         for (i = 0; i < element.countChildren(); i++) {
@@ -318,6 +317,12 @@ class VerticalGroup extends GeometricShape {
         }
         this.x = value;
         this.changerListener.changePosition(this);
+
+        if (this.frame !== null) {
+            this.frame.adjustTo(this);
+            this.changerListener.changePosition(this.frame);
+            this.changerListener.changeDimensions(this.frame);
+        }
     }
 
     get y() {
@@ -328,11 +333,6 @@ class VerticalGroup extends GeometricShape {
         // Recalculate all children y coordinate.
         let i = 0;
         let currentY = value;
-
-        if (this.frame !== null) {
-            this.frame.y = this.y;
-            //currentY = this.frame.contentY1();
-        }
         currentY += this.groupStylingAttributes.verMargin;
 
         for (i = 0; i < element.countChildren(); i++) {
@@ -343,6 +343,12 @@ class VerticalGroup extends GeometricShape {
         }
         this.y = value;
         this.changerListener.changePosition(this);
+
+        if (this.frame !== null) {
+            this.frame.adjustTo(this);
+            this.changerListener.changePosition(this.frame);
+            this.changerListener.changeDimensions(this.frame);
+        }
     }
 
     get width() {
@@ -353,7 +359,7 @@ class VerticalGroup extends GeometricShape {
                 maxWidth = this.getChildAt(i).width;
             }
         }
-        maxWidth += 2 * (this.groupStylingAttributes.horMargin + this.stylingAttributes.strokeWidth);
+        maxWidth += 2 * this.groupStylingAttributes.horMargin;
         return maxWidth;
     }
 
@@ -362,9 +368,23 @@ class VerticalGroup extends GeometricShape {
         if (requiredWidth < value) {
             return;
         }
-        this.frame.width += (value - requiredWidth);
-        this.changerListener.changeDimensions(this.frame);
         super.width = value;
+
+        // Adjust children's width (for children with certain resizing policies).
+        let i = 0;
+        for (i = 0; i < this.countChildren(); i++) {
+            if (this.resizePolicy[i] == VerticalGroup.FILL_SPACE) {
+                this.children[i].width = value - 2 * this.groupStylingAttributes.horMargin;
+            } else if (this.resizePolicy[i] == VerticalGroup.MATCH_PARENT) {
+                this.children[i].width = value;
+            }
+        }
+
+        if (this.frame !== null) {
+            this.frame.adjustTo(this);
+            this.changerListener.changePosition(this.frame);
+            this.changerListener.changeDimensions(this.frame);
+        }
     }
 
     get height() {
@@ -373,7 +393,7 @@ class VerticalGroup extends GeometricShape {
         for (i = 0; i < this.countChildren(); i++) {
             totalHeight += this.groupStylingAttributes.verMargin + this.getChildAt(i).height;
         }
-        totalHeight += this.groupStylingAttributes.verMargin + 2 * this.stylingAttributes.strokeWidth;
+        totalHeight += this.groupStylingAttributes.verMargin;
         return totalHeight;
     }
 
@@ -382,17 +402,25 @@ class VerticalGroup extends GeometricShape {
         if (requiredHeight > value) {
             return;
         }
-        this.frame.height += (value - requiredHeight);
-        this.changerListener.changeDimensions(this.frame);
         super.height = value;
+
+        if (this.frame !== null) {
+            this.frame.adjustTo(this);
+            this.changerListener.changePosition(this.frame);
+            this.changerListener.changeDimensions(this.frame);
+        }
     }
 
     static get MATCH_PARENT() {
-        return true;
+        return 2;
+    }
+
+    static get FILL_SPACE() {
+        return 1;
     }
 
     static get WRAP_CONTENT() {
-        return false;
+        return 0;
     }
 
     get groupStylingAttributes() {
@@ -412,17 +440,28 @@ class VerticalGroup extends GeometricShape {
     }
 
     get resizePolicy() {
-        return this._resizingPolicy;
+        return this._resizePolicy;
     }
 
     set resizePolicy(value) {
-        this._resizingPolicy = value;
+        this._resizePolicy = value;
     }
 
-    addChild(child, resizePolicy = this.WRAP_CONTENT) {
+    addChild(child, resizePolicy = VerticalGroup.WRAP_CONTENT) {
         this.children.push(child);
         this.resizePolicy.push(resizePolicy);
         child.x = this.x;
+        let currentWidth = this.width;
+        if (resizePolicy === VerticalGroup.WRAP_CONTENT) {
+            child.x += this.groupStylingAttributes.horMargin;
+        }
+        else if (resizePolicy === VerticalGroup.FILL_SPACE) {
+            child.x += this.groupStylingAttributes.horMargin;
+            child.width = currentWidth - this.groupStylingAttributes.horMargin * 2;
+        } else if (resizePolicy === VerticalGroup.MATCH_PARENT) {
+            child.width = currentWidth;
+        }
+
         if (this.countChildren() == 1) {
             child.y = this.y + this.groupStylingAttributes.verMargin;
         } else {
@@ -432,12 +471,8 @@ class VerticalGroup extends GeometricShape {
 
         this.changerListener.changePosition(child);
 
-        if (this.frame !== null) {
-            this.frame.width = this.width;
-            this.frame.height = this.height;
-            this.changerListener.changePosition(this.frame);
-            this.changerListener.changeDimensions(this.frame);
-        }
+        this.width = this.width;
+        this.height = this.height;
     }
 
     countChildren() {
@@ -454,10 +489,7 @@ class VerticalGroup extends GeometricShape {
 
     set frame(value) {
         this._frame = value;
-        this.frame.x = this.x;
-        this.frame.y = this.y;
-        this.frame.width = this.width;
-        this.frame.height = this.height;
+        this.frame.adjustTo(this);
         this.changerListener.changePosition(this._frame);
         this.changerListener.changeDimensions(this._frame);
     }
@@ -466,7 +498,7 @@ class VerticalGroup extends GeometricShape {
 
 class StylingAttributes {
 
-    constructor(strokeWidth = 1, strokeColor = 'black', fillColor = 'white') {
+    constructor(strokeWidth = 3, strokeColor = 'black', fillColor = '#FFFFCC') {
         this._strokeWidth = strokeWidth;
         this._strokeColor = strokeColor;
         this._fillColor = fillColor;
@@ -497,14 +529,16 @@ class StylingAttributes {
     }
 
     toString() {
-        return "stroke:" + this.strokeColor + "; fill: " + this.fillColor + "; stroke-width: " + this.strokeWidth;
+        let style = "stroke:" + this.strokeColor + "; fill: " + this.fillColor + "; stroke-width: " + this.strokeWidth + ";";
+        style += "-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;";
+        return style;
     }
 
 }
 
 class GroupStylingAttributes {
 
-    constructor(horMargin = 0, verMargin = 10) {
+    constructor(horMargin = 10, verMargin = 10) {
         this._horMargin = horMargin;
         this._verMargin = verMargin;
     }
@@ -523,6 +557,40 @@ class GroupStylingAttributes {
 
     set verMargin(value) {
         this._verMargin = value;
+    }
+
+}
+
+class FontStylingAttributes {
+
+    constructor(family = "sans-serif", size = 14, weight = "100") {
+        this._family = family;
+        this._size = size;
+        this._weight = weight;
+    }
+
+    get family() {
+        return this._family;
+    }
+
+    set family(value) {
+        this._family = value;
+    }
+
+    get size() {
+        return this._size;
+    }
+
+    set size(value) {
+        this._size = value;
+    }
+
+    get weight() {
+        return this._weight;
+    }
+
+    set weight(value) {
+        this._weight = value;
     }
 
 }
