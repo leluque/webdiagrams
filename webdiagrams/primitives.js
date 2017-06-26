@@ -8,6 +8,57 @@
 
 'use strict';
 
+class BoundingBox {
+
+    constructor(x1 = 0, y1 = 0, x2 = 100, y2 = 100) {
+        this._x1 = x1;
+        this._y1 = y1;
+        this._x2 = x2;
+        this._y2 = y2;
+    }
+
+    get x1() {
+        return this._x1;
+    }
+
+    set x1(value) {
+        this._x1 = value;
+    }
+
+    get y1() {
+        return this._y1;
+    }
+
+    set y1(value) {
+        this._y1 = value;
+    }
+
+    get x2() {
+        return this._x2;
+    }
+
+    set x2(value) {
+        this._x2 = value;
+    }
+
+    get y2() {
+        return this._y2;
+    }
+
+    set y2(value) {
+        this._y2 = value;
+    }
+
+    get width() {
+        return this.x2 - this.x1;
+    }
+
+    get height() {
+        return this.y2 - this.y1;
+    }
+
+}
+
 class GeometricShape {
 
     constructor(x = 0, y = 0, width = 50, height = 50, stylingAttributes = new StylingAttributes(), id) {
@@ -18,7 +69,7 @@ class GeometricShape {
         this._stylingAttributes = stylingAttributes;
         this._id = id;
         this._drawed = null;
-        this._changerListener = null;
+        this._changeListener = null;
     }
 
     get x() {
@@ -27,7 +78,7 @@ class GeometricShape {
 
     set x(value) {
         this._x = value;
-        this.changerListener.changeX(this);
+        this.changeListener.changeX(this);
     }
 
     get y() {
@@ -36,7 +87,7 @@ class GeometricShape {
 
     set y(value) {
         this._y = value;
-        this.changerListener.changeY(this);
+        this.changeListener.changeY(this);
     }
 
     get width() {
@@ -45,7 +96,7 @@ class GeometricShape {
 
     set width(value) {
         this._width = value;
-        this.changerListener.changeWidth(this);
+        this.changeListener.changeWidth(this);
     }
 
     get height() {
@@ -54,7 +105,7 @@ class GeometricShape {
 
     set height(value) {
         this._height = value;
-        this.changerListener.changeHeight(this);
+        this.changeListener.changeHeight(this);
     }
 
     get stylingAttributes() {
@@ -81,20 +132,20 @@ class GeometricShape {
         this._drawed = value;
     }
 
-    get changerListener() {
-        return this._changerListener;
+    get changeListener() {
+        return this._changeListener;
     }
 
-    set changerListener(value) {
-        this._changerListener = value;
+    set changeListener(value) {
+        this._changeListener = value;
     }
 
     move(newX, newY) {
-        this.changerListener.changePosition(this, newX, newY);
+        this.changeListener.changePosition(this, newX, newY);
     }
 
     attr(json) {
-        this.changerListener.changeStylingAttributes(this, json);
+        this.changeListener.changeStylingAttributes(this, json);
     }
 
 }
@@ -143,7 +194,7 @@ class Ellipse extends GeometricShape {
 
     set width(value) {
         this.width = value;
-        this.changerListener.changeRadiusX(this);
+        this.changeListener.changeRadiusX(this);
     }
 
     get height() {
@@ -152,7 +203,7 @@ class Ellipse extends GeometricShape {
 
     set height(value) {
         this.height = value;
-        this.changerListener.changeRadiusY(this);
+        this.changeListener.changeRadiusY(this);
     }
 
     get centerX() {
@@ -237,7 +288,7 @@ class Text extends GeometricShape {
 
     set text(value) {
         this._text = value;
-        this.changerListener.changeText(this);
+        this.changeListener.changeText(this);
     }
 
     get fontStylingAttributes() {
@@ -313,15 +364,15 @@ class VerticalGroup extends GeometricShape {
         for (i = 0; i < element.countChildren(); i++) {
             let child = element.getChildAt(i);
             child.x = newX;
-            this.changerListener.changePosition(child);
+            this.changeListener.changePosition(child);
         }
         this.x = value;
-        this.changerListener.changePosition(this);
+        this.changeListener.changePosition(this);
 
         if (this.frame !== null) {
             this.frame.adjustTo(this);
-            this.changerListener.changePosition(this.frame);
-            this.changerListener.changeDimensions(this.frame);
+            this.changeListener.changePosition(this.frame);
+            this.changeListener.changeDimensions(this.frame);
         }
     }
 
@@ -339,15 +390,15 @@ class VerticalGroup extends GeometricShape {
             let child = element.getChildAt(i);
             child.y = currentY;
             currentY += child.height + this.groupStylingAttributes.verMargin;
-            this.changerListener.changePosition(child);
+            this.changeListener.changePosition(child);
         }
         this.y = value;
-        this.changerListener.changePosition(this);
+        this.changeListener.changePosition(this);
 
         if (this.frame !== null) {
             this.frame.adjustTo(this);
-            this.changerListener.changePosition(this.frame);
-            this.changerListener.changeDimensions(this.frame);
+            this.changeListener.changePosition(this.frame);
+            this.changeListener.changeDimensions(this.frame);
         }
     }
 
@@ -384,8 +435,8 @@ class VerticalGroup extends GeometricShape {
 
         if (this.frame !== null) {
             this.frame.adjustTo(this);
-            this.changerListener.changePosition(this.frame);
-            this.changerListener.changeDimensions(this.frame);
+            this.changeListener.changePosition(this.frame);
+            this.changeListener.changeDimensions(this.frame);
         }
     }
 
@@ -408,8 +459,8 @@ class VerticalGroup extends GeometricShape {
 
         if (this.frame !== null) {
             this.frame.adjustTo(this);
-            this.changerListener.changePosition(this.frame);
-            this.changerListener.changeDimensions(this.frame);
+            this.changeListener.changePosition(this.frame);
+            this.changeListener.changeDimensions(this.frame);
         }
     }
 
@@ -471,7 +522,7 @@ class VerticalGroup extends GeometricShape {
             child.y = previousChild.y + previousChild.height + this.groupStylingAttributes.verMargin;
         }
 
-        this.changerListener.changePosition(child);
+        this.changeListener.changePosition(child);
 
         this.width = this.width;
         this.height = this.height;
@@ -492,8 +543,8 @@ class VerticalGroup extends GeometricShape {
     set frame(value) {
         this._frame = value;
         this.frame.adjustTo(this);
-        this.changerListener.changePosition(this._frame);
-        this.changerListener.changeDimensions(this._frame);
+        this.changeListener.changePosition(this._frame);
+        this.changeListener.changeDimensions(this._frame);
     }
 
 }

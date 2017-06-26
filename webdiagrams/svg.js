@@ -63,7 +63,7 @@ class SVGArea {
     circle(centerX = 50, centerY = 50, radius = 100) {
         let newCircle = new Circle(centerX, centerY, radius);
         newCircle.id = this.generateId();
-        newCircle.changerListener = new SVGChanger();
+        newCircle.changeListener = new SVGChanger();
 
         let lookAndFeel = new LookAndFeel();
         let drawer = lookAndFeel.getDrawerFor(newCircle);
@@ -79,7 +79,7 @@ class SVGArea {
     ellipse(centerX = 50, centerY = 50, radiusX = 100, radiusY = 50) {
         let newEllipse = new Ellipse(centerX, centerY, radiusX, radiusY);
         newEllipse.id = this.generateId();
-        newEllipse.changerListener = new SVGChanger();
+        newEllipse.changeListener = new SVGChanger();
 
         let lookAndFeel = new LookAndFeel();
         let drawer = lookAndFeel.getDrawerFor(newEllipse);
@@ -95,7 +95,7 @@ class SVGArea {
     rect(x1 = 10, y1 = 10, x2 = 100, y2 = 20) {
         let newRectangle = new Rectangle(x1, y1, x2, y2);
         newRectangle.id = this.generateId();
-        newRectangle.changerListener = new SVGChanger();
+        newRectangle.changeListener = new SVGChanger();
 
         let lookAndFeel = new LookAndFeel();
         let drawer = lookAndFeel.getDrawerFor(newRectangle);
@@ -111,7 +111,7 @@ class SVGArea {
     text(x = 10, y = 10, text = "This is an example text") {
         let newText = new Text(x, y, text);
         newText.id = this.generateId();
-        newText.changerListener = new SVGChanger();
+        newText.changeListener = new SVGChanger();
 
         let lookAndFeel = new LookAndFeel();
         let drawer = lookAndFeel.getDrawerFor(newText);
@@ -127,7 +127,7 @@ class SVGArea {
     vgroup(x = 10, y = 10) {
         let newVGroup = new VerticalGroup(x, y);
         newVGroup.id = this.generateId();
-        newVGroup.changerListener = new SVGChanger();
+        newVGroup.changeListener = new SVGChanger();
 
         let lookAndFeel = new LookAndFeel();
         let drawer = lookAndFeel.getDrawerFor(newVGroup);
@@ -143,7 +143,7 @@ class SVGArea {
     line(x1 = 10, y1 = 10, x2 = 100, y2 = 10) {
         let newLine = new Line(x1, y1, x2, y2);
         newLine.id = this.generateId();
-        newLine.changerListener = new SVGChanger();
+        newLine.changeListener = new SVGChanger();
 
         let lookAndFeel = new LookAndFeel();
         let drawer = lookAndFeel.getDrawerFor(newLine);
