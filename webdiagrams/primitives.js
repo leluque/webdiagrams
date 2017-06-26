@@ -148,6 +148,14 @@ class GeometricShape {
         this.changeListener.changeStylingAttributes(this, json);
     }
 
+    /**
+     * Returns a bounding box for the geometric shape content.
+     * @returns A bounding box for the geometric shape content.
+     */
+    get contentBox() {
+        return null;
+    }
+
 }
 
 class Circle extends GeometricShape {
@@ -178,6 +186,12 @@ class Circle extends GeometricShape {
         let difference = (newRadius - halfSquare);
         this.x = innerContent.x - difference;
         this.y = innerContent.y - difference;
+    }
+
+    get contentBox() {
+        let involvingBoxHalfDiagonal = Math.sqrt(2*Math.pow(this.width, 2))/2;
+        let delta = involvingBoxHalfDiagonal - this.radius - this.stylingAttributes.strokeWidth;
+        return new BoundingBox(this.x + delta, this.y + delta, this.x + this.width - delta, this.y + this.height - delta);
     }
 
 }
@@ -252,6 +266,11 @@ class Rectangle extends GeometricShape {
         this.y = innerContent.y - innerContent.stylingAttributes.strokeWidth / 2;
         this.width = innerContent.width + 2 * (innerContent.stylingAttributes.strokeWidth / 2);
         this.height = innerContent.height + 2 * (innerContent.stylingAttributes.strokeWidth / 2);
+    }
+
+    get contentBox() {
+        let border = this.stylingAttributes.strokeWidth;
+        return new BoundingBox(this.x + border, this.y + border, this.x + this.width - border, this.y + this.height - border);
     }
 
 }
@@ -408,7 +427,7 @@ class VerticalGroup extends GeometricShape {
         for (i = 0; i < this.countChildren(); i++) {
             if (this.getChildAt(i).width > maxWidth) {
                 maxWidth = this.getChildAt(i).width
-                if(this.resizePolicy[i] !== VerticalGroup.MATCH_PARENT) {
+                if (this.resizePolicy[i] !== VerticalGroup.MATCH_PARENT) {
                     maxWidth += 2 * this.groupStylingAttributes.horMargin;
                 }
             }
