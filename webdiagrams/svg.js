@@ -8,8 +8,6 @@
 
 'use strict';
 
-let svgChanger = null;
-
 class SVGArea {
 
     constructor(svgSelector = "#svg") {
@@ -60,18 +58,29 @@ class SVGArea {
         return element;
     }
 
+    // TODO: in all methods below, register listener events for all
+    // relevant events and register Circle (or the appropriate class)
+    // EVENThappened method as a callback function. This function
+    // just inform the event listeners that the event happened.
     circle(centerX = 50, centerY = 50, radius = 100) {
+        //*****************************
+        // Create a new circle and set its id.
         let newCircle = new Circle(centerX, centerY, radius);
         newCircle.id = this.generateId();
-        newCircle.changeListener = new SVGChanger();
+
+        //*****************************
+        // Add change listeners.
+        newCircle.addChangeListener(new CircleDimensionChangeListener());
+        newCircle.addChangeListener(new CirclePositionChangeListener());
+        newCircle.addChangeListener(new StyleChangeListener());
 
         let lookAndFeel = new LookAndFeel();
         let drawer = lookAndFeel.getDrawerFor(newCircle);
         drawer.svgArea = this;
-        var drawedCircle = drawer.draw(newCircle);
-        this.svg.appendChild(drawedCircle);
+        var drawnCircle = drawer.draw(newCircle);
+        this.svg.appendChild(drawnCircle);
 
-        newCircle.drawed = drawedCircle;
+        newCircle.drawn = drawnCircle;
 
         return this.addElement(newCircle);
     }
@@ -79,165 +88,197 @@ class SVGArea {
     ellipse(centerX = 50, centerY = 50, radiusX = 100, radiusY = 50) {
         let newEllipse = new Ellipse(centerX, centerY, radiusX, radiusY);
         newEllipse.id = this.generateId();
-        newEllipse.changeListener = new SVGChanger();
+        //newEllipse.changeListener = new SVGChanger();
 
         let lookAndFeel = new LookAndFeel();
         let drawer = lookAndFeel.getDrawerFor(newEllipse);
         drawer.svgArea = this;
-        var drawedEllipse = drawer.draw(newEllipse);
-        this.svg.appendChild(drawedEllipse);
+        var drawnEllipse = drawer.draw(newEllipse);
+        this.svg.appendChild(drawnEllipse);
 
-        newEllipse.drawed = drawedEllipse;
+        newEllipse.drawn = drawnEllipse;
 
         return this.addElement(newEllipse);
     }
 
     rect(x1 = 10, y1 = 10, x2 = 100, y2 = 20) {
+        //*****************************
+        // Create a new rectangle and set its id.
         let newRectangle = new Rectangle(x1, y1, x2, y2);
         newRectangle.id = this.generateId();
-        newRectangle.changeListener = new SVGChanger();
+
+        //*****************************
+        // Add change listeners.
+        newRectangle.addChangeListener(new RectangleDimensionChangeListener());
+        newRectangle.addChangeListener(new RectanglePositionChangeListener());
+        newRectangle.addChangeListener(new StyleChangeListener());
 
         let lookAndFeel = new LookAndFeel();
         let drawer = lookAndFeel.getDrawerFor(newRectangle);
         drawer.svgArea = this;
-        var drawedRectangle = drawer.draw(newRectangle);
-        this.svg.appendChild(drawedRectangle);
+        var drawnRectangle = drawer.draw(newRectangle);
+        this.svg.appendChild(drawnRectangle);
 
-        newRectangle.drawed = drawedRectangle;
+        newRectangle.drawn = drawnRectangle;
 
         return this.addElement(newRectangle);
     }
 
     text(x = 10, y = 10, text = "This is an example text") {
+        //*****************************
+        // Create a new text and set its id.
         let newText = new Text(x, y, text);
         newText.id = this.generateId();
-        newText.changeListener = new SVGChanger();
+
+        //*****************************
+        // Add change listeners.
+        newText.addChangeListener(new TextDimensionChangeListener());
+        newText.addChangeListener(new TextPositionChangeListener());
+        newText.addChangeListener(new TextChangeListener());
+        newText.addChangeListener(new StyleChangeListener());
 
         let lookAndFeel = new LookAndFeel();
         let drawer = lookAndFeel.getDrawerFor(newText);
         drawer.svgArea = this;
-        var drawedText = drawer.draw(newText);
-        this.svg.appendChild(drawedText);
+        var drawnText = drawer.draw(newText);
+        this.svg.appendChild(drawnText);
 
-        newText.drawed = drawedText;
+        newText.drawn = drawnText;
+        newText.calculateDimensions();
 
         return this.addElement(newText);
     }
 
     vgroup(x = 10, y = 10) {
+        //*****************************
+        // Create a new vertical group and set its id.
         let newVGroup = new VerticalGroup(x, y);
         newVGroup.id = this.generateId();
-        newVGroup.changeListener = new SVGChanger();
 
         let lookAndFeel = new LookAndFeel();
         let drawer = lookAndFeel.getDrawerFor(newVGroup);
         drawer.svgArea = this;
-        var drawedVGroup = drawer.draw(newVGroup);
-        this.svg.appendChild(drawedVGroup);
+        var drawnVGroup = drawer.draw(newVGroup);
+        this.svg.appendChild(drawnVGroup);
 
-        newVGroup.drawed = drawedVGroup;
+        newVGroup.drawn = drawnVGroup;
 
         return this.addElement(newVGroup);
     }
 
     line(x1 = 10, y1 = 10, x2 = 100, y2 = 10) {
+        //*****************************
+        // Create a new line and set its id.
         let newLine = new Line(x1, y1, x2, y2);
         newLine.id = this.generateId();
-        newLine.changeListener = new SVGChanger();
+
+        //*****************************
+        // Add change listeners.
+        newLine.addChangeListener(new LineDimensionChangeListener());
+        newLine.addChangeListener(new LinePositionChangeListener());
+        newLine.addChangeListener(new StyleChangeListener());
 
         let lookAndFeel = new LookAndFeel();
         let drawer = lookAndFeel.getDrawerFor(newLine);
         drawer.svgArea = this;
-        var drawedLine = drawer.draw(newLine);
-        this.svg.appendChild(drawedLine);
+        var drawnLine = drawer.draw(newLine);
+        this.svg.appendChild(drawnLine);
 
-        newLine.drawed = drawedLine;
+        newLine.drawn = drawnLine;
 
         return this.addElement(newLine);
     }
 
 }
 
-class SVGChanger {
-
-    constructor() {
-        if (!svgChanger) {
-            svgChanger = this;
-        }
-
-        return svgChanger;
+class GeneralPositionChangeListener extends ChangeListener {
+    update(target) {
+        this.changeX(target);
+        this.changeY(target);
     }
 
-    changePosition(element) {
-        if (element instanceof Line) {
-            element.drawed.setAttribute("x1", element.x1);
-            element.drawed.setAttribute("y1", element.y1);
-            element.drawed.setAttribute("x2", element.x2);
-            element.drawed.setAttribute("y2", element.y2);
-        } else if (element instanceof Circle) {
-            element.drawed.setAttribute("cx", element.centerX);
-            element.drawed.setAttribute("cy", element.centerY);
-        } else {
-            this.changeX(element);
-            this.changeY(element);
-        }
+    changeX(target) {
+        target.drawn.setAttribute("x", target.x);
     }
 
-    changeX(element) {
-        if (element instanceof Circle) {
-            element.drawed.setAttribute("cx", element.centerX);
-        } else {
-            element.drawed.setAttribute("x", element.x);
-        }
+    changeY(target) {
+        target.drawn.setAttribute("y", target.y);
+    }
+}
+class RectanglePositionChangeListener extends GeneralPositionChangeListener {
+}
+class TextPositionChangeListener extends GeneralPositionChangeListener {
+}
+class LinePositionChangeListener extends GeneralPositionChangeListener {
+    update(target) {
+        target.drawn.setAttribute("x1", target.x1);
+        target.drawn.setAttribute("y1", target.y1);
+        target.drawn.setAttribute("x2", target.x2);
+        target.drawn.setAttribute("y2", target.y2);
+    }
+}
+class CirclePositionChangeListener extends GeneralPositionChangeListener {
+    changeX(target) {
+        target.drawn.setAttribute("cx", target.centerX);
     }
 
-    changeY(element) {
-        if (element instanceof Circle) {
-            element.drawed.setAttribute("cy", element.centerY);
-        } else {
-            element.drawed.setAttribute("y", element.y);
-        }
+    changeY(target) {
+        target.drawn.setAttribute("cy", target.centerY);
+    }
+}
+
+class GeneralDimensionChangeListener extends ChangeListener {
+
+    update(target) {
+        this.changeWidth(target);
+        this.changeHeight(target);
     }
 
-    changeWidth(element) {
-        if (element instanceof Line) {
-            element.drawed.setAttribute("x2", element.x2);
-        } else {
-            element.drawed.setAttribute("width", element.width);
-        }
+    changeWidth(target) {
+        target.drawn.setAttribute("width", target.width);
     }
 
-    changeHeight(element) {
-        if (element instanceof Line) {
-            element.drawed.setAttribute("y2", element.y2);
-        } else {
-            element.drawed.setAttribute("height", element.height);
-        }
+    changeHeight(target) {
+        target.drawn.setAttribute("height", target.height);
     }
 
-    changeDimensions(element) {
-        this.changeWidth(element);
-        this.changeHeight(element);
+}
+class RectangleDimensionChangeListener extends GeneralDimensionChangeListener {
+}
+class TextDimensionChangeListener extends GeneralDimensionChangeListener {
+}
+class CircleDimensionChangeListener extends GeneralDimensionChangeListener {
+
+    update(target) {
+        super.update(target);
+        this.changeRadius(target);
     }
 
-    changeRadius(element) {
-        element.drawed.setAttribute("r", element.radius);
+    changeRadius(target) {
+        target.drawn.setAttribute("r", target.radius);
     }
 
-    changeRadiusX(element) {
-        element.drawed.setAttribute("rx", element.radiusX);
+}
+class LineDimensionChangeListener extends GeneralDimensionChangeListener {
+
+    changeWidth(target) {
+        target.drawn.setAttribute("x2", target.x2);
     }
 
-    changeRadiusY(element) {
-        element.drawed.setAttribute("ry", element.radiusY);
+    changeHeight(target) {
+        target.drawn.setAttribute("y2", target.y2);
     }
 
-    changeStylingAttributes(element, json) {
-        Object.assign(element.drawed.style, json);
-    }
+}
 
-    changeText(element) {
-        element.drawed.textContent = element.text;
+class TextChangeListener extends ChangeListener {
+    update(target) {
+        target.drawn.textContent = target.text;
     }
+}
 
+class StyleChangeListener extends ChangeListener {
+    update(target) {
+        Object.assign(target.drawn.style, target.stylingAttributes.toJSON());
+    }
 }
