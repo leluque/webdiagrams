@@ -73,6 +73,7 @@
            } else {
                vgroup.width += 10;
            }
+           vgroup.fitContent = false;
         }
 
         function move() {
@@ -83,7 +84,6 @@
             }
         }
 
-        // TODO: correct - style not changing
         function changeStyle() {
             rect.appearance({
                 fill: "none",
@@ -91,9 +91,12 @@
                 strokeWidth: 2});
         }
 
-        // TODO: correct - change group width when a child element is changed.
         function changeText() {
             text.text = randomText();
+        }
+
+        function fitContent() {
+            vgroup.forceFitContent();
         }
 
     </script>
@@ -102,6 +105,7 @@
     <button type="button" onclick="move()">Move</button>
     <button type="button" onclick="changeStyle()">Change style</button>
     <button type="button" onclick="changeText()">Change text</button>
+    <button type="button" onclick="fitContent()">Fit content</button>
 
 </body>
 </html>

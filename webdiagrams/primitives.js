@@ -476,14 +476,14 @@ class Line extends GraphicalElement {
     }
 
     get minWidth() {
-        if(this.stylingAttributes !== null) {
+        if (this.stylingAttributes !== null) {
             return this.stylingAttributes.strokeWidth;
         }
         return 1;
     }
 
     get minHeight() {
-        if(this.stylingAttributes !== null) {
+        if (this.stylingAttributes !== null) {
             return this.stylingAttributes.strokeWidth;
         }
         return 1;
@@ -514,6 +514,9 @@ class VerticalGroup extends GraphicalElement {
         this._resizePolicy = [];
         this._frame = null;
         this._dimensionReadjustmentEnabled = true;
+        // Does the group must fit its content?
+        // If the user resize it, for example, this attribute may be changed to false.
+        this._fitContent = true;
     }
 
     get x() {
@@ -534,6 +537,7 @@ class VerticalGroup extends GraphicalElement {
         let newChildrenX = contentBox.x1;
 
         let i = 0;
+        this.disableDimensionReadjustment(); // The dimension does not have to change in this case.
         for (let child of this.children) {
             child.x = newChildrenX;
             if (this.resizePolicy[i] !== VerticalGroup.MATCH_PARENT) {
@@ -541,6 +545,7 @@ class VerticalGroup extends GraphicalElement {
             }
             i++;
         }
+        this.enableDimensionReadjustment();
     }
 
     get y() {
@@ -560,10 +565,12 @@ class VerticalGroup extends GraphicalElement {
 
         let currentChildrenY = contentBox.y1 + this.verMargin;
 
+        this.disableDimensionReadjustment(); // The dimension does not have to change in this case.
         for (let child of this.children) {
             child.y = currentChildrenY;
             currentChildrenY += child.height + this.verMargin;
         }
+        this.enableDimensionReadjustment();
     }
 
     get width() {
@@ -812,13 +819,30 @@ class VerticalGroup extends GraphicalElement {
         this._dimensionReadjustmentEnabled = true;
     }
 
+    forceFitContent() {
+        this.fitContent = true;
+        this.readjustDimensions();
+    }
+
+    get fitContent() {
+        return this._fitContent;
+    }
+
+    set fitContent(value) {
+        this._fitContent = value;
+    }
+
     readjustDimensions() {
         if (!this.dimensionReadjustmentEnabled) {
             return;
         }
 
-        this.width = this.minWidth;
-        this.height = this.minHeight;
+        if (this.fitContent || this.minWidth > this.width) {
+            this.width = this.minWidth;
+        }
+        if (this.fitContent || this.minHeight > this.height) {
+            this.height = this.minHeight;
+        }
     }
 
 }
