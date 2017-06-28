@@ -301,13 +301,13 @@ class Circle extends GraphicalElement {
 
     get contentBox() {
         let involvingBoxHalfDiagonal = Math.sqrt(2 * Math.pow(this.width, 2)) / 2;
-        let delta = involvingBoxHalfDiagonal - this.radius - this.stylingAttributes.strokeWidth;
+        let deltaDiagonal = involvingBoxHalfDiagonal - this.radius;
+        let delta = Math.sqrt(deltaDiagonal * deltaDiagonal) / 2;
         return new BoundingBox(this.x + delta, this.y + delta, this.x + this.width - delta, this.y + this.height - delta);
     }
 
     widthToFit(boundingBox) {
-        let maxDimension = Math.max(boundingBox.x2 - boundingBox.x1, boundingBox.y2 - boundingBox.y1);
-        let diameter = Math.sqrt(2 * Math.pow(maxDimension, 2)) + this.stylingAttributes.strokeWidth;
+        let diameter = Math.sqrt(Math.pow(boundingBox.width, 2) + Math.pow(boundingBox.height, 2)) + this.stylingAttributes.strokeWidth;
         return diameter;
     }
 

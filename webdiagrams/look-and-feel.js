@@ -81,6 +81,7 @@ class DefaultCircleDrawer extends DefaultDrawer {
         newCircle.setAttributeNS(null, "cy", element.centerY);
         newCircle.setAttributeNS(null, "r", element.radius);
         newCircle.setAttributeNS(null, "style", element.stylingAttributes.toString());
+        newCircle.setAttributeNS(null, "shape-rendering", "geometricPrecision");
         return newCircle;
     }
 
@@ -96,6 +97,7 @@ class DefaultEllipseDrawer extends DefaultDrawer {
         newEllipse.setAttributeNS(null, "rx", element.radiusX);
         newEllipse.setAttributeNS(null, "ry", element.radiusY);
         newEllipse.setAttributeNS(null, "style", element.stylingAttributes.toString());
+        newEllipse.setAttributeNS(null, "shape-rendering", "geometricPrecision");
         return newEllipse;
     }
 
@@ -111,6 +113,7 @@ class DefaultRectangleDrawer extends DefaultDrawer {
         newRectangle.setAttributeNS(null, "width", element.width);
         newRectangle.setAttributeNS(null, "height", element.height);
         newRectangle.setAttributeNS(null, "style", element.stylingAttributes.toString());
+        newRectangle.setAttributeNS(null, "shape-rendering", "geometricPrecision");
         return newRectangle;
     }
 
@@ -123,7 +126,13 @@ class DefaultTextDrawer extends DefaultDrawer {
         newText.setAttributeNS(null, "id", element.id);
         newText.setAttributeNS(null, "x", element.x);
         newText.setAttributeNS(null, "y", element.y);
+        newText.setAttributeNS(null, "font-family", element.fontStylingAttributes.family);
+        newText.setAttributeNS(null, "font-size", element.fontStylingAttributes.size);
+        newText.setAttributeNS(null, "font-weight", element.fontStylingAttributes.weight);
+        newText.setAttributeNS(null, "alignment-baseline", "hanging");
+        newText.setAttributeNS(null, "text-anchor", "start");
         newText.setAttributeNS(null, "style", element.stylingAttributes.toString());
+        newText.setAttributeNS(null, "text-rendering", "optimizeLegibility");
 
         var textNode = document.createTextNode(element.text);
         newText.appendChild(textNode);
@@ -143,6 +152,7 @@ class DefaultLineDrawer extends DefaultDrawer {
         newLine.setAttributeNS(null, "x2", element.x2);
         newLine.setAttributeNS(null, "y2", element.y2);
         newLine.setAttributeNS(null, "style", element.stylingAttributes.toString());
+        newLine.setAttributeNS(null, "shape-rendering", "geometricPrecision");
         return newLine;
     }
 
