@@ -123,17 +123,26 @@ class DefaultTextDrawer extends DefaultDrawer {
 
     draw(element) {
         let newText = document.createElementNS(this.svgArea.namespace, "text");
-        newText.setAttributeNS(null, "id", element.id);
-        newText.setAttributeNS(null, "x", element.x);
-        newText.setAttributeNS(null, "y", element.y);
-        newText.setAttributeNS(null, "font-family", element.fontStylingAttributes.family);
-        newText.setAttributeNS(null, "font-size", element.fontStylingAttributes.size);
-        newText.setAttributeNS(null, "font-weight", element.fontStylingAttributes.weight);
-        newText.setAttributeNS(null, "font-style", element.fontStylingAttributes.style);
-        newText.setAttributeNS(null, "alignment-baseline", "hanging");
-        newText.setAttributeNS(null, "text-anchor", "start");
-        newText.setAttributeNS(null, "style", element.stylingAttributes.toString());
-        newText.setAttributeNS(null, "text-rendering", "optimizeLegibility");
+        newText.setAttribute("id", element.id);
+
+        newText.setAttribute("x", element.x);
+        // The hanging baseline-alignment was not working equally on all browsers.
+        // Because of that, the alignment was changed to baseline and now the
+        // text must be drawn based on its bottom y coordinate.
+
+        // (-4) was used because the text was showing a little bit down than it should be.
+        // Only god knows why.
+        newText.setAttribute("y", element.y + element.height - 4);
+
+        newText.setAttribute("font-family", element.fontStylingAttributes.family);
+        newText.setAttribute("font-size", element.fontStylingAttributes.size);
+        newText.setAttribute("font-weight", element.fontStylingAttributes.weight);
+        newText.setAttribute("font-style", element.fontStylingAttributes.style);
+        newText.setAttribute("alignment-baseline", "baseline");
+        newText.setAttribute("dominant-baseline", "baseline");
+        newText.setAttribute("text-anchor", "start");
+        newText.setAttribute("style", element.stylingAttributes.toString());
+        newText.setAttribute("text-rendering", "optimizeLegibility");
 
         var textNode = document.createTextNode(element.text);
         newText.appendChild(textNode);

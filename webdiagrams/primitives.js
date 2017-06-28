@@ -1143,7 +1143,7 @@ class VerticalGroupChildChangeListener
 
 class StylingAttributes {
 
-    constructor(strokeWidth = 3, strokeColor = 'black', fillColor = '#FFFFCC', target = null) {
+    constructor(strokeWidth = 2, strokeColor = 'black', fillColor = '#FFFFCC', target = null) {
         this._strokeWidth = strokeWidth;
         this._strokeColor = strokeColor;
         this._fillColor = fillColor;
@@ -1243,7 +1243,7 @@ class FontStylingAttributes {
         this._style = value;
     }
 
-    constructor(family = "'Open Sans', sans-serif", size = 13, weight = "100", style="normal", target = null) {
+    constructor(family = "'Roboto', sans-serif", size = 13, weight = "100", style="normal", target = null) {
         this._family = family;
         this._size = size;
         this._weight = weight;

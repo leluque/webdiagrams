@@ -18,11 +18,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PrimitiveTest.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PrimitiveTest.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PrimitiveTest.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="53" column="58" lean-forward="false" selection-start-line="53" selection-start-column="58" selection-end-line="53" selection-end-column="58" />
+            <state relative-caret-position="306">
+              <caret line="18" column="67" lean-forward="false" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -31,8 +31,8 @@
       <file leaf-file-name="primitives.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/primitives.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-271">
-              <caret line="1245" column="61" lean-forward="false" selection-start-line="1245" selection-start-column="61" selection-end-line="1245" selection-end-column="61" />
+            <state relative-caret-position="358">
+              <caret line="1245" column="33" lean-forward="false" selection-start-line="1245" selection-start-column="33" selection-end-line="1245" selection-end-column="33" />
               <folding>
                 <element signature="n#BoundingBox#0" expanded="false" />
                 <element signature="n#ChangeListener#0" expanded="false" />
@@ -40,6 +40,7 @@
                 <element signature="n#Ellipse#0" expanded="false" />
                 <element signature="n#Rectangle#0" expanded="false" />
                 <element signature="n#Line#0" expanded="false" />
+                <element signature="n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!block;n#MATCH_PARENT#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!block;n#CENTER#0;n#VerticalGroup#0" expanded="false" />
@@ -98,6 +99,7 @@
                 <element signature="n#!!block;n#resizePolicy#1;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!block;n#gravity#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!block;n#gravity#1;n#VerticalGroup#0" expanded="false" />
+                <element signature="n#VerticalGroupChildChangeListener#0" expanded="false" />
                 <element signature="n#StylingAttributes#0" expanded="false" />
                 <element signature="n#GroupStylingAttributes#0" expanded="false" />
               </folding>
@@ -105,18 +107,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="svg.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="svg.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/svg.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="137" column="42" lean-forward="false" selection-start-line="137" selection-start-column="42" selection-end-line="137" selection-end-column="42" />
+            <state relative-caret-position="529">
+              <caret line="219" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
               <folding>
                 <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
                 <element signature="n#!!block;n#ellipse#0;n#SVGArea#0" expanded="false" />
                 <element signature="n#!!block;n#line#0;n#SVGArea#0" expanded="false" />
-                <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
                 <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-                <element signature="n#TextPositionChangeListener#0" expanded="false" />
                 <element signature="n#LinePositionChangeListener#0" expanded="false" />
                 <element signature="n#CirclePositionChangeListener#0" expanded="false" />
                 <element signature="n#GeneralDimensionChangeListener#0" expanded="false" />
@@ -125,6 +125,7 @@
                 <element signature="n#CircleDimensionChangeListener#0" expanded="false" />
                 <element signature="n#LineDimensionChangeListener#0" expanded="false" />
                 <element signature="n#TextChangeListener#0" expanded="false" />
+                <element signature="n#FontChangeListener#0" expanded="false" />
                 <element signature="n#StyleChangeListener#0" expanded="false" />
               </folding>
             </state>
@@ -134,8 +135,8 @@
       <file leaf-file-name="look-and-feel.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/look-and-feel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="132" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+            <state relative-caret-position="381">
+              <caret line="134" column="64" lean-forward="false" selection-start-line="134" selection-start-column="64" selection-end-line="134" selection-end-column="64" />
               <folding>
                 <element signature="n#LookAndFeel#0" expanded="false" />
                 <element signature="n#DefaultLookAndFeelFactory#0" expanded="false" />
@@ -143,8 +144,8 @@
                 <element signature="n#DefaultCircleDrawer#0" expanded="false" />
                 <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
                 <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
-                <element signature="n#DefaultLineDrawer#0" expanded="false" />
-                <element signature="n#DefaultVerticalGroupDrawer#0" expanded="false" />
+                <marker date="1498680368780" expanded="false" signature="5022:5601" ph="{...}" />
+                <marker date="1498680368780" expanded="false" signature="5658:6593" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -162,7 +163,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>setDatarect.setAttributeNS(&quot;http://www.example.com/yourcustomnamespace&quot;, &quot;data&quot;, &quot;whatever-data-you-want-here&quot;);</find>
       <find>changeDimen</find>
       <find>content</find>
       <find>super</find>
@@ -192,12 +192,14 @@
       <find>Alterando</find>
       <find>half_width</find>
       <find>enab</find>
+      <find>newText.setAttributeNS(null,</find>
     </findStrings>
     <replaceStrings>
       <replace>this.</replace>
       <replace>_changeListener</replace>
       <replace>drawn</replace>
       <replace>number</replace>
+      <replace>newText.setAttribute(</replace>
     </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -207,10 +209,10 @@
         <option value="chrome-extension://elicpjhcidhpjomhibiffojpinpmmpil/video/content.js" />
         <option value="chrome-extension://kfhkikpdmehlpkaiplafjkaicdljldcf/contentscript-common.js" />
         <option value="chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/js/bundle.js" />
+        <option value="$PROJECT_DIR$/svg.js" />
         <option value="$PROJECT_DIR$/look-and-feel.js" />
         <option value="$PROJECT_DIR$/primitives.js" />
         <option value="$PROJECT_DIR$/PrimitiveTest.html" />
-        <option value="$PROJECT_DIR$/svg.js" />
       </list>
     </option>
   </component>
@@ -394,12 +396,13 @@
       <workItem from="1498582882098" duration="5697000" />
       <workItem from="1498651771310" duration="11390000" />
       <workItem from="1498668822904" duration="142000" />
-      <workItem from="1498669487121" duration="7069000" />
+      <workItem from="1498669487121" duration="7390000" />
+      <workItem from="1498679495744" duration="907000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83749000" />
+    <option name="totallyTimeSpent" value="84977000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -435,11 +438,10 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/primitives.js</url>
           <line>967</line>
-          <properties />
           <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="73" />
+      <option name="time" value="74" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -463,6 +465,7 @@
             <element signature="n#Ellipse#0" expanded="false" />
             <element signature="n#Rectangle#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
+            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#MATCH_PARENT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#CENTER#0;n#VerticalGroup#0" expanded="false" />
@@ -521,6 +524,7 @@
             <element signature="n#!!block;n#resizePolicy#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#VerticalGroupChildChangeListener#0" expanded="false" />
             <element signature="n#StylingAttributes#0" expanded="false" />
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
           </folding>
@@ -538,8 +542,8 @@
             <element signature="n#DefaultCircleDrawer#0" expanded="false" />
             <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
             <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
-            <element signature="n#DefaultLineDrawer#0" expanded="false" />
-            <element signature="n#DefaultVerticalGroupDrawer#0" expanded="false" />
+            <marker date="1498680368780" expanded="false" signature="5022:5601" ph="{...}" />
+            <marker date="1498680368780" expanded="false" signature="5658:6593" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -551,11 +555,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#ellipse#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#!!block;n#vgroup#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#line#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#TextPositionChangeListener#0" expanded="false" />
             <element signature="n#LinePositionChangeListener#0" expanded="false" />
             <element signature="n#CirclePositionChangeListener#0" expanded="false" />
             <element signature="n#GeneralDimensionChangeListener#0" expanded="false" />
@@ -564,6 +565,7 @@
             <element signature="n#CircleDimensionChangeListener#0" expanded="false" />
             <element signature="n#LineDimensionChangeListener#0" expanded="false" />
             <element signature="n#TextChangeListener#0" expanded="false" />
+            <element signature="n#FontChangeListener#0" expanded="false" />
             <element signature="n#StyleChangeListener#0" expanded="false" />
           </folding>
         </state>
@@ -588,6 +590,7 @@
             <element signature="n#Ellipse#0" expanded="false" />
             <element signature="n#Rectangle#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
+            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#MATCH_PARENT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#CENTER#0;n#VerticalGroup#0" expanded="false" />
@@ -646,6 +649,7 @@
             <element signature="n#!!block;n#resizePolicy#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#VerticalGroupChildChangeListener#0" expanded="false" />
             <element signature="n#StylingAttributes#0" expanded="false" />
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
           </folding>
@@ -663,8 +667,8 @@
             <element signature="n#DefaultCircleDrawer#0" expanded="false" />
             <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
             <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
-            <element signature="n#DefaultLineDrawer#0" expanded="false" />
-            <element signature="n#DefaultVerticalGroupDrawer#0" expanded="false" />
+            <marker date="1498680368780" expanded="false" signature="5022:5601" ph="{...}" />
+            <marker date="1498680368780" expanded="false" signature="5658:6593" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -676,11 +680,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#ellipse#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#!!block;n#vgroup#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#line#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#TextPositionChangeListener#0" expanded="false" />
             <element signature="n#LinePositionChangeListener#0" expanded="false" />
             <element signature="n#CirclePositionChangeListener#0" expanded="false" />
             <element signature="n#GeneralDimensionChangeListener#0" expanded="false" />
@@ -689,6 +690,7 @@
             <element signature="n#CircleDimensionChangeListener#0" expanded="false" />
             <element signature="n#LineDimensionChangeListener#0" expanded="false" />
             <element signature="n#TextChangeListener#0" expanded="false" />
+            <element signature="n#FontChangeListener#0" expanded="false" />
             <element signature="n#StyleChangeListener#0" expanded="false" />
           </folding>
         </state>
@@ -709,11 +711,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#ellipse#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#!!block;n#vgroup#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#line#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#TextPositionChangeListener#0" expanded="false" />
             <element signature="n#LinePositionChangeListener#0" expanded="false" />
             <element signature="n#CirclePositionChangeListener#0" expanded="false" />
             <element signature="n#GeneralDimensionChangeListener#0" expanded="false" />
@@ -722,6 +721,7 @@
             <element signature="n#CircleDimensionChangeListener#0" expanded="false" />
             <element signature="n#LineDimensionChangeListener#0" expanded="false" />
             <element signature="n#TextChangeListener#0" expanded="false" />
+            <element signature="n#FontChangeListener#0" expanded="false" />
             <element signature="n#StyleChangeListener#0" expanded="false" />
           </folding>
         </state>
@@ -738,8 +738,8 @@
             <element signature="n#DefaultCircleDrawer#0" expanded="false" />
             <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
             <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
-            <element signature="n#DefaultLineDrawer#0" expanded="false" />
-            <element signature="n#DefaultVerticalGroupDrawer#0" expanded="false" />
+            <marker date="1498680368780" expanded="false" signature="5022:5601" ph="{...}" />
+            <marker date="1498680368780" expanded="false" signature="5658:6593" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -755,6 +755,7 @@
             <element signature="n#Ellipse#0" expanded="false" />
             <element signature="n#Rectangle#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
+            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#MATCH_PARENT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#CENTER#0;n#VerticalGroup#0" expanded="false" />
@@ -813,6 +814,7 @@
             <element signature="n#!!block;n#resizePolicy#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#VerticalGroupChildChangeListener#0" expanded="false" />
             <element signature="n#StylingAttributes#0" expanded="false" />
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
           </folding>
@@ -834,11 +836,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#ellipse#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#!!block;n#vgroup#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#line#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#TextPositionChangeListener#0" expanded="false" />
             <element signature="n#LinePositionChangeListener#0" expanded="false" />
             <element signature="n#CirclePositionChangeListener#0" expanded="false" />
             <element signature="n#GeneralDimensionChangeListener#0" expanded="false" />
@@ -847,6 +846,7 @@
             <element signature="n#CircleDimensionChangeListener#0" expanded="false" />
             <element signature="n#LineDimensionChangeListener#0" expanded="false" />
             <element signature="n#TextChangeListener#0" expanded="false" />
+            <element signature="n#FontChangeListener#0" expanded="false" />
             <element signature="n#StyleChangeListener#0" expanded="false" />
           </folding>
         </state>
@@ -863,8 +863,8 @@
             <element signature="n#DefaultCircleDrawer#0" expanded="false" />
             <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
             <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
-            <element signature="n#DefaultLineDrawer#0" expanded="false" />
-            <element signature="n#DefaultVerticalGroupDrawer#0" expanded="false" />
+            <marker date="1498680368780" expanded="false" signature="5022:5601" ph="{...}" />
+            <marker date="1498680368780" expanded="false" signature="5658:6593" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -880,6 +880,7 @@
             <element signature="n#Ellipse#0" expanded="false" />
             <element signature="n#Rectangle#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
+            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#MATCH_PARENT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#CENTER#0;n#VerticalGroup#0" expanded="false" />
@@ -938,6 +939,7 @@
             <element signature="n#!!block;n#resizePolicy#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#VerticalGroupChildChangeListener#0" expanded="false" />
             <element signature="n#StylingAttributes#0" expanded="false" />
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
           </folding>
@@ -963,6 +965,7 @@
             <element signature="n#Ellipse#0" expanded="false" />
             <element signature="n#Rectangle#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
+            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#MATCH_PARENT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#CENTER#0;n#VerticalGroup#0" expanded="false" />
@@ -1021,6 +1024,7 @@
             <element signature="n#!!block;n#resizePolicy#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#VerticalGroupChildChangeListener#0" expanded="false" />
             <element signature="n#StylingAttributes#0" expanded="false" />
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
           </folding>
@@ -1034,11 +1038,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#ellipse#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#!!block;n#vgroup#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#line#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#TextPositionChangeListener#0" expanded="false" />
             <element signature="n#LinePositionChangeListener#0" expanded="false" />
             <element signature="n#CirclePositionChangeListener#0" expanded="false" />
             <element signature="n#GeneralDimensionChangeListener#0" expanded="false" />
@@ -1047,6 +1048,7 @@
             <element signature="n#CircleDimensionChangeListener#0" expanded="false" />
             <element signature="n#LineDimensionChangeListener#0" expanded="false" />
             <element signature="n#TextChangeListener#0" expanded="false" />
+            <element signature="n#FontChangeListener#0" expanded="false" />
             <element signature="n#StyleChangeListener#0" expanded="false" />
           </folding>
         </state>
@@ -1063,8 +1065,8 @@
             <element signature="n#DefaultCircleDrawer#0" expanded="false" />
             <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
             <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
-            <element signature="n#DefaultLineDrawer#0" expanded="false" />
-            <element signature="n#DefaultVerticalGroupDrawer#0" expanded="false" />
+            <marker date="1498680368780" expanded="false" signature="5022:5601" ph="{...}" />
+            <marker date="1498680368780" expanded="false" signature="5658:6593" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1088,6 +1090,7 @@
             <element signature="n#Ellipse#0" expanded="false" />
             <element signature="n#Rectangle#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
+            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#MATCH_PARENT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#CENTER#0;n#VerticalGroup#0" expanded="false" />
@@ -1146,6 +1149,7 @@
             <element signature="n#!!block;n#resizePolicy#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#VerticalGroupChildChangeListener#0" expanded="false" />
             <element signature="n#StylingAttributes#0" expanded="false" />
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
           </folding>
@@ -1159,11 +1163,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#ellipse#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#!!block;n#vgroup#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#line#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#TextPositionChangeListener#0" expanded="false" />
             <element signature="n#LinePositionChangeListener#0" expanded="false" />
             <element signature="n#CirclePositionChangeListener#0" expanded="false" />
             <element signature="n#GeneralDimensionChangeListener#0" expanded="false" />
@@ -1172,6 +1173,7 @@
             <element signature="n#CircleDimensionChangeListener#0" expanded="false" />
             <element signature="n#LineDimensionChangeListener#0" expanded="false" />
             <element signature="n#TextChangeListener#0" expanded="false" />
+            <element signature="n#FontChangeListener#0" expanded="false" />
             <element signature="n#StyleChangeListener#0" expanded="false" />
           </folding>
         </state>
@@ -1188,8 +1190,8 @@
             <element signature="n#DefaultCircleDrawer#0" expanded="false" />
             <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
             <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
-            <element signature="n#DefaultLineDrawer#0" expanded="false" />
-            <element signature="n#DefaultVerticalGroupDrawer#0" expanded="false" />
+            <marker date="1498680368780" expanded="false" signature="5022:5601" ph="{...}" />
+            <marker date="1498680368780" expanded="false" signature="5658:6593" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1213,6 +1215,7 @@
             <element signature="n#Ellipse#0" expanded="false" />
             <element signature="n#Rectangle#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
+            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#MATCH_PARENT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#CENTER#0;n#VerticalGroup#0" expanded="false" />
@@ -1271,6 +1274,7 @@
             <element signature="n#!!block;n#resizePolicy#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#VerticalGroupChildChangeListener#0" expanded="false" />
             <element signature="n#StylingAttributes#0" expanded="false" />
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
           </folding>
@@ -1284,11 +1288,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#ellipse#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#!!block;n#vgroup#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#line#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#TextPositionChangeListener#0" expanded="false" />
             <element signature="n#LinePositionChangeListener#0" expanded="false" />
             <element signature="n#CirclePositionChangeListener#0" expanded="false" />
             <element signature="n#GeneralDimensionChangeListener#0" expanded="false" />
@@ -1297,6 +1298,7 @@
             <element signature="n#CircleDimensionChangeListener#0" expanded="false" />
             <element signature="n#LineDimensionChangeListener#0" expanded="false" />
             <element signature="n#TextChangeListener#0" expanded="false" />
+            <element signature="n#FontChangeListener#0" expanded="false" />
             <element signature="n#StyleChangeListener#0" expanded="false" />
           </folding>
         </state>
@@ -1321,6 +1323,7 @@
             <element signature="n#Ellipse#0" expanded="false" />
             <element signature="n#Rectangle#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
+            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#MATCH_PARENT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#CENTER#0;n#VerticalGroup#0" expanded="false" />
@@ -1379,6 +1382,7 @@
             <element signature="n#!!block;n#resizePolicy#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#VerticalGroupChildChangeListener#0" expanded="false" />
             <element signature="n#StylingAttributes#0" expanded="false" />
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
           </folding>
@@ -1392,11 +1396,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#ellipse#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#!!block;n#vgroup#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#line#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#TextPositionChangeListener#0" expanded="false" />
             <element signature="n#LinePositionChangeListener#0" expanded="false" />
             <element signature="n#CirclePositionChangeListener#0" expanded="false" />
             <element signature="n#GeneralDimensionChangeListener#0" expanded="false" />
@@ -1405,6 +1406,7 @@
             <element signature="n#CircleDimensionChangeListener#0" expanded="false" />
             <element signature="n#LineDimensionChangeListener#0" expanded="false" />
             <element signature="n#TextChangeListener#0" expanded="false" />
+            <element signature="n#FontChangeListener#0" expanded="false" />
             <element signature="n#StyleChangeListener#0" expanded="false" />
           </folding>
         </state>
@@ -1421,8 +1423,8 @@
             <element signature="n#DefaultCircleDrawer#0" expanded="false" />
             <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
             <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
-            <element signature="n#DefaultLineDrawer#0" expanded="false" />
-            <element signature="n#DefaultVerticalGroupDrawer#0" expanded="false" />
+            <marker date="1498680368780" expanded="false" signature="5022:5601" ph="{...}" />
+            <marker date="1498680368780" expanded="false" signature="5658:6593" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1446,6 +1448,7 @@
             <element signature="n#Ellipse#0" expanded="false" />
             <element signature="n#Rectangle#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
+            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#MATCH_PARENT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#CENTER#0;n#VerticalGroup#0" expanded="false" />
@@ -1504,6 +1507,7 @@
             <element signature="n#!!block;n#resizePolicy#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#VerticalGroupChildChangeListener#0" expanded="false" />
             <element signature="n#StylingAttributes#0" expanded="false" />
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
           </folding>
@@ -1517,11 +1521,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#ellipse#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#!!block;n#vgroup#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#line#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#TextPositionChangeListener#0" expanded="false" />
             <element signature="n#LinePositionChangeListener#0" expanded="false" />
             <element signature="n#CirclePositionChangeListener#0" expanded="false" />
             <element signature="n#GeneralDimensionChangeListener#0" expanded="false" />
@@ -1530,6 +1531,7 @@
             <element signature="n#CircleDimensionChangeListener#0" expanded="false" />
             <element signature="n#LineDimensionChangeListener#0" expanded="false" />
             <element signature="n#TextChangeListener#0" expanded="false" />
+            <element signature="n#FontChangeListener#0" expanded="false" />
             <element signature="n#StyleChangeListener#0" expanded="false" />
           </folding>
         </state>
@@ -1546,8 +1548,8 @@
             <element signature="n#DefaultCircleDrawer#0" expanded="false" />
             <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
             <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
-            <element signature="n#DefaultLineDrawer#0" expanded="false" />
-            <element signature="n#DefaultVerticalGroupDrawer#0" expanded="false" />
+            <marker date="1498680368780" expanded="false" signature="5022:5601" ph="{...}" />
+            <marker date="1498680368780" expanded="false" signature="5658:6593" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1571,6 +1573,7 @@
             <element signature="n#Ellipse#0" expanded="false" />
             <element signature="n#Rectangle#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
+            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#MATCH_PARENT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#CENTER#0;n#VerticalGroup#0" expanded="false" />
@@ -1629,6 +1632,7 @@
             <element signature="n#!!block;n#resizePolicy#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#VerticalGroupChildChangeListener#0" expanded="false" />
             <element signature="n#StylingAttributes#0" expanded="false" />
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
           </folding>
@@ -1642,11 +1646,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#ellipse#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#!!block;n#vgroup#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#line#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#TextPositionChangeListener#0" expanded="false" />
             <element signature="n#LinePositionChangeListener#0" expanded="false" />
             <element signature="n#CirclePositionChangeListener#0" expanded="false" />
             <element signature="n#GeneralDimensionChangeListener#0" expanded="false" />
@@ -1655,6 +1656,7 @@
             <element signature="n#CircleDimensionChangeListener#0" expanded="false" />
             <element signature="n#LineDimensionChangeListener#0" expanded="false" />
             <element signature="n#TextChangeListener#0" expanded="false" />
+            <element signature="n#FontChangeListener#0" expanded="false" />
             <element signature="n#StyleChangeListener#0" expanded="false" />
           </folding>
         </state>
@@ -1671,8 +1673,8 @@
             <element signature="n#DefaultCircleDrawer#0" expanded="false" />
             <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
             <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
-            <element signature="n#DefaultLineDrawer#0" expanded="false" />
-            <element signature="n#DefaultVerticalGroupDrawer#0" expanded="false" />
+            <marker date="1498680368780" expanded="false" signature="5022:5601" ph="{...}" />
+            <marker date="1498680368780" expanded="false" signature="5658:6593" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1688,8 +1690,8 @@
             <element signature="n#DefaultCircleDrawer#0" expanded="false" />
             <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
             <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
-            <element signature="n#DefaultLineDrawer#0" expanded="false" />
-            <element signature="n#DefaultVerticalGroupDrawer#0" expanded="false" />
+            <marker date="1498680368780" expanded="false" signature="5022:5601" ph="{...}" />
+            <marker date="1498680368780" expanded="false" signature="5658:6593" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1705,6 +1707,7 @@
             <element signature="n#Ellipse#0" expanded="false" />
             <element signature="n#Rectangle#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
+            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#MATCH_PARENT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#CENTER#0;n#VerticalGroup#0" expanded="false" />
@@ -1763,6 +1766,7 @@
             <element signature="n#!!block;n#resizePolicy#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#VerticalGroupChildChangeListener#0" expanded="false" />
             <element signature="n#StylingAttributes#0" expanded="false" />
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
           </folding>
@@ -1776,11 +1780,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#ellipse#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#!!block;n#vgroup#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#line#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#TextPositionChangeListener#0" expanded="false" />
             <element signature="n#LinePositionChangeListener#0" expanded="false" />
             <element signature="n#CirclePositionChangeListener#0" expanded="false" />
             <element signature="n#GeneralDimensionChangeListener#0" expanded="false" />
@@ -1789,6 +1790,7 @@
             <element signature="n#CircleDimensionChangeListener#0" expanded="false" />
             <element signature="n#LineDimensionChangeListener#0" expanded="false" />
             <element signature="n#TextChangeListener#0" expanded="false" />
+            <element signature="n#FontChangeListener#0" expanded="false" />
             <element signature="n#StyleChangeListener#0" expanded="false" />
           </folding>
         </state>
@@ -1813,8 +1815,8 @@
             <element signature="n#DefaultCircleDrawer#0" expanded="false" />
             <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
             <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
-            <element signature="n#DefaultLineDrawer#0" expanded="false" />
-            <element signature="n#DefaultVerticalGroupDrawer#0" expanded="false" />
+            <marker date="1498680368780" expanded="false" signature="5022:5601" ph="{...}" />
+            <marker date="1498680368780" expanded="false" signature="5658:6593" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1830,6 +1832,7 @@
             <element signature="n#Ellipse#0" expanded="false" />
             <element signature="n#Rectangle#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
+            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#MATCH_PARENT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#CENTER#0;n#VerticalGroup#0" expanded="false" />
@@ -1888,6 +1891,7 @@
             <element signature="n#!!block;n#resizePolicy#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#VerticalGroupChildChangeListener#0" expanded="false" />
             <element signature="n#StylingAttributes#0" expanded="false" />
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
           </folding>
@@ -1901,11 +1905,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#ellipse#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#!!block;n#vgroup#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#line#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#TextPositionChangeListener#0" expanded="false" />
             <element signature="n#LinePositionChangeListener#0" expanded="false" />
             <element signature="n#CirclePositionChangeListener#0" expanded="false" />
             <element signature="n#GeneralDimensionChangeListener#0" expanded="false" />
@@ -1914,6 +1915,7 @@
             <element signature="n#CircleDimensionChangeListener#0" expanded="false" />
             <element signature="n#LineDimensionChangeListener#0" expanded="false" />
             <element signature="n#TextChangeListener#0" expanded="false" />
+            <element signature="n#FontChangeListener#0" expanded="false" />
             <element signature="n#StyleChangeListener#0" expanded="false" />
           </folding>
         </state>
@@ -1927,18 +1929,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PrimitiveTest.html">
+    <entry file="file://$PROJECT_DIR$/svg.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="53" column="58" lean-forward="false" selection-start-line="53" selection-start-column="58" selection-end-line="53" selection-end-column="58" />
-          <folding />
+        <state relative-caret-position="529">
+          <caret line="219" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
+            <element signature="n#!!block;n#ellipse#0;n#SVGArea#0" expanded="false" />
+            <element signature="n#!!block;n#line#0;n#SVGArea#0" expanded="false" />
+            <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
+            <element signature="n#LinePositionChangeListener#0" expanded="false" />
+            <element signature="n#CirclePositionChangeListener#0" expanded="false" />
+            <element signature="n#GeneralDimensionChangeListener#0" expanded="false" />
+            <element signature="n#RectangleDimensionChangeListener#0" expanded="false" />
+            <element signature="n#TextDimensionChangeListener#0" expanded="false" />
+            <element signature="n#CircleDimensionChangeListener#0" expanded="false" />
+            <element signature="n#LineDimensionChangeListener#0" expanded="false" />
+            <element signature="n#TextChangeListener#0" expanded="false" />
+            <element signature="n#FontChangeListener#0" expanded="false" />
+            <element signature="n#StyleChangeListener#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/look-and-feel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="134" column="64" lean-forward="false" selection-start-line="134" selection-start-column="64" selection-end-line="134" selection-end-column="64" />
+          <folding>
+            <element signature="n#LookAndFeel#0" expanded="false" />
+            <element signature="n#DefaultLookAndFeelFactory#0" expanded="false" />
+            <element signature="n#DefaultDrawer#0" expanded="false" />
+            <element signature="n#DefaultCircleDrawer#0" expanded="false" />
+            <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
+            <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
+            <marker date="1498680368780" expanded="false" signature="5022:5601" ph="{...}" />
+            <marker date="1498680368780" expanded="false" signature="5658:6593" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/primitives.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-271">
-          <caret line="1245" column="61" lean-forward="false" selection-start-line="1245" selection-start-column="61" selection-end-line="1245" selection-end-column="61" />
+        <state relative-caret-position="358">
+          <caret line="1245" column="33" lean-forward="false" selection-start-line="1245" selection-start-column="33" selection-end-line="1245" selection-end-column="33" />
           <folding>
             <element signature="n#BoundingBox#0" expanded="false" />
             <element signature="n#ChangeListener#0" expanded="false" />
@@ -1946,6 +1980,7 @@
             <element signature="n#Ellipse#0" expanded="false" />
             <element signature="n#Rectangle#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
+            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#MATCH_PARENT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#CENTER#0;n#VerticalGroup#0" expanded="false" />
@@ -2004,50 +2039,18 @@
             <element signature="n#!!block;n#resizePolicy#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#gravity#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#VerticalGroupChildChangeListener#0" expanded="false" />
             <element signature="n#StylingAttributes#0" expanded="false" />
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/look-and-feel.js">
+    <entry file="file://$PROJECT_DIR$/PrimitiveTest.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="132" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-          <folding>
-            <element signature="n#LookAndFeel#0" expanded="false" />
-            <element signature="n#DefaultLookAndFeelFactory#0" expanded="false" />
-            <element signature="n#DefaultDrawer#0" expanded="false" />
-            <element signature="n#DefaultCircleDrawer#0" expanded="false" />
-            <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
-            <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
-            <element signature="n#DefaultLineDrawer#0" expanded="false" />
-            <element signature="n#DefaultVerticalGroupDrawer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/svg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="137" column="42" lean-forward="false" selection-start-line="137" selection-start-column="42" selection-end-line="137" selection-end-column="42" />
-          <folding>
-            <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#!!block;n#ellipse#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#!!block;n#line#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
-            <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#TextPositionChangeListener#0" expanded="false" />
-            <element signature="n#LinePositionChangeListener#0" expanded="false" />
-            <element signature="n#CirclePositionChangeListener#0" expanded="false" />
-            <element signature="n#GeneralDimensionChangeListener#0" expanded="false" />
-            <element signature="n#RectangleDimensionChangeListener#0" expanded="false" />
-            <element signature="n#TextDimensionChangeListener#0" expanded="false" />
-            <element signature="n#CircleDimensionChangeListener#0" expanded="false" />
-            <element signature="n#LineDimensionChangeListener#0" expanded="false" />
-            <element signature="n#TextChangeListener#0" expanded="false" />
-            <element signature="n#StyleChangeListener#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="306">
+          <caret line="18" column="67" lean-forward="false" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="67" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -209,6 +209,17 @@ class GeneralPositionChangeListener extends ChangeListener {
 class RectanglePositionChangeListener extends GeneralPositionChangeListener {
 }
 class TextPositionChangeListener extends GeneralPositionChangeListener {
+
+    changeY(target) {
+        // The hanging baseline-alignment was not working equally on all browsers.
+        // Because of that, the alignment was changed to baseline and now the
+        // text must be drawn based on its bottom y coordinate.
+
+        // (-4) was used because the text was showing a little bit down than it should be.
+        // Only god knows why.
+        target.drawn.setAttribute("y", (target.y + target.height - 4));
+    }
+
 }
 class LinePositionChangeListener extends GeneralPositionChangeListener {
     update(target) {
