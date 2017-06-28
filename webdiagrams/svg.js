@@ -124,10 +124,10 @@ class SVGArea {
         return this.addElement(newRectangle);
     }
 
-    text(x = 10, y = 10, text = "This is an example text") {
+    text(x = 10, y = 10, text = "This is an example text", fontStylingAttributes = new FontStylingAttributes()) {
         //*****************************
         // Create a new text and set its id.
-        let newText = new Text(x, y, text);
+        let newText = new Text(x, y, text, undefined, fontStylingAttributes);
         newText.id = this.generateId();
 
         //*****************************
@@ -135,6 +135,7 @@ class SVGArea {
         newText.addChangeListener(new TextDimensionChangeListener());
         newText.addChangeListener(new TextPositionChangeListener());
         newText.addChangeListener(new TextChangeListener());
+        newText.addChangeListener(new FontChangeListener());
         newText.addChangeListener(new StyleChangeListener());
 
         let lookAndFeel = new LookAndFeel();
@@ -274,6 +275,15 @@ class LineDimensionChangeListener extends GeneralDimensionChangeListener {
 class TextChangeListener extends ChangeListener {
     update(target) {
         target.drawn.textContent = target.text;
+    }
+}
+
+class FontChangeListener extends ChangeListener {
+    update(target) {
+        target.drawn.setAttribute("font-family", target.fontStylingAttributes.family);
+        target.drawn.setAttribute("font-size", target.fontStylingAttributes.size);
+        target.drawn.setAttribute("font-weight", target.fontStylingAttributes.weight);
+        target.drawn.setAttribute("font-style", target.fontStylingAttributes.style);
     }
 }
 

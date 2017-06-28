@@ -129,6 +129,7 @@ class DefaultTextDrawer extends DefaultDrawer {
         newText.setAttributeNS(null, "font-family", element.fontStylingAttributes.family);
         newText.setAttributeNS(null, "font-size", element.fontStylingAttributes.size);
         newText.setAttributeNS(null, "font-weight", element.fontStylingAttributes.weight);
+        newText.setAttributeNS(null, "font-style", element.fontStylingAttributes.style);
         newText.setAttributeNS(null, "alignment-baseline", "hanging");
         newText.setAttributeNS(null, "text-anchor", "start");
         newText.setAttributeNS(null, "style", element.stylingAttributes.toString());

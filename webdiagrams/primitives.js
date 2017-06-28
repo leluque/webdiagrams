@@ -1235,12 +1235,20 @@ class GroupStylingAttributes {
 }
 
 class FontStylingAttributes {
+    get style() {
+        return this._style;
+    }
 
-    constructor(family = "sans-serif", size = 14, weight = "100", target = null) {
+    set style(value) {
+        this._style = value;
+    }
+
+    constructor(family = "'Open Sans', sans-serif", size = 13, weight = "100", style="normal", target = null) {
         this._family = family;
         this._size = size;
         this._weight = weight;
         this._target = target;
+        this._style = style;
     }
 
     get family() {
@@ -1278,4 +1286,5 @@ class FontStylingAttributes {
         this._target = value;
         this.target.notifyListeners();
     }
+
 }

@@ -14,6 +14,11 @@
         }
 
     </style>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+    </style>
+
 </head>
 <body>
 
@@ -41,10 +46,13 @@
         let svgArea = new SVGArea("#svg");
 
         //****************************
-        // UML Class.
+        // UML Interface.
         rect = svgArea.rect()
         umlClass = svgArea.vgroup(10, 10);
         umlClass.frame = rect;
+        let stereotype = svgArea.text(undefined, undefined, "<<interface>>");
+        stereotype.fontStylingAttributes.style = "italic";
+        umlClass.addChild(stereotype, VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
         umlClass.addChild(svgArea.text(undefined, undefined, "Cliente"), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
         umlClass.addChild(svgArea.line(), VerticalGroup.MATCH_PARENT);
         umlClass.addChild(svgArea.text(undefined, undefined, "- cpf: String"));
@@ -56,7 +64,6 @@
         text = svgArea.text(undefined, undefined, "+ consultarPorCpf(cpf: String): List<Cliente>");
         umlClass.addChild(text);
         //****************************
-
 
 
         graph = svgArea.vgroup(340, 50);
