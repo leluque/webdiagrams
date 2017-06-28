@@ -39,15 +39,13 @@
 
     (function () {
         let svgArea = new SVGArea("#svg");
-        //   circle = svgArea.circle(50, 50, 20);
-        //var ellipse = svgArea.ellipse(150, 150, 50, 25);
-        //rect = svgArea.rect(10, 10, 100, 50);
-        //text = svgArea.text(50, 50, "Test text");
 
+        //****************************
+        // UML Class.
         rect = svgArea.rect()
         umlClass = svgArea.vgroup(10, 10);
         umlClass.frame = rect;
-        umlClass.addChild(svgArea.text(undefined, undefined, "Cliente"));
+        umlClass.addChild(svgArea.text(undefined, undefined, "Cliente"), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
         umlClass.addChild(svgArea.line(), VerticalGroup.MATCH_PARENT);
         umlClass.addChild(svgArea.text(undefined, undefined, "- cpf: String"));
         umlClass.addChild(svgArea.text(undefined, undefined, "- nome: String"));
@@ -57,15 +55,19 @@
         umlClass.addChild(svgArea.text(undefined, undefined, "+ atualizar(): void"));
         text = svgArea.text(undefined, undefined, "+ consultarPorCpf(cpf: String): List<Cliente>");
         umlClass.addChild(text);
+        //****************************
+
+
 
         graph = svgArea.vgroup(340, 50);
         graph.frame = svgArea.circle();
         let text1 = svgArea.text(undefined, undefined, "Nó de super grafo");
-        graph.addChild(text1);
+        graph.addChild(text1, VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
+        graph.addChild(svgArea.text(undefined, undefined, "2a linha"), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
+        graph.addChild(svgArea.text(undefined, undefined, "3a linha"), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
         let contentBox = graph.frame.contentBox;
-        console.log(contentBox);
 
-     //   svgArea.rect(contentBox.x1, contentBox.y1, contentBox.x2, contentBox.y2);
+        //   svgArea.rect(contentBox.x1, contentBox.y1, contentBox.x2, contentBox.y2);
 
         //var circle = svgArea.circle(50, 50, 50);
         //var contentBox = circle.contentBox;
