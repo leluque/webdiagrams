@@ -201,19 +201,29 @@ class GraphicalElement {
         this.notifyListeners();
     }
 
-    get id() {
+    get borderSize() {
+        if (this.stylingAttributes !== null) {
+            return this.stylingAttributes.strokeWidth / 2;
+        }
+    }
+
+    get
+    id() {
         return this._id;
     }
 
-    set id(value) {
+    set
+    id(value) {
         this._id = value;
     }
 
-    get drawn() {
+    get
+    drawn() {
         return this._drawn;
     }
 
-    set drawn(value) {
+    set
+    drawn(value) {
         this._drawn = value;
     }
 
@@ -258,11 +268,13 @@ class GraphicalElement {
         return null;
     }
 
-    get changeListeners() {
+    get
+    changeListeners() {
         return this._changeListeners;
     }
 
-    set changeListeners(value) {
+    set
+    changeListeners(value) {
         this._changeListeners = value;
     }
 
@@ -281,7 +293,8 @@ class GraphicalElement {
 
 }
 
-class Circle extends GraphicalElement {
+class Circle
+    extends GraphicalElement {
 
     constructor(centerX = 0, centerY = 0, radius = 50, stylingAttributes) {
         super(centerX - radius, centerY - radius, radius * 2, radius * 2, stylingAttributes);
@@ -429,14 +442,16 @@ class Ellipse extends GraphicalElement {
 
 class Rectangle extends GraphicalElement {
 
-    constructor(x1 = 10, y1 = 10, x2 = 100, y2 = 20, stylingAttributes) {
+    constructor(x1 = 0, y1 = 0, x2 = 0, y2 = 0, stylingAttributes) {
         super(x1, y1, x2 - x1, y2 - y1, stylingAttributes);
     }
 
     contentBox(width, height) { // For rectangles, it does not matter the current width/height of a group they may be a frame of.
         // The stroke width is divided by 2 because its thickness is divided 50% to the left and 50% to the right.
-        let border = this.stylingAttributes.strokeWidth / 2;
-        return new BoundingBox(this.x + border, this.y + border, this.x + this.width - border, this.y + this.height - border);
+        let border = this.borderSize;
+        let boundingBox = new BoundingBox(this.x + border, this.y + border, this.x + this.width - border, this.y + this.height - border);
+        console.log(boundingBox)
+        return boundingBox;
     }
 
     widthToFit(boundingBox) {
@@ -506,7 +521,8 @@ class Text extends GraphicalElement {
 class Line extends GraphicalElement {
 
     constructor(x1 = 10, y1 = 10, x2 = 1, y2 = 1, stylingAttributes = new StylingAttributes(1)) {
-        super(x1, y1, x2 - x1, y2 - y1, stylingAttributes);
+        super(x1, y1, x2 - x1 + 1, y2 - y1 + 1, stylingAttributes);
+        // (+1) was used because the line has at least one pixel even if their initial and final coordinate are equal.
     }
 
     get x1() {
@@ -638,7 +654,7 @@ class VerticalGroup extends GraphicalElement {
     }
 
     constructor(x = 0, y = 0, stylingAttributes, groupStylingAttributes = new GroupStylingAttributes()) {
-        super(x, y, 1, 1, stylingAttributes);
+        super(x, y, 0, 0, stylingAttributes);
         this._groupStylingAttributes = groupStylingAttributes;
         this._children = [];
         this._resizePolicy = [];
@@ -970,7 +986,9 @@ class VerticalGroup extends GraphicalElement {
             contentMinHeight += this.verMargin;
             contentMinHeight += child.minHeight;
         }
-        contentMinHeight += this.verMargin;
+        if (this.countChildren() > 0) {
+            contentMinHeight += this.verMargin;
+        }
 
         return contentMinHeight;
     }
@@ -1039,9 +1057,9 @@ class VerticalGroup extends GraphicalElement {
         // Add the group as a child change listener.
         child.addChangeListener(new VerticalGroupChildChangeListener(this));
 
-        this.adjustChildrenPositionAndDimension();
 
         this.changeNotificationsEnabled = oldChangeNotificationsStatus;
+        this.adjustChildrenPositionAndDimension();
         this.dimensionReadjustmentEnabled = oldDimensionReadjustmentStatus;
     }
 
@@ -1079,11 +1097,18 @@ class VerticalGroup extends GraphicalElement {
     set
     frame(value) {
         this.disableChangeNotifications();
+
+        // Change the group width and height to accommodate the frame border.
+        this.width += value.borderSize;
+        this.height += value.borderSize;
+
         this._frame = value;
         this.frame.x = this.x;
         this.frame.y = this.y;
         this.frame.width = this.width;
         this.frame.height = this.height;
+
+        this.adjustChildrenPositionAndDimension();
         this.enableChangeNotifications();
 
         this.frame.notifyListeners();
@@ -1160,8 +1185,8 @@ class VerticalGroup extends GraphicalElement {
 
     get
     borderSize() {
-        if (this.frame !== null && this.frame.stylingAttributes !== null) {
-            return this.frame.stylingAttributes.strokeWidth / 2;
+        if (this.frame !== null) {
+            return this.frame.borderSize;
         }
     }
 
@@ -1211,7 +1236,7 @@ class VerticalGroupChildChangeListener
 
 class StylingAttributes {
 
-    constructor(strokeWidth = 2, strokeColor = 'black', fillColor = '#FFFFCC', target = null) {
+    constructor(strokeWidth = 3, strokeColor = 'black', fillColor = '#FFFFCC', target = null) {
         this._strokeWidth = strokeWidth;
         this._strokeColor = strokeColor;
         this._fillColor = fillColor;

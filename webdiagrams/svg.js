@@ -240,9 +240,9 @@ class TextPositionChangeListener extends GeneralPositionChangeListener {
         // Because of that, the alignment was changed to baseline and now the
         // text must be drawn based on its bottom y coordinate.
 
-        // (-4) was used because the text was showing a little bit down than it should be.
+        // (-6) was used because the text was showing a little bit down than it should be.
         // Only god knows why.
-        target.drawn.setAttribute("y", (target.y + target.height - 4));
+        target.drawn.setAttribute("y", (target.y + target.height - 6));
     }
 
 }
