@@ -541,6 +541,74 @@ class Line extends GraphicalElement {
 
 }
 
+class Image extends GraphicalElement {
+
+    constructor(x = 10, y = 10, width = 20, height = 20, image, stylingAttributes) {
+        super(x, y, width, height, stylingAttributes);
+        this._image = image;
+        this._boundingBoxFunction = this.defaultBoundingBox;
+        this._widthToFitFunction = this.defaultWidthToFit;
+        this._heightToFitFunction = this.defaultHeightToFit;
+    }
+
+    get image() {
+        return this._image;
+    }
+
+    set image(value) {
+        this._image = value;
+    }
+
+    get boundingBoxFunction() {
+        return this._boundingBoxFunction;
+    }
+
+    set boundingBoxFunction(value) {
+        this._boundingBoxFunction = value;
+    }
+
+    defaultBoundingBox(width, height) {
+        return new BoundingBox(this.x, this.y, this.x2, this.y2);
+    }
+
+    get widthToFitFunction() {
+        return this._widthToFitFunction;
+    }
+
+    set widthToFitFunction(value) {
+        this._widthToFitFunction = value;
+    }
+
+    defaultWidthToFit(boundingBox) {
+        return boundingBox.width;
+    }
+
+    get heightToFitFunction() {
+        return this._heightToFitFunction;
+    }
+
+    set heightToFitFunction(value) {
+        this._heightToFitFunction = value;
+    }
+
+    defaultHeightToFit(boundingBox) {
+        return boundingBox.height;
+    }
+
+    contentBox(width, height) {
+        return this.boundingBoxFunction(width, height);
+    }
+
+    widthToFit(boundingBox) {
+        return this.widthToFitFunction(boundingBox);
+    }
+
+    heightToFit(boundingBox) {
+        return this.heightToFitFunction(boundingBox);
+    }
+
+}
+
 class VerticalGroup extends GraphicalElement {
 
     // It does not use horizontal margins for elements.
@@ -603,7 +671,7 @@ class VerticalGroup extends GraphicalElement {
         // Center content vertically inside the group.
         // It is important for squared frames as circles, for example.
         let contentHeight = this.verMargin;
-        for(let child of this.children) {
+        for (let child of this.children) {
             contentHeight += child.height;
             contentHeight += this.verMargin;
         }
@@ -1243,7 +1311,7 @@ class FontStylingAttributes {
         this._style = value;
     }
 
-    constructor(family = "'Roboto', sans-serif", size = 13, weight = "100", style="normal", target = null) {
+    constructor(family = "'Roboto', sans-serif", size = 13, weight = "100", style = "normal", target = null) {
         this._family = family;
         this._size = size;
         this._weight = weight;

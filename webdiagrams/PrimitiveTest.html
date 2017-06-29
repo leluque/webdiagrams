@@ -65,6 +65,12 @@
         umlClass.addChild(text);
         //****************************
 
+        //****************************
+        // UML Actor.
+        let umlActor = svgArea.vgroup(10, 300);
+        umlActor.addChild(svgArea.image(undefined, undefined, 25, 50, "images/uml_actor.svg"), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
+        umlActor.addChild(svgArea.text(undefined, undefined, "Ator"));
+        //****************************
 
         graph = svgArea.vgroup(340, 50);
         graph.frame = svgArea.circle();

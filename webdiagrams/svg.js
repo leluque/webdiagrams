@@ -150,6 +150,29 @@ class SVGArea {
         return this.addElement(newText);
     }
 
+    image(x = 10, y = 10, width = 20, height = 20, image) {
+        //*****************************
+        // Create a new image and set its id.
+        let newImage = new Image(x, y, width, height, image);
+        newImage.id = this.generateId();
+
+        //*****************************
+        // Add change listeners.
+        newImage.addChangeListener(new ImageDimensionChangeListener());
+        newImage.addChangeListener(new ImagePositionChangeListener());
+        newImage.addChangeListener(new StyleChangeListener());
+
+        let lookAndFeel = new LookAndFeel();
+        let drawer = lookAndFeel.getDrawerFor(newImage);
+        drawer.svgArea = this;
+        var drawnText = drawer.draw(newImage);
+        this.svg.appendChild(drawnText);
+
+        newImage.drawn = drawnText;
+
+        return this.addElement(newImage);
+    }
+
     vgroup(x = 10, y = 10) {
         //*****************************
         // Create a new vertical group and set its id.
@@ -208,6 +231,8 @@ class GeneralPositionChangeListener extends ChangeListener {
 }
 class RectanglePositionChangeListener extends GeneralPositionChangeListener {
 }
+class ImagePositionChangeListener extends GeneralPositionChangeListener {
+}
 class TextPositionChangeListener extends GeneralPositionChangeListener {
 
     changeY(target) {
@@ -256,6 +281,8 @@ class GeneralDimensionChangeListener extends ChangeListener {
 
 }
 class RectangleDimensionChangeListener extends GeneralDimensionChangeListener {
+}
+class ImageDimensionChangeListener extends GeneralDimensionChangeListener {
 }
 class TextDimensionChangeListener extends GeneralDimensionChangeListener {
 }

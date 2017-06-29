@@ -51,6 +51,8 @@ class DefaultLookAndFeelFactory {
             return new DefaultVerticalGroupDrawer();
         } else if (element instanceof Line) {
             return new DefaultLineDrawer();
+        } else if (element instanceof Image) {
+            return new DefaultImageDrawer();
         }
     }
 
@@ -164,6 +166,23 @@ class DefaultLineDrawer extends DefaultDrawer {
         newLine.setAttributeNS(null, "style", element.stylingAttributes.toString());
         newLine.setAttributeNS(null, "shape-rendering", "geometricPrecision");
         return newLine;
+    }
+
+}
+
+class DefaultImageDrawer extends DefaultDrawer {
+
+    draw(element) {
+        let newImage = document.createElementNS(this.svgArea.namespace, "image");
+        newImage.setAttributeNS(null, "id", element.id);
+        newImage.setAttributeNS(null, "x", element.x);
+        newImage.setAttributeNS(null, "y", element.y);
+        newImage.setAttributeNS(null, "width", element.width);
+        newImage.setAttributeNS(null, "height", element.height);
+        newImage.setAttributeNS(null, "style", element.stylingAttributes.toString());
+        newImage.setAttributeNS(null, "visibility", "visible");
+        newImage.setAttributeNS('http://www.w3.org/1999/xlink', 'href', element.image);
+        return newImage;
     }
 
 }
