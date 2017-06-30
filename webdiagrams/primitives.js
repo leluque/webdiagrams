@@ -697,9 +697,7 @@ class VerticalGroup extends GraphicalElement {
             contentHeight += this.verMargin;
         }
         let deltaY = ((bottomYLimit - newY) - contentHeight) / 2;
-        if (deltaY > 0) {
-            newY += deltaY + this.verMargin; // The vertical margin is necessary to start at the right position for the first child.
-        }
+        newY += deltaY + this.verMargin; // The vertical margin is necessary to start at the right position for the first child.
 
         // Adjust children's position and dimension.
         let i = 0;

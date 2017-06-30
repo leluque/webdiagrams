@@ -63,6 +63,7 @@
         umlClass.addChild(svgArea.text(undefined, undefined, "+ atualizar(): void"));
         text = svgArea.text(undefined, undefined, "+ consultarPorCpf(cpf: String): List<Cliente>");
         umlClass.addChild(text);
+
         //****************************
 
         //****************************
@@ -76,7 +77,7 @@
         // Graph node.
         node = svgArea.vgroup(340, 50);
         node.frame = svgArea.circle();
-        let text1 = svgArea.text(undefined, undefined, "Nó de super grafo");
+        let text1 = svgArea.text(undefined, undefined, "Nó de um grafo");
         node.addChild(text1, VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
         node.addChild(svgArea.text(undefined, undefined, "2a linha"), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
         node.addChild(svgArea.text(undefined, undefined, "3a linha"), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);

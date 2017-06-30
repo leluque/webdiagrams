@@ -132,7 +132,9 @@ class DefaultTextDrawer extends DefaultDrawer {
         // Because of that, the alignment was changed to baseline and now the
         // text must be drawn based on its bottom y coordinate.
 
-        newText.setAttribute("y", element.y + element.height);
+        // 3/4 was used because the bottom-line alignment put the bottom part of
+        // letters such as p and q bellow the line.
+        newText.setAttribute("y", element.y + 3 * element.height / 4);
 
         newText.setAttribute("font-family", element.fontStylingAttributes.family);
         newText.setAttribute("font-size", element.fontStylingAttributes.size);

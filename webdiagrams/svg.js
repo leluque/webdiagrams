@@ -240,7 +240,9 @@ class TextPositionChangeListener extends GeneralPositionChangeListener {
         // Because of that, the alignment was changed to baseline and now the
         // text must be drawn based on its bottom y coordinate.
 
-        target.drawn.setAttribute("y", (target.y + target.height));
+        // 3/4 was used because the bottom-line alignment put the bottom part of
+        // letters such as p and q bellow the line.
+        target.drawn.setAttribute("y", (target.y + 3 * target.height / 4));
     }
 
 }
