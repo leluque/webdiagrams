@@ -366,6 +366,8 @@ class Circle
 
         let contentBox = new BoundingBox(this.x + deltaX, this.y + deltaY, this.x + this.width - deltaX, this.y + this.height - deltaY);
 
+        console.log(contentBox);
+
         return contentBox;
     }
 
@@ -672,28 +674,31 @@ class VerticalGroup extends GraphicalElement {
     adjustChildrenPositionAndDimension() {
         let availableWidthForChildren = this.width;
         let newX = this.x;
-        let newY = this.y + this.verMargin;
+        let newY = this.y;
         let rightXLimit = this.x + this.width;
         let bottomYLimit = this.y + this.height;
         if (this.frame !== null) {
             let contentBox = this.frame.contentBox(this.width, this.height);
             availableWidthForChildren = contentBox.width;
             newX = contentBox.x1;
-            newY = contentBox.y1 + this.verMargin;
+            newY = contentBox.y1;
             rightXLimit = contentBox.x2;
             bottomYLimit = contentBox.y2;
         }
 
         // Center content vertically inside the group.
         // It is important for squared frames as circles, for example.
-        let contentHeight = this.verMargin;
+        let contentHeight = 0;
+        if (this.countChildren() > 0) {
+            contentHeight += this.verMargin;
+        }
         for (let child of this.children) {
             contentHeight += child.height;
             contentHeight += this.verMargin;
         }
         let deltaY = ((bottomYLimit - newY) - contentHeight) / 2;
         if (deltaY > 0) {
-            newY += deltaY;
+            newY += deltaY + this.verMargin; // The vertical margin is necessary to start at the right position for the first child.
         }
 
         // Adjust children's position and dimension.
@@ -740,20 +745,6 @@ class VerticalGroup extends GraphicalElement {
             this.height = this.minHeight;
         }
     }
-
-    /**
-     * Replaces the behaviour of the notifyListeners method.
-     * Repasses the notification to the frame and the group children.
-     */
-    /* notifyListeners() {
-     super.notifyListeners();
-     if(this.frame !== null) {
-     this.frame.notifyListeners();
-     }
-     for(let child of this.children) {
-     child.notifyListeners();
-     }
-     }*/
 
     /**
      * Returns the group x coordinate.

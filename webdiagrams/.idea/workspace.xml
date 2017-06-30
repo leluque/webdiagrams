@@ -18,26 +18,28 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PrimitiveTest.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PrimitiveTest.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PrimitiveTest.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="56" column="17" lean-forward="false" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+            <state relative-caret-position="255">
+              <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="primitives.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="primitives.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/primitives.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="1238" column="31" lean-forward="false" selection-start-line="1238" selection-start-column="31" selection-end-line="1238" selection-end-column="31" />
+            <state relative-caret-position="6">
+              <caret line="698" column="65" lean-forward="true" selection-start-line="698" selection-start-column="65" selection-end-line="698" selection-end-column="65" />
               <folding>
                 <element signature="n#BoundingBox#0" expanded="false" />
                 <element signature="n#ChangeListener#0" expanded="false" />
-                <element signature="n#Circle#0" expanded="false" />
+                <element signature="n#GraphicalElement#0" expanded="false" />
                 <element signature="n#Ellipse#0" expanded="false" />
+                <element signature="n#Rectangle#0" expanded="false" />
+                <element signature="n#Text#0" expanded="false" />
                 <element signature="n#Line#0" expanded="false" />
                 <element signature="n#Image#0" expanded="false" />
                 <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -54,26 +56,34 @@
                 <element signature="n#!!block;n#y#1;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!doc;n#width#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!doc;n#width#1;n#VerticalGroup#0" expanded="false" />
+                <element signature="n#!!block;n#width#1;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!doc;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!block;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!doc;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
+                <element signature="n#!!block;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!doc;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!block;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!doc;n#height#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!doc;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
+                <element signature="n#!!block;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!doc;n#height#1;n#VerticalGroup#0" expanded="false" />
+                <element signature="n#!!block;n#height#1;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!doc;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
+                <element signature="n#!!block;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!doc;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
+                <element signature="n#!!block;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!doc;n#children#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!doc;n#children#1;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!block;n#children#1;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!doc;n#addChild#0;n#VerticalGroup#0" expanded="false" />
+                <element signature="n#!!block;n#addChild#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!doc;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!block;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!doc;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!block;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!doc;n#frame#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!doc;n#frame#1;n#VerticalGroup#0" expanded="false" />
+                <element signature="n#!!block;n#frame#1;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!block;n#dimensionReadjustmentEnabled#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!block;n#dimensionReadjustmentEnabled#1;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!block;n#disableDimensionReadjustment#0;n#VerticalGroup#0" expanded="false" />
@@ -101,8 +111,8 @@
       <file leaf-file-name="svg.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/svg.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="213" column="4" lean-forward="false" selection-start-line="213" selection-start-column="4" selection-end-line="213" selection-end-column="4" />
+            <state relative-caret-position="211">
+              <caret line="242" column="0" lean-forward="false" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
               <folding>
                 <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
                 <element signature="n#!!block;n#ellipse#0;n#SVGArea#0" expanded="false" />
@@ -128,8 +138,8 @@
       <file leaf-file-name="look-and-feel.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/look-and-feel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="134" column="14" lean-forward="false" selection-start-line="134" selection-start-column="14" selection-end-line="134" selection-end-column="14" />
+            <state relative-caret-position="211">
+              <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
               <folding>
                 <element signature="n#LookAndFeel#0" expanded="false" />
                 <element signature="n#DefaultLookAndFeelFactory#0" expanded="false" />
@@ -157,8 +167,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>this.</find>
-      <find>super.</find>
       <find>console.log</find>
       <find>return this.</find>
       <find>alert</find>
@@ -187,6 +195,8 @@
       <find>this.stroke</find>
       <find>addChild</find>
       <find>-4</find>
+      <find>center</find>
+      <find>-6</find>
     </findStrings>
     <replaceStrings>
       <replace>this.</replace>
@@ -203,10 +213,10 @@
         <option value="chrome-extension://elicpjhcidhpjomhibiffojpinpmmpil/video/content.js" />
         <option value="chrome-extension://kfhkikpdmehlpkaiplafjkaicdljldcf/contentscript-common.js" />
         <option value="chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/js/bundle.js" />
-        <option value="$PROJECT_DIR$/PrimitiveTest.html" />
         <option value="$PROJECT_DIR$/look-and-feel.js" />
         <option value="$PROJECT_DIR$/svg.js" />
         <option value="$PROJECT_DIR$/primitives.js" />
+        <option value="$PROJECT_DIR$/PrimitiveTest.html" />
       </list>
     </option>
   </component>
@@ -229,7 +239,7 @@
     <option name="height" value="744" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -242,24 +252,7 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webdiagrams" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webdiagrams" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
@@ -395,12 +388,12 @@
       <workItem from="1498744409392" duration="193000" />
       <workItem from="1498745028590" duration="4221000" />
       <workItem from="1498763469624" duration="1964000" />
-      <workItem from="1498829375147" duration="2102000" />
+      <workItem from="1498829375147" duration="2856000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94080000" />
+    <option name="totallyTimeSpent" value="94834000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -414,7 +407,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35015774" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35015774" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -452,7 +445,7 @@
           <option name="timeStamp" value="87" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="88" />
+      <option name="time" value="89" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -472,8 +465,10 @@
           <folding>
             <element signature="n#BoundingBox#0" expanded="false" />
             <element signature="n#ChangeListener#0" expanded="false" />
-            <element signature="n#Circle#0" expanded="false" />
+            <element signature="n#GraphicalElement#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
+            <element signature="n#Rectangle#0" expanded="false" />
+            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -490,26 +485,34 @@
             <element signature="n#!!block;n#y#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#width#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#height#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#addChild#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#addChild#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#frame#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#disableDimensionReadjustment#0;n#VerticalGroup#0" expanded="false" />
@@ -591,8 +594,10 @@
           <folding>
             <element signature="n#BoundingBox#0" expanded="false" />
             <element signature="n#ChangeListener#0" expanded="false" />
-            <element signature="n#Circle#0" expanded="false" />
+            <element signature="n#GraphicalElement#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
+            <element signature="n#Rectangle#0" expanded="false" />
+            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -609,26 +614,34 @@
             <element signature="n#!!block;n#y#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#width#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#height#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#addChild#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#addChild#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#frame#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#disableDimensionReadjustment#0;n#VerticalGroup#0" expanded="false" />
@@ -753,8 +766,10 @@
           <folding>
             <element signature="n#BoundingBox#0" expanded="false" />
             <element signature="n#ChangeListener#0" expanded="false" />
-            <element signature="n#Circle#0" expanded="false" />
+            <element signature="n#GraphicalElement#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
+            <element signature="n#Rectangle#0" expanded="false" />
+            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -771,26 +786,34 @@
             <element signature="n#!!block;n#y#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#width#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#height#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#addChild#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#addChild#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#frame#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#disableDimensionReadjustment#0;n#VerticalGroup#0" expanded="false" />
@@ -872,8 +895,10 @@
           <folding>
             <element signature="n#BoundingBox#0" expanded="false" />
             <element signature="n#ChangeListener#0" expanded="false" />
-            <element signature="n#Circle#0" expanded="false" />
+            <element signature="n#GraphicalElement#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
+            <element signature="n#Rectangle#0" expanded="false" />
+            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -890,26 +915,34 @@
             <element signature="n#!!block;n#y#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#width#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#height#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#addChild#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#addChild#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#frame#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#disableDimensionReadjustment#0;n#VerticalGroup#0" expanded="false" />
@@ -948,8 +981,10 @@
           <folding>
             <element signature="n#BoundingBox#0" expanded="false" />
             <element signature="n#ChangeListener#0" expanded="false" />
-            <element signature="n#Circle#0" expanded="false" />
+            <element signature="n#GraphicalElement#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
+            <element signature="n#Rectangle#0" expanded="false" />
+            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -966,26 +1001,34 @@
             <element signature="n#!!block;n#y#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#width#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#height#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#addChild#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#addChild#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#frame#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#disableDimensionReadjustment#0;n#VerticalGroup#0" expanded="false" />
@@ -1067,8 +1110,10 @@
           <folding>
             <element signature="n#BoundingBox#0" expanded="false" />
             <element signature="n#ChangeListener#0" expanded="false" />
-            <element signature="n#Circle#0" expanded="false" />
+            <element signature="n#GraphicalElement#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
+            <element signature="n#Rectangle#0" expanded="false" />
+            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -1085,26 +1130,34 @@
             <element signature="n#!!block;n#y#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#width#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#height#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#addChild#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#addChild#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#frame#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#disableDimensionReadjustment#0;n#VerticalGroup#0" expanded="false" />
@@ -1186,8 +1239,10 @@
           <folding>
             <element signature="n#BoundingBox#0" expanded="false" />
             <element signature="n#ChangeListener#0" expanded="false" />
-            <element signature="n#Circle#0" expanded="false" />
+            <element signature="n#GraphicalElement#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
+            <element signature="n#Rectangle#0" expanded="false" />
+            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -1204,26 +1259,34 @@
             <element signature="n#!!block;n#y#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#width#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#height#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#addChild#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#addChild#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#frame#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#disableDimensionReadjustment#0;n#VerticalGroup#0" expanded="false" />
@@ -1287,8 +1350,10 @@
           <folding>
             <element signature="n#BoundingBox#0" expanded="false" />
             <element signature="n#ChangeListener#0" expanded="false" />
-            <element signature="n#Circle#0" expanded="false" />
+            <element signature="n#GraphicalElement#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
+            <element signature="n#Rectangle#0" expanded="false" />
+            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -1305,26 +1370,34 @@
             <element signature="n#!!block;n#y#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#width#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#height#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#addChild#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#addChild#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#frame#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#disableDimensionReadjustment#0;n#VerticalGroup#0" expanded="false" />
@@ -1406,8 +1479,10 @@
           <folding>
             <element signature="n#BoundingBox#0" expanded="false" />
             <element signature="n#ChangeListener#0" expanded="false" />
-            <element signature="n#Circle#0" expanded="false" />
+            <element signature="n#GraphicalElement#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
+            <element signature="n#Rectangle#0" expanded="false" />
+            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -1424,26 +1499,34 @@
             <element signature="n#!!block;n#y#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#width#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#height#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#addChild#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#addChild#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#frame#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#disableDimensionReadjustment#0;n#VerticalGroup#0" expanded="false" />
@@ -1525,8 +1608,10 @@
           <folding>
             <element signature="n#BoundingBox#0" expanded="false" />
             <element signature="n#ChangeListener#0" expanded="false" />
-            <element signature="n#Circle#0" expanded="false" />
+            <element signature="n#GraphicalElement#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
+            <element signature="n#Rectangle#0" expanded="false" />
+            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -1543,26 +1628,34 @@
             <element signature="n#!!block;n#y#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#width#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#height#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#addChild#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#addChild#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#frame#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#disableDimensionReadjustment#0;n#VerticalGroup#0" expanded="false" />
@@ -1654,8 +1747,10 @@
           <folding>
             <element signature="n#BoundingBox#0" expanded="false" />
             <element signature="n#ChangeListener#0" expanded="false" />
-            <element signature="n#Circle#0" expanded="false" />
+            <element signature="n#GraphicalElement#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
+            <element signature="n#Rectangle#0" expanded="false" />
+            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -1672,26 +1767,34 @@
             <element signature="n#!!block;n#y#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#width#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#height#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#addChild#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#addChild#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#frame#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#disableDimensionReadjustment#0;n#VerticalGroup#0" expanded="false" />
@@ -1773,8 +1876,10 @@
           <folding>
             <element signature="n#BoundingBox#0" expanded="false" />
             <element signature="n#ChangeListener#0" expanded="false" />
-            <element signature="n#Circle#0" expanded="false" />
+            <element signature="n#GraphicalElement#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
+            <element signature="n#Rectangle#0" expanded="false" />
+            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -1791,26 +1896,34 @@
             <element signature="n#!!block;n#y#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#width#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#height#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#addChild#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#addChild#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#frame#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#disableDimensionReadjustment#0;n#VerticalGroup#0" expanded="false" />
@@ -1869,8 +1982,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/look-and-feel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="134" column="14" lean-forward="false" selection-start-line="134" selection-start-column="14" selection-end-line="134" selection-end-column="14" />
+        <state relative-caret-position="211">
+          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
           <folding>
             <element signature="n#LookAndFeel#0" expanded="false" />
             <element signature="n#DefaultLookAndFeelFactory#0" expanded="false" />
@@ -1887,8 +2000,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/svg.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="213" column="4" lean-forward="false" selection-start-line="213" selection-start-column="4" selection-end-line="213" selection-end-column="4" />
+        <state relative-caret-position="211">
+          <caret line="242" column="0" lean-forward="false" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#ellipse#0;n#SVGArea#0" expanded="false" />
@@ -1910,23 +2023,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PrimitiveTest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="56" column="17" lean-forward="false" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/primitives.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="1238" column="31" lean-forward="false" selection-start-line="1238" selection-start-column="31" selection-end-line="1238" selection-end-column="31" />
+        <state relative-caret-position="6">
+          <caret line="698" column="65" lean-forward="true" selection-start-line="698" selection-start-column="65" selection-end-line="698" selection-end-column="65" />
           <folding>
             <element signature="n#BoundingBox#0" expanded="false" />
             <element signature="n#ChangeListener#0" expanded="false" />
-            <element signature="n#Circle#0" expanded="false" />
+            <element signature="n#GraphicalElement#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
+            <element signature="n#Rectangle#0" expanded="false" />
+            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -1943,26 +2050,34 @@
             <element signature="n#!!block;n#y#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#width#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#width#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#increaseWidthBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#minWidth#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#height#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#height#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#increaseHeightBy#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#minContentHeight#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#children#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#addChild#0;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#addChild#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#countChildren#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#getChildAt#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#frame#1;n#VerticalGroup#0" expanded="false" />
+            <element signature="n#!!block;n#frame#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#dimensionReadjustmentEnabled#1;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#disableDimensionReadjustment#0;n#VerticalGroup#0" expanded="false" />
@@ -1983,6 +2098,14 @@
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
             <element signature="n#FontStylingAttributes#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PrimitiveTest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
