@@ -1099,8 +1099,8 @@ class VerticalGroup extends GraphicalElement {
         this.disableChangeNotifications();
 
         // Change the group width and height to accommodate the frame border.
-        this.width += value.borderSize;
-        this.height += value.borderSize;
+        this.width += value.borderSize * 2;
+        this.height += value.borderSize * 2;
 
         this._frame = value;
         this.frame.x = this.x;

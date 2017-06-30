@@ -21,24 +21,23 @@
       <file leaf-file-name="PrimitiveTest.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PrimitiveTest.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="51" column="8" lean-forward="false" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
+            <state relative-caret-position="201">
+              <caret line="56" column="17" lean-forward="false" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="primitives.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="primitives.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/primitives.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
+            <state relative-caret-position="170">
               <caret line="1238" column="31" lean-forward="false" selection-start-line="1238" selection-start-column="31" selection-end-line="1238" selection-end-column="31" />
               <folding>
                 <element signature="n#BoundingBox#0" expanded="false" />
                 <element signature="n#ChangeListener#0" expanded="false" />
                 <element signature="n#Circle#0" expanded="false" />
                 <element signature="n#Ellipse#0" expanded="false" />
-                <element signature="n#Text#0" expanded="false" />
                 <element signature="n#Line#0" expanded="false" />
                 <element signature="n#Image#0" expanded="false" />
                 <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -102,8 +101,8 @@
       <file leaf-file-name="svg.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/svg.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="242" column="14" lean-forward="false" selection-start-line="242" selection-start-column="14" selection-end-line="242" selection-end-column="14" />
+            <state relative-caret-position="204">
+              <caret line="213" column="4" lean-forward="false" selection-start-line="213" selection-start-column="4" selection-end-line="213" selection-end-column="4" />
               <folding>
                 <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
                 <element signature="n#!!block;n#ellipse#0;n#SVGArea#0" expanded="false" />
@@ -126,10 +125,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="look-and-feel.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="look-and-feel.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/look-and-feel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
+            <state relative-caret-position="561">
               <caret line="134" column="14" lean-forward="false" selection-start-line="134" selection-start-column="14" selection-end-line="134" selection-end-column="14" />
               <folding>
                 <element signature="n#LookAndFeel#0" expanded="false" />
@@ -206,8 +205,8 @@
         <option value="chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/js/bundle.js" />
         <option value="$PROJECT_DIR$/PrimitiveTest.html" />
         <option value="$PROJECT_DIR$/look-and-feel.js" />
-        <option value="$PROJECT_DIR$/primitives.js" />
         <option value="$PROJECT_DIR$/svg.js" />
+        <option value="$PROJECT_DIR$/primitives.js" />
       </list>
     </option>
   </component>
@@ -394,12 +393,14 @@
       <workItem from="1498669487121" duration="7390000" />
       <workItem from="1498679495744" duration="1530000" />
       <workItem from="1498744409392" duration="193000" />
-      <workItem from="1498745028590" duration="3980000" />
+      <workItem from="1498745028590" duration="4221000" />
+      <workItem from="1498763469624" duration="1964000" />
+      <workItem from="1498829375147" duration="2102000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89773000" />
+    <option name="totallyTimeSpent" value="94080000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -413,7 +414,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34542587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35015774" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -433,13 +434,25 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/primitives.js</url>
-          <line>1098</line>
+          <url>file://$PROJECT_DIR$/PrimitiveTest.html</url>
+          <line>54</line>
           <properties />
-          <option name="timeStamp" value="78" />
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/PrimitiveTest.html</url>
+          <line>55</line>
+          <properties />
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/PrimitiveTest.html</url>
+          <line>56</line>
+          <properties />
+          <option name="timeStamp" value="87" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="81" />
+      <option name="time" value="88" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -461,7 +474,6 @@
             <element signature="n#ChangeListener#0" expanded="false" />
             <element signature="n#Circle#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
-            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -581,7 +593,6 @@
             <element signature="n#ChangeListener#0" expanded="false" />
             <element signature="n#Circle#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
-            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -744,7 +755,6 @@
             <element signature="n#ChangeListener#0" expanded="false" />
             <element signature="n#Circle#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
-            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -864,7 +874,6 @@
             <element signature="n#ChangeListener#0" expanded="false" />
             <element signature="n#Circle#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
-            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -941,7 +950,6 @@
             <element signature="n#ChangeListener#0" expanded="false" />
             <element signature="n#Circle#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
-            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -1061,7 +1069,6 @@
             <element signature="n#ChangeListener#0" expanded="false" />
             <element signature="n#Circle#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
-            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -1181,7 +1188,6 @@
             <element signature="n#ChangeListener#0" expanded="false" />
             <element signature="n#Circle#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
-            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -1283,7 +1289,6 @@
             <element signature="n#ChangeListener#0" expanded="false" />
             <element signature="n#Circle#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
-            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -1403,7 +1408,6 @@
             <element signature="n#ChangeListener#0" expanded="false" />
             <element signature="n#Circle#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
-            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -1523,7 +1527,6 @@
             <element signature="n#ChangeListener#0" expanded="false" />
             <element signature="n#Circle#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
-            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -1653,7 +1656,6 @@
             <element signature="n#ChangeListener#0" expanded="false" />
             <element signature="n#Circle#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
-            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -1773,7 +1775,6 @@
             <element signature="n#ChangeListener#0" expanded="false" />
             <element signature="n#Circle#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
-            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -1866,24 +1867,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/look-and-feel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="134" column="14" lean-forward="false" selection-start-line="134" selection-start-column="14" selection-end-line="134" selection-end-column="14" />
+          <folding>
+            <element signature="n#LookAndFeel#0" expanded="false" />
+            <element signature="n#DefaultLookAndFeelFactory#0" expanded="false" />
+            <element signature="n#DefaultDrawer#0" expanded="false" />
+            <element signature="n#DefaultCircleDrawer#0" expanded="false" />
+            <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
+            <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
+            <element signature="n#DefaultLineDrawer#0" expanded="false" />
+            <element signature="n#DefaultImageDrawer#0" expanded="false" />
+            <element signature="n#DefaultVerticalGroupDrawer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="213" column="4" lean-forward="false" selection-start-line="213" selection-start-column="4" selection-end-line="213" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
+            <element signature="n#!!block;n#ellipse#0;n#SVGArea#0" expanded="false" />
+            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
+            <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
+            <element signature="n#ImagePositionChangeListener#0" expanded="false" />
+            <element signature="n#LinePositionChangeListener#0" expanded="false" />
+            <element signature="n#CirclePositionChangeListener#0" expanded="false" />
+            <element signature="n#GeneralDimensionChangeListener#0" expanded="false" />
+            <element signature="n#RectangleDimensionChangeListener#0" expanded="false" />
+            <element signature="n#ImageDimensionChangeListener#0" expanded="false" />
+            <element signature="n#TextDimensionChangeListener#0" expanded="false" />
+            <element signature="n#CircleDimensionChangeListener#0" expanded="false" />
+            <element signature="n#LineDimensionChangeListener#0" expanded="false" />
+            <element signature="n#TextChangeListener#0" expanded="false" />
+            <element signature="n#FontChangeListener#0" expanded="false" />
+            <element signature="n#StyleChangeListener#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PrimitiveTest.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="51" column="8" lean-forward="false" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
+        <state relative-caret-position="201">
+          <caret line="56" column="17" lean-forward="false" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/primitives.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
+        <state relative-caret-position="170">
           <caret line="1238" column="31" lean-forward="false" selection-start-line="1238" selection-start-column="31" selection-end-line="1238" selection-end-column="31" />
           <folding>
             <element signature="n#BoundingBox#0" expanded="false" />
             <element signature="n#ChangeListener#0" expanded="false" />
             <element signature="n#Circle#0" expanded="false" />
             <element signature="n#Ellipse#0" expanded="false" />
-            <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
             <element signature="n#!!block;n#FILL_SPACE#0;n#VerticalGroup#0" expanded="false" />
@@ -1939,49 +1982,6 @@
             <element signature="n#VerticalGroupChildChangeListener#0" expanded="false" />
             <element signature="n#GroupStylingAttributes#0" expanded="false" />
             <element signature="n#FontStylingAttributes#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/svg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="242" column="14" lean-forward="false" selection-start-line="242" selection-start-column="14" selection-end-line="242" selection-end-column="14" />
-          <folding>
-            <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#!!block;n#ellipse#0;n#SVGArea#0" expanded="false" />
-            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
-            <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#ImagePositionChangeListener#0" expanded="false" />
-            <element signature="n#LinePositionChangeListener#0" expanded="false" />
-            <element signature="n#CirclePositionChangeListener#0" expanded="false" />
-            <element signature="n#GeneralDimensionChangeListener#0" expanded="false" />
-            <element signature="n#RectangleDimensionChangeListener#0" expanded="false" />
-            <element signature="n#ImageDimensionChangeListener#0" expanded="false" />
-            <element signature="n#TextDimensionChangeListener#0" expanded="false" />
-            <element signature="n#CircleDimensionChangeListener#0" expanded="false" />
-            <element signature="n#LineDimensionChangeListener#0" expanded="false" />
-            <element signature="n#TextChangeListener#0" expanded="false" />
-            <element signature="n#FontChangeListener#0" expanded="false" />
-            <element signature="n#StyleChangeListener#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/look-and-feel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="134" column="14" lean-forward="false" selection-start-line="134" selection-start-column="14" selection-end-line="134" selection-end-column="14" />
-          <folding>
-            <element signature="n#LookAndFeel#0" expanded="false" />
-            <element signature="n#DefaultLookAndFeelFactory#0" expanded="false" />
-            <element signature="n#DefaultDrawer#0" expanded="false" />
-            <element signature="n#DefaultCircleDrawer#0" expanded="false" />
-            <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
-            <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
-            <element signature="n#DefaultLineDrawer#0" expanded="false" />
-            <element signature="n#DefaultImageDrawer#0" expanded="false" />
-            <element signature="n#DefaultVerticalGroupDrawer#0" expanded="false" />
           </folding>
         </state>
       </provider>
