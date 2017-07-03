@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Relationship Test</title>
+    <script src="look-and-feel.js"></script>
+    <script src="geometry.js"></script>
+    <script src="svg.js"></script>
+
+    <style>
+
+        #svg {
+            border: 1px solid #000;
+        }
+
+    </style>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto');
+    </style>
+
+</head>
+<body>
+
+<svg id="svg" width="800" height="600"></svg>
+
+<script>
+
+    function randomText() {
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        for (var i = 0; i < 1 + Math.random() * 100; i++)
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+        return text;
+    }
+
+    (function () {
+        let svgArea = new SVGArea("#svg");
+
+        //****************************
+        // UML simple association.
+        svgArea.line(10, 10, 100, 10, new StylingAttributes(2));
+        //****************************
+
+        //****************************
+        // UML simple realization.
+        svgArea.line(10, 30, 100, 30, new StylingAttributes(2, 'black', '#FFFFCC', "5 5"));
+        //****************************
+
+    })();
+
+</script>
+
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Primitive Test</title>
     <script src="look-and-feel.js"></script>
-    <script src="primitives.js"></script>
+    <script src="geometry.js"></script>
     <script src="svg.js"></script>
 
     <style>
@@ -131,6 +131,14 @@
         let decisionNode = svgArea.vgroup(450, 450);
         decisionNode.frame = svgArea.diamond(undefined, undefined, undefined, undefined, true);
         decisionNode.addChild(svgArea.text(undefined, undefined, "Condition"), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
+        //****************************
+
+        //****************************
+        // Vertical group with weight.
+        svgArea.line(500, 100, 500, 200);
+        let vgroupWeight = svgArea.vgroup(650, 450, new GroupStylingAttributes(0,0));
+        vgroupWeight.addChild(svgArea.line(10, 10, 10, 20, new StylingAttributes(3)), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER, 0.4);
+        vgroupWeight.addChild(svgArea.diamond(undefined, undefined, 20, 20), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
         //****************************
 
     })();
