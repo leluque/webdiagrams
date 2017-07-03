@@ -88,6 +88,9 @@ class GraphicalElement {
         this._drawn = null; // A reference to the shape drawn on an area.
         this._changeListeners = [];
         this._changeNotificationsEnabled = true;
+        this._rotation = 0;
+        this._rotationCenterX = this.x + this.width / 2;
+        this._rotationCenterY = this.y + this.height / 2;
     }
 
     disableChangeNotifications() {
@@ -112,6 +115,7 @@ class GraphicalElement {
 
     set x(value) {
         this._x = value;
+        this.rotationCenterX = this.x + this.width / 2;
         this.notifyListeners();
     }
 
@@ -121,6 +125,7 @@ class GraphicalElement {
 
     set y(value) {
         this._y = value;
+        this.rotationCenterY = this.y + this.height / 2;
         this.notifyListeners();
     }
 
@@ -130,6 +135,7 @@ class GraphicalElement {
 
     set width(value) {
         this._width = value;
+        this.rotationCenterX = this.x + this.width / 2;
         this.notifyListeners();
     }
 
@@ -150,6 +156,7 @@ class GraphicalElement {
 
     set height(value) {
         this._height = value;
+        this.rotationCenterY = this.y + this.height / 2;
         this.notifyListeners();
     }
 
@@ -162,6 +169,33 @@ class GraphicalElement {
         if (this.height < this.minHeight) {
             this.height = this.minHeight;
         }
+    }
+
+    get rotation() {
+        return this._rotation;
+    }
+
+    set rotation(value) {
+        this._rotation = value;
+        this.notifyListeners();
+    }
+
+    get rotationCenterX() {
+        return this._rotationCenterX;
+    }
+
+    set rotationCenterX(value) {
+        this._rotationCenterX = value;
+        this.notifyListeners();
+    }
+
+    get rotationCenterY() {
+        return this._rotationCenterY;
+    }
+
+    set rotationCenterY(value) {
+        this._rotationCenterY = value;
+        this.notifyListeners();
     }
 
     get x2() {
@@ -1285,6 +1319,7 @@ class VerticalGroup extends GraphicalElement {
         this.resizePolicy.push(resizePolicy);
         this.gravity.push(gravity);
         this.weight.push(weight);
+        this.drawn.appendChild(child.drawn);
 
         //*****************************
         // Update the group width if necessary.
