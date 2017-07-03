@@ -157,18 +157,18 @@
 
         let aggRelationship = svgArea.vgroup(0, 0, new GroupStylingAttributes(0, 0));
         aggRelationship.addChild(svgArea.line(0, 0, 0, 1, new StylingAttributes(3)), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER, 1);
-        aggRelationship.addChild(svgArea.diamond(undefined, undefined, diamondWidth, diamondWidth), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER, 0, diamondOverlap);
+        aggRelationship.addChild(svgArea.diamond(undefined, undefined, diamondWidth, diamondWidth, true, new StylingAttributes(10)), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER, 0, diamondOverlap);
 
-        let lineHeight = 1 + Math.abs(Math.abs(aggRelationship.height - Math.sqrt(width*width + height*height)));
+        let lineHeight = 1 + Math.abs(Math.abs(aggRelationship.height - Math.sqrt(width * width + height * height)));
         aggRelationship.increaseHeightBy(lineHeight);
 
-        let groupX = Math.min(x1, x2) + width / 2;
+        let groupX = Math.min(x1, x2) + width / 2 - aggRelationship.width / 2;
         let groupY = Math.min(y1, y2) - (aggRelationship.height - height) / 2;
         aggRelationship.x = groupX;
         aggRelationship.y = groupY;
 
         let angle = angleBetween2Lines(aggRelationship.x + aggRelationship.width / 2, aggRelationship.y, aggRelationship.x + aggRelationship.width / 2, aggRelationship.y + aggRelationship.height,
-                                       x1, y1, x2, y2);
+            x1, y1, x2, y2);
         aggRelationship.rotation = -1 * angle;
 
         svgArea.rect(x1 - 2, y1 - 2, x1 + 2, y1 + 2);
