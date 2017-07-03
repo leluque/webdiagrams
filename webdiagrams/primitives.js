@@ -8,6 +8,9 @@
 
 'use strict';
 
+/**
+ * This class implements a bounding box.
+ */
 class BoundingBox {
 
     constructor(x1 = 0, y1 = 0, x2 = 100, y2 = 100) {
@@ -72,7 +75,7 @@ class ChangeListener {
  */
 class GraphicalElement {
 
-    constructor(x = 0, y = 0, width = 50, height = 50, stylingAttributes = new StylingAttributes(), id) {
+    constructor(x = 0, y = 0, width = 0, height = 0, stylingAttributes = new StylingAttributes(), id) {
         this._x = x;
         this._y = y;
         this._minWidth = 10;
@@ -191,6 +194,24 @@ class GraphicalElement {
         }
     }
 
+    /**
+     * Returns the minimum value of X that stays inside the geometric shape for
+     * the specified y value.
+     * @param givenY The y value.
+     */
+    boundaryX1For(givenY) {
+        return this.x;
+    }
+
+    /**
+     * Returns the maximum value of X that stays inside the geometric shape for
+     * the specified y value.
+     * @param givenY The y value.
+     */
+    boundaryX2For(givenY) {
+        return this.x2;
+    }
+
     get stylingAttributes() {
         return this._stylingAttributes;
     }
@@ -293,6 +314,12 @@ class GraphicalElement {
 
 }
 
+/**
+ * This class implements circles.
+ * The general circle equation is (x-a)^2 + (y-b)^2 = r^2,
+ * where
+ * a,b are the x,y coordinates of the circle's center.
+ */
 class Circle
     extends GraphicalElement {
 
@@ -334,20 +361,31 @@ class Circle
         super.height = value;
     }
 
+    boundaryX1For(givenY) {
+        // The circle equation is (x-a)^2 + (y-b)^2 = r^2
+        // (x-a)^2 = r^2 - (y-b)^2
+        // x^2 - 2xa + a^2 = r^2 - (y-b)^2
+        // x^2 - 2xa + (a^2 -r^2 + (y-b)^2) = 0
+        let eqa = 1;
+        let eqb = -2 * this.centerX;
+        let eqc = Math.pow(this.centerX, 2) - Math.pow(this.radius, 2) + Math.pow(givenY - this.centerY, 2);
+        let delta = eqb * eqb - 4 * eqa * eqc;
+        let sqrtDelta = Math.sqrt(delta);
+        let x1 = (-eqb - sqrtDelta) / (2 * eqa);
+        return x1;
+    }
+
+    boundaryX2For(givenY) {
+        let eqa = 1;
+        let eqb = -2 * this.centerX;
+        let eqc = Math.pow(this.centerX, 2) - Math.pow(this.radius, 2) + Math.pow(givenY - this.centerY, 2);
+        let delta = eqb * eqb - 4 * eqa * eqc;
+        let sqrtDelta = Math.sqrt(delta);
+        let x2 = (-eqb + sqrtDelta) / (2 * eqa);
+        return x2;
+    }
 
     contentBox(width = 1, height = 1) {
-        //*****************************
-        // The previous algorithm was supposing a squared content box. Nonetheless, some contents are rectangular and
-        // if the ration between the content width/height is not considered, this method may conflict with
-        // the method width to fit that takes this ratio into consideration.
-        // It was being observed for circles with text inside (a graph node for example).
-
-        //let involvingBoxHalfDiagonal = Math.sqrt(2 * Math.pow(this.width, 2)) / 2;
-        //let deltaDiagonal = involvingBoxHalfDiagonal - this.radius;
-        //let delta = Math.sqrt(deltaDiagonal * deltaDiagonal) / 2;
-        //return new BoundingBox(this.x + delta, this.y + delta, this.x + this.width - delta, this.y + this.height - delta);
-        //*****************************
-
         // Take into consideration the ratio among width and height.
         // FORMULA:
         // (width/2)^2 + (height/2)^2 = radius^2
@@ -366,8 +404,6 @@ class Circle
 
         let contentBox = new BoundingBox(this.x + deltaX, this.y + deltaY, this.x + this.width - deltaX, this.y + this.height - deltaY);
 
-        console.log(contentBox);
-
         return contentBox;
     }
 
@@ -382,8 +418,14 @@ class Circle
 
 }
 
-// TODO: update notifiers.
-// TODO: implement contentBox e width/heightToFit
+/**
+ * This class implements ellipses.
+ * The general ellipse equation is (x-h)^2/a^2 + (y-k)^2/b^2 = 1,
+ * where
+ * a is the radius along the x-axis
+ * b is the radius along the y-axis
+ * h,k are the x,y coordinates of the ellipse's center.
+ */
 class Ellipse extends GraphicalElement {
 
     constructor(centerX = 0, centerY = 0, radiusX = 50, radiusY = 25, stylingAttributes) {
@@ -395,8 +437,8 @@ class Ellipse extends GraphicalElement {
     }
 
     set width(value) {
-        this.width = value;
-        this.changeListeners.changeRadiusX(this);
+        super.width = value;
+        super.height = value / 2; // Keep the proportion.
     }
 
     get height() {
@@ -404,8 +446,8 @@ class Ellipse extends GraphicalElement {
     }
 
     set height(value) {
-        this.height = value;
-        this.changeListeners.changeRadiusY(this);
+        super.height = value;
+        super.width = value * 2; // Keep the proportion.
     }
 
     get centerX() {
@@ -440,6 +482,79 @@ class Ellipse extends GraphicalElement {
         this.height = value * 2;
     }
 
+    boundaryX1For(givenY) {
+        // The general ellipse equation is (x-h)^2/a^2 + (y-k)^2/b^2 = 1
+        // (x^2 - 2xh + h^2)
+        // ----------------- + (y-k)^2/b^2 - 1 = 0
+        //        a^2
+        // (1/a^2)x^2 - (2h/a^2)x + h^2/a^2 + (y-k)^2/b^2 - 1 = 0
+        let a = this.radiusX;
+        let b = this.radiusY;
+        let h = this.centerX;
+        let k = this.centerY;
+        let eqa = 1 / (a * a);
+        let eqb = -2 * h / (a * a);
+        let eqc = ((h * h) / (a * a)) + Math.pow(givenY - k, 2) / (b * b) - 1;
+        let delta = eqb * eqb - 4 * eqa * eqc;
+        let sqrtDelta = Math.sqrt(delta);
+        let x1 = (-eqb - sqrtDelta) / (2 * eqa);
+        return x1;
+    }
+
+    boundaryX2For(givenY) {
+        // The general ellipse equation is (x-h)^2/a^2 + (y-k)^2/b^2 = 1
+        // (x^2 - 2xh + h^2)
+        // ----------------- + (y-k)^2/b^2 - 1 = 0
+        //        a^2
+        // (1/a^2)x^2 - (2h/a^2)x + h^2/a^2 + (y-k)^2/b^2 - 1 = 0
+        let a = this.radiusX;
+        let b = this.radiusY;
+        let h = this.centerX;
+        let k = this.centerY;
+        let eqa = 1 / (a * a);
+        let eqb = -2 * h / (a * a);
+        let eqc = ((h * h) / (a * a)) + Math.pow(givenY - k, 2) / (b * b) - 1;
+        let delta = eqb * eqb - 4 * eqa * eqc;
+        let sqrtDelta = Math.sqrt(delta);
+        let x2 = (-eqb + sqrtDelta) / (2 * eqa);
+        return x2;
+    }
+
+    contentBox(width = 1, height = 1) {
+        let sqrt2 = Math.sqrt(2);
+        let rectHeight = (this.height / 2) * sqrt2;
+        let rectWidth = (this.width / 2) * sqrt2;
+        let deltaX = (this.width - rectWidth) / 2;
+        let deltaY = (this.height - rectHeight) / 2;
+
+        let contentBox = new BoundingBox(this.x + deltaX, this.y + deltaY, this.x + this.width - deltaX, this.y + this.height - deltaY);
+
+        return contentBox;
+    }
+
+    widthToFit(boundingBox) {
+        // Ellipse formula is (x/A)^2+(y/B)^2=1, where A and B are the two radius of the ellipse
+        // Rectangle sides are Rw and Rh
+        // Let's assume we want ellipse with same proportions as rectangle; then, if we image square in circle (A=B,Rq=Rh) and squeeze it, we well keep ratio of ellipse A/B same as ratio of rectangle sides Rw/Rh;
+        // This leads us to following system of equations:
+        //     (x/A)^2+(y/B)^2=1
+        // A/B=Rw/Rh
+        //
+        // Lets solve it: A=B*(Rw/Rh)
+        //     (Rh/2B)^2+(Rh/2B)^2=1
+        // Rh=sqrt(2)*B
+        //
+        // And final solution:
+        //     A=Rw/sqrt(2)
+        // B=Rh/sqrt(2)
+
+        return 2 * boundingBox.width / Math.sqrt(2);
+    }
+
+    heightToFit(boundingBox) {
+        return 2 * boundingBox.height / Math.sqrt(2);
+    }
+
 }
 
 class Rectangle extends GraphicalElement {
@@ -452,7 +567,6 @@ class Rectangle extends GraphicalElement {
         // The stroke width is divided by 2 because its thickness is divided 50% to the left and 50% to the right.
         let border = this.borderSize;
         let boundingBox = new BoundingBox(this.x + border, this.y + border, this.x + this.width - border, this.y + this.height - border);
-        console.log(boundingBox)
         return boundingBox;
     }
 
@@ -629,8 +743,13 @@ class Image extends GraphicalElement {
 
 class VerticalGroup extends GraphicalElement {
 
-    // It does not use horizontal margins for elements.
+    // It goes further the content area and touches the frame borders.
     static get MATCH_PARENT() {
+        return 3;
+    }
+
+    // It does not use horizontal margins for elements.
+    static get MATCH_CONTENT_AREA() {
         return 2;
     }
 
@@ -680,6 +799,7 @@ class VerticalGroup extends GraphicalElement {
         if (this.frame !== null) {
             let contentBox = this.frame.contentBox(this.width, this.height);
             availableWidthForChildren = contentBox.width;
+            console.log(this.width + " - Available width:  " + contentBox.width);
             newX = contentBox.x1;
             newY = contentBox.y1;
             rightXLimit = contentBox.x2;
@@ -711,14 +831,24 @@ class VerticalGroup extends GraphicalElement {
                 } else if (this.gravity[i] == VerticalGroup.RIGHT) {
                     this.children[i].x = rightXLimit - this.horMargin - this.children[i].width;
                 } else {
-                    this.children[i].x = ((newX + rightXLimit) / 2) - this.children[i].width / 2;
+                    this.children[i].x = ((newX + rightXLimit) - this.children[i].width) / 2;
                 }
             } else if (this.resizePolicy[i] === VerticalGroup.FILL_SPACE) {
                 this.children[i].width = availableWidthForChildren - 2 * this.horMargin;
                 this.children[i].x = newX + this.horMargin;
-            } else if (this.resizePolicy[i] === VerticalGroup.MATCH_PARENT) {
+            } else if (this.resizePolicy[i] === VerticalGroup.MATCH_CONTENT_AREA) {
                 this.children[i].width = availableWidthForChildren;
                 this.children[i].x = newX;
+            } else if (this.resizePolicy[i] === VerticalGroup.MATCH_PARENT) {
+                let boundaryX1 = this.boundaryX1For(newY);
+                let boundaryX2 = this.boundaryX2For(newY);
+                if (this.frame !== null) {
+                    boundaryX1 = this.frame.boundaryX1For(newY);
+                    boundaryX2 = this.frame.boundaryX2For(newY);
+                }
+
+                this.children[i].width = boundaryX2 - boundaryX1;
+                this.children[i].x = boundaryX1;
             }
             this.children[i].y = newY;
             newY += this.children[i].height + this.verMargin;
@@ -872,9 +1002,10 @@ class VerticalGroup extends GraphicalElement {
             let child = this.getChildAt(i);
             if (child.minWidth > calcMinWidth) {
                 calcMinWidth = child.minWidth;
-                // MATCH_PARENT does not use horizontal margins for elements.
+                // MATCH_CONTENT_AREA does not use horizontal margins for elements.
                 // It is used for lines, for example.
-                if (this.resizePolicy[i] !== VerticalGroup.MATCH_PARENT) {
+                if (this.resizePolicy[i] !== VerticalGroup.MATCH_CONTENT_AREA &&
+                    this.resizePolicy[i] !== VerticalGroup.MATCH_PARENT) {
                     calcMinWidth += 2 * this.horMargin;
                 }
             }

@@ -46,6 +46,27 @@
         let svgArea = new SVGArea("#svg");
 
         //****************************
+        // Circle boundaries.
+/*
+        let circ = svgArea.circle(500, 320, 50);
+        let x1 = circ.boundaryX1For(300);
+        let x2 = circ.boundaryX2For(300);
+        console.log(x1 + "," + x2);
+        svgArea.line(x1, 300, x2, 300);
+*/
+        //****************************
+
+        //****************************
+        // Ellipse boundaries.
+/*
+         let el = svgArea.ellipse(480, 320, 36, 24);
+         let x1 = el.boundaryX1For(336);
+         let x2 = el.boundaryX2For(336);
+         svgArea.line(x1, 336, x2, 336);
+*/
+        //****************************
+
+        //****************************
         // UML Interface.
         rect = svgArea.rect()
         umlClass = svgArea.vgroup(10, 10);
@@ -53,34 +74,54 @@
         let stereotype = svgArea.text(undefined, undefined, "<<interface>>");
         stereotype.fontStylingAttributes.style = "italic";
         umlClass.addChild(stereotype, VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
-        umlClass.addChild(svgArea.text(undefined, undefined, "Cliente"), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
+        umlClass.addChild(svgArea.text(undefined, undefined, "Customer"), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
         umlClass.addChild(svgArea.line(), VerticalGroup.MATCH_PARENT);
-        umlClass.addChild(svgArea.text(undefined, undefined, "- cpf: String"));
-        umlClass.addChild(svgArea.text(undefined, undefined, "- nome: String"));
-        umlClass.addChild(svgArea.text(undefined, undefined, "- dataNascimento: Date"));
+        umlClass.addChild(svgArea.text(undefined, undefined, "- registry: String"));
+        umlClass.addChild(svgArea.text(undefined, undefined, "- name: String"));
+        umlClass.addChild(svgArea.text(undefined, undefined, "- birthDate: Date"));
         umlClass.addChild(svgArea.line(), VerticalGroup.MATCH_PARENT);
-        umlClass.addChild(svgArea.text(undefined, undefined, "+ salvar(): void"));
-        umlClass.addChild(svgArea.text(undefined, undefined, "+ atualizar(): void"));
-        text = svgArea.text(undefined, undefined, "+ consultarPorCpf(cpf: String): List<Cliente>");
+        umlClass.addChild(svgArea.text(undefined, undefined, "+ save(): void"));
+        umlClass.addChild(svgArea.text(undefined, undefined, "+ update(): void"));
+        text = svgArea.text(undefined, undefined, "+ findByRegistry(registry: String): List<Customer>");
         umlClass.addChild(text);
-
         //****************************
 
         //****************************
         // UML Actor.
         let umlActor = svgArea.vgroup(10, 300);
         umlActor.addChild(svgArea.image(undefined, undefined, 25, 50, "images/uml_actor.svg"), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
-        umlActor.addChild(svgArea.text(undefined, undefined, "Ator"));
+        umlActor.addChild(svgArea.text(undefined, undefined, "Actor"));
         //****************************
+
+        //****************************
+        // UML Use Case.
+        let umlUseCase = svgArea.vgroup(160, 320);
+        umlUseCase.frame = svgArea.ellipse();
+        umlUseCase.addChild(svgArea.text(undefined, undefined, "U.C."), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
+        //****************************
+
+        //****************************
+        // UML Use Case.
+        let umlUseCase1 = svgArea.vgroup(300, 320, new GroupStylingAttributes(0, 0));
+        umlUseCase1.frame = svgArea.ellipse();
+        umlUseCase1.addChild(svgArea.text(undefined, undefined, "Other Use Case"), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
+        let line = svgArea.line();
+        umlUseCase1.addChild(line, VerticalGroup.MATCH_PARENT);
+        umlUseCase1.addChild(svgArea.text(undefined, undefined, "extension points", new FontStylingAttributes(family = "'Roboto', sans-serif", size = 13, weight = "500", style = "normal", target = null)), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
+        umlUseCase1.addChild(svgArea.text(undefined, undefined, "Another use case"), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
+        umlUseCase1.addChild(svgArea.text(undefined, undefined, "Yet another use case"), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
+        //****************************
+
 
         //****************************
         // Graph node.
         node = svgArea.vgroup(340, 50);
         node.frame = svgArea.circle();
-        let text1 = svgArea.text(undefined, undefined, "Nó de um grafo");
+        let text1 = svgArea.text(undefined, undefined, "Graph Node");
         node.addChild(text1, VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
-        node.addChild(svgArea.text(undefined, undefined, "2a linha"), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
-        node.addChild(svgArea.text(undefined, undefined, "3a linha"), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
+        node.addChild(svgArea.line(), VerticalGroup.MATCH_CONTENT_AREA);
+        node.addChild(svgArea.text(undefined, undefined, "2nd row"), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
+        node.addChild(svgArea.text(undefined, undefined, "3rd row"), VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER);
         //****************************
 
     })();

@@ -86,9 +86,16 @@ class SVGArea {
     }
 
     ellipse(centerX = 50, centerY = 50, radiusX = 100, radiusY = 50) {
+        //*****************************
+        // Create a new ellipse and set its id.
         let newEllipse = new Ellipse(centerX, centerY, radiusX, radiusY);
         newEllipse.id = this.generateId();
-        //newEllipse.changeListener = new SVGChanger();
+
+        //*****************************
+        // Add change listeners.
+        newEllipse.addChangeListener(new EllipseDimensionChangeListener());
+        newEllipse.addChangeListener(new EllipsePositionChangeListener());
+        newEllipse.addChangeListener(new StyleChangeListener());
 
         let lookAndFeel = new LookAndFeel();
         let drawer = lookAndFeel.getDrawerFor(newEllipse);
@@ -173,10 +180,10 @@ class SVGArea {
         return this.addElement(newImage);
     }
 
-    vgroup(x = 10, y = 10) {
+    vgroup(x = 10, y = 10, groupStyling = new GroupStylingAttributes()) {
         //*****************************
         // Create a new vertical group and set its id.
-        let newVGroup = new VerticalGroup(x, y);
+        let newVGroup = new VerticalGroup(x, y, undefined, groupStyling);
         newVGroup.id = this.generateId();
 
         let lookAndFeel = new LookAndFeel();
@@ -231,6 +238,17 @@ class GeneralPositionChangeListener extends ChangeListener {
 }
 class RectanglePositionChangeListener extends GeneralPositionChangeListener {
 }
+class EllipsePositionChangeListener extends GeneralPositionChangeListener {
+
+    changeX(target) {
+        target.drawn.setAttribute("cx", target.centerX);
+    }
+
+    changeY(target) {
+        target.drawn.setAttribute("cy", target.centerY);
+    }
+
+}
 class ImagePositionChangeListener extends GeneralPositionChangeListener {
 }
 class TextPositionChangeListener extends GeneralPositionChangeListener {
@@ -282,18 +300,28 @@ class GeneralDimensionChangeListener extends ChangeListener {
 }
 class RectangleDimensionChangeListener extends GeneralDimensionChangeListener {
 }
+class EllipseDimensionChangeListener extends GeneralDimensionChangeListener {
+
+    changeWidth(target) {
+        target.drawn.setAttribute("rx", target.radiusX);
+    }
+
+    changeHeight(target) {
+        target.drawn.setAttribute("ry", target.radiusY);
+    }
+
+}
 class ImageDimensionChangeListener extends GeneralDimensionChangeListener {
 }
 class TextDimensionChangeListener extends GeneralDimensionChangeListener {
 }
 class CircleDimensionChangeListener extends GeneralDimensionChangeListener {
 
-    update(target) {
-        super.update(target);
-        this.changeRadius(target);
+    changeWidth(target) {
+        target.drawn.setAttribute("r", target.radius);
     }
 
-    changeRadius(target) {
+    changeHeight(target) {
         target.drawn.setAttribute("r", target.radius);
     }
 
