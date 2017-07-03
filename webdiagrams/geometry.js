@@ -903,6 +903,7 @@ class VerticalGroup extends GraphicalElement {
         this._resizePolicy = [];
         this._gravity = [];
         this._weight = [];
+        this._overlap = [];
         this._frame = null;
         this._dimensionReadjustmentEnabled = true;
         // Does the group must fit its content?
@@ -933,9 +934,11 @@ class VerticalGroup extends GraphicalElement {
         if (this.countChildren() > 0) {
             contentHeight += this.verMargin;
         }
+        let i = 0;
         for (let child of this.children) {
-            contentHeight += child.height;
+            contentHeight += child.height + this.overlap[i];
             contentHeight += this.verMargin;
+            i++;
         }
 
         // Calculate the space left after drawing all children.
@@ -944,13 +947,13 @@ class VerticalGroup extends GraphicalElement {
         if (heightLeft > 0) {
             // Sum all children weight.
             let weightSum = 0;
-            for (let i = 0; i < this.countChildren(); i++) {
+            for (i = 0; i < this.countChildren(); i++) {
                 weightSum += this.weight[i];
             }
-            for (let i = 0; i < this.countChildren(); i++) {
+            for (i = 0; i < this.countChildren(); i++) {
                 let child = this.children[i];
                 if (this.weight[i] > 0) {
-                    let deltaHeight = this.weight[i]/weightSum * heightLeft;
+                    let deltaHeight = this.weight[i] / weightSum * heightLeft;
                     child.height += deltaHeight;
                 }
             }
@@ -963,15 +966,16 @@ class VerticalGroup extends GraphicalElement {
         if (this.countChildren() > 0) {
             contentHeight += this.verMargin;
         }
+        i = 0;
         for (let child of this.children) {
-            contentHeight += child.height;
+            contentHeight += child.height + this.overlap[i];
             contentHeight += this.verMargin;
+            i++;
         }
         let deltaY = ((bottomYLimit - newY) - contentHeight) / 2;
         newY += deltaY + this.verMargin; // The vertical margin is necessary to start at the right position for the first child.
 
         // Adjust children's position and dimension.
-        let i = 0;
         for (i = 0; i < this.countChildren(); i++) {
             let oldChangeNotificationsStatus = this.children[i].changeNotificationsEnabled;
             this.children[i].disableChangeNotifications(); // Prevent cascade readjustments: parent changes child and child changes parent.
@@ -1001,6 +1005,8 @@ class VerticalGroup extends GraphicalElement {
                 this.children[i].width = boundaryX2 - boundaryX1;
                 this.children[i].x = boundaryX1;
             }
+
+            newY += this.overlap[i];
             this.children[i].y = newY;
             newY += this.children[i].height + this.verMargin;
 
@@ -1191,6 +1197,26 @@ class VerticalGroup extends GraphicalElement {
     }
 
     /**
+     * Calculates and returns the minimum height required to display the group content.
+     * @returns {number} The minimum height required to display the group content.
+     */
+    get
+    minContentHeight() {
+        let contentMinHeight = 0;
+        let i = 0;
+        for (let child of this.children) {
+            contentMinHeight += this.verMargin;
+            contentMinHeight += child.minHeight + this.overlap[i];
+            i++;
+        }
+        if (this.countChildren() > 0) {
+            contentMinHeight += this.verMargin;
+        }
+
+        return contentMinHeight;
+    }
+
+    /**
      * Calculates and returns the minimum height required to display the group frame and its content.
      * @returns {number} The minimum height required to display the group frame and its content.
      */
@@ -1247,24 +1273,6 @@ class VerticalGroup extends GraphicalElement {
     }
 
     /**
-     * Calculates and returns the minimum height required to display the group content.
-     * @returns {number} The minimum height required to display the group content.
-     */
-    get
-    minContentHeight() {
-        let contentMinHeight = 0;
-        for (let child of this.children) {
-            contentMinHeight += this.verMargin;
-            contentMinHeight += child.minHeight;
-        }
-        if (this.countChildren() > 0) {
-            contentMinHeight += this.verMargin;
-        }
-
-        return contentMinHeight;
-    }
-
-    /**
      * Returns the children.
      * @returns {Array} The children.
      */
@@ -1291,7 +1299,7 @@ class VerticalGroup extends GraphicalElement {
      * @param resizePolicy the child resize policy.
      * @param gravity The child horizontal gravity.
      */
-    addChild(child, resizePolicy = VerticalGroup.WRAP_CONTENT, gravity = VerticalGroup.LEFT, weight = 0) {
+    addChild(child, resizePolicy = VerticalGroup.WRAP_CONTENT, gravity = VerticalGroup.LEFT, weight = 0, overlap = 0) {
         let oldChangeNotificationsStatus = this.changeNotificationsEnabled;
         let oldDimensionReadjustmentStatus = this.dimensionReadjustmentEnabled;
         this.disableChangeNotifications(); // Avoid unnecessary change notifications.
@@ -1299,7 +1307,7 @@ class VerticalGroup extends GraphicalElement {
 
         //*****************************
         // Increase the group height to fit the new child.
-        let childRequiredHeight = child.height + this.verMargin;
+        let childRequiredHeight = child.height + this.verMargin + overlap;
         if (this.countChildren() == 0) { // Add another vertical margin to the first child.
             childRequiredHeight += this.verMargin;
         }
@@ -1319,6 +1327,7 @@ class VerticalGroup extends GraphicalElement {
         this.resizePolicy.push(resizePolicy);
         this.gravity.push(gravity);
         this.weight.push(weight);
+        this.overlap.push(overlap);
         this.drawn.appendChild(child.drawn);
 
         //*****************************
@@ -1329,7 +1338,6 @@ class VerticalGroup extends GraphicalElement {
 
         // Add the group as a child change listener.
         child.addChangeListener(new VerticalGroupChildChangeListener(this));
-
 
         this.changeNotificationsEnabled = oldChangeNotificationsStatus;
         this.adjustChildrenPositionAndDimension();
@@ -1376,6 +1384,7 @@ class VerticalGroup extends GraphicalElement {
         this.height += value.borderSize * 2;
 
         this._frame = value;
+        this.drawn.appendChild(this.frame.drawn);
         this.frame.x = this.x;
         this.frame.y = this.y;
         this.frame.width = this.width;
@@ -1489,6 +1498,14 @@ class VerticalGroup extends GraphicalElement {
 
     set weight(value) {
         this._weight = value;
+    }
+
+    get overlap() {
+        return this._overlap;
+    }
+
+    set overlap(value) {
+        this._overlap = value;
     }
 }
 
