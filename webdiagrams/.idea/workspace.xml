@@ -18,11 +18,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PrimitiveTest.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PrimitiveTest.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PrimitiveTest.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+            <state relative-caret-position="119">
+              <caret line="115" column="38" lean-forward="true" selection-start-line="115" selection-start-column="38" selection-end-line="115" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -31,8 +31,8 @@
       <file leaf-file-name="primitives.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/primitives.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="587" column="82" lean-forward="false" selection-start-line="587" selection-start-column="82" selection-end-line="587" selection-end-column="82" />
+            <state relative-caret-position="184">
+              <caret line="889" column="0" lean-forward="false" selection-start-line="889" selection-start-column="0" selection-end-line="889" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc;n#BoundingBox#0" expanded="false" />
                 <element signature="n#BoundingBox#0" expanded="false" />
@@ -53,7 +53,6 @@
                 <element signature="n#Text#0" expanded="false" />
                 <element signature="n#Line#0" expanded="false" />
                 <element signature="n#Image#0" expanded="false" />
-                <element signature="n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!block;n#RIGHT#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!doc;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
                 <element signature="n#!!block;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
@@ -112,13 +111,13 @@
       <file leaf-file-name="svg.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/svg.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="136" column="79" lean-forward="false" selection-start-line="136" selection-start-column="79" selection-end-line="136" selection-end-column="79" />
+            <state relative-caret-position="289">
+              <caret line="280" column="0" lean-forward="false" selection-start-line="280" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
               <folding>
                 <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
                 <element signature="n#!!block;n#image#0;n#SVGArea#0" expanded="false" />
+                <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
                 <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-                <element signature="n#DiamondPositionChangeListener#0" expanded="false" />
                 <element signature="n#EllipsePositionChangeListener#0" expanded="false" />
                 <element signature="n#ImagePositionChangeListener#0" expanded="false" />
                 <element signature="n#TextPositionChangeListener#0" expanded="false" />
@@ -139,11 +138,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="look-and-feel.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="look-and-feel.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/look-and-feel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="138" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+            <state relative-caret-position="443">
+              <caret line="140" column="37" lean-forward="false" selection-start-line="140" selection-start-column="37" selection-end-line="140" selection-end-column="37" />
               <folding>
                 <element signature="n#LookAndFeel#0" expanded="false" />
                 <element signature="n#!!block;n#constructor#0;n#LookAndFeel#0" expanded="false" />
@@ -195,7 +194,6 @@
       <find>console.lo</find>
       <find>MATHC</find>
       <find>&gt;&gt;</find>
-      <find>console.log</find>
       <find>contentBox</find>
       <find>minContent</find>
       <find>heightToFit</find>
@@ -203,6 +201,7 @@
       <find>ellipse</find>
       <find>MATCH_CONTENT_AREA</find>
       <find>MATCH</find>
+      <find>console.log</find>
     </findStrings>
     <replaceStrings>
       <replace>this.</replace>
@@ -219,10 +218,10 @@
         <option value="chrome-extension://elicpjhcidhpjomhibiffojpinpmmpil/video/content.js" />
         <option value="chrome-extension://kfhkikpdmehlpkaiplafjkaicdljldcf/contentscript-common.js" />
         <option value="chrome-extension://kbfnbcaeplbcioakkpcpgfkobkghlhen/src/js/bundle.js" />
-        <option value="$PROJECT_DIR$/look-and-feel.js" />
+        <option value="$PROJECT_DIR$/PrimitiveTest.html" />
         <option value="$PROJECT_DIR$/primitives.js" />
         <option value="$PROJECT_DIR$/svg.js" />
-        <option value="$PROJECT_DIR$/PrimitiveTest.html" />
+        <option value="$PROJECT_DIR$/look-and-feel.js" />
       </list>
     </option>
   </component>
@@ -416,12 +415,12 @@
       <workItem from="1499083392050" duration="599000" />
       <workItem from="1499087460065" duration="7044000" />
       <workItem from="1499097799232" duration="8114000" />
-      <workItem from="1499107608021" duration="840000" />
+      <workItem from="1499107608021" duration="1344000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115705000" />
+    <option name="totallyTimeSpent" value="116209000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -435,7 +434,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35015774" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35015774" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -490,7 +489,6 @@
             <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
-            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#RIGHT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
@@ -572,8 +570,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#image#0;n#SVGArea#0" expanded="false" />
+            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#DiamondPositionChangeListener#0" expanded="false" />
             <element signature="n#EllipsePositionChangeListener#0" expanded="false" />
             <element signature="n#ImagePositionChangeListener#0" expanded="false" />
             <element signature="n#TextPositionChangeListener#0" expanded="false" />
@@ -625,7 +623,6 @@
             <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
-            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#RIGHT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
@@ -707,8 +704,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#image#0;n#SVGArea#0" expanded="false" />
+            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#DiamondPositionChangeListener#0" expanded="false" />
             <element signature="n#EllipsePositionChangeListener#0" expanded="false" />
             <element signature="n#ImagePositionChangeListener#0" expanded="false" />
             <element signature="n#TextPositionChangeListener#0" expanded="false" />
@@ -743,8 +740,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#image#0;n#SVGArea#0" expanded="false" />
+            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#DiamondPositionChangeListener#0" expanded="false" />
             <element signature="n#EllipsePositionChangeListener#0" expanded="false" />
             <element signature="n#ImagePositionChangeListener#0" expanded="false" />
             <element signature="n#TextPositionChangeListener#0" expanded="false" />
@@ -808,7 +805,6 @@
             <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
-            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#RIGHT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
@@ -878,8 +874,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#image#0;n#SVGArea#0" expanded="false" />
+            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#DiamondPositionChangeListener#0" expanded="false" />
             <element signature="n#EllipsePositionChangeListener#0" expanded="false" />
             <element signature="n#ImagePositionChangeListener#0" expanded="false" />
             <element signature="n#TextPositionChangeListener#0" expanded="false" />
@@ -943,7 +939,6 @@
             <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
-            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#RIGHT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
@@ -1030,7 +1025,6 @@
             <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
-            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#RIGHT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
@@ -1092,8 +1086,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#image#0;n#SVGArea#0" expanded="false" />
+            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#DiamondPositionChangeListener#0" expanded="false" />
             <element signature="n#EllipsePositionChangeListener#0" expanded="false" />
             <element signature="n#ImagePositionChangeListener#0" expanded="false" />
             <element signature="n#TextPositionChangeListener#0" expanded="false" />
@@ -1165,7 +1159,6 @@
             <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
-            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#RIGHT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
@@ -1227,8 +1220,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#image#0;n#SVGArea#0" expanded="false" />
+            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#DiamondPositionChangeListener#0" expanded="false" />
             <element signature="n#EllipsePositionChangeListener#0" expanded="false" />
             <element signature="n#ImagePositionChangeListener#0" expanded="false" />
             <element signature="n#TextPositionChangeListener#0" expanded="false" />
@@ -1300,7 +1293,6 @@
             <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
-            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#RIGHT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
@@ -1362,8 +1354,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#image#0;n#SVGArea#0" expanded="false" />
+            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#DiamondPositionChangeListener#0" expanded="false" />
             <element signature="n#EllipsePositionChangeListener#0" expanded="false" />
             <element signature="n#ImagePositionChangeListener#0" expanded="false" />
             <element signature="n#TextPositionChangeListener#0" expanded="false" />
@@ -1415,7 +1407,6 @@
             <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
-            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#RIGHT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
@@ -1477,8 +1468,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#image#0;n#SVGArea#0" expanded="false" />
+            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#DiamondPositionChangeListener#0" expanded="false" />
             <element signature="n#EllipsePositionChangeListener#0" expanded="false" />
             <element signature="n#ImagePositionChangeListener#0" expanded="false" />
             <element signature="n#TextPositionChangeListener#0" expanded="false" />
@@ -1550,7 +1541,6 @@
             <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
-            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#RIGHT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
@@ -1612,8 +1602,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#image#0;n#SVGArea#0" expanded="false" />
+            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#DiamondPositionChangeListener#0" expanded="false" />
             <element signature="n#EllipsePositionChangeListener#0" expanded="false" />
             <element signature="n#ImagePositionChangeListener#0" expanded="false" />
             <element signature="n#TextPositionChangeListener#0" expanded="false" />
@@ -1685,7 +1675,6 @@
             <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
-            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#RIGHT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
@@ -1747,8 +1736,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#image#0;n#SVGArea#0" expanded="false" />
+            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#DiamondPositionChangeListener#0" expanded="false" />
             <element signature="n#EllipsePositionChangeListener#0" expanded="false" />
             <element signature="n#ImagePositionChangeListener#0" expanded="false" />
             <element signature="n#TextPositionChangeListener#0" expanded="false" />
@@ -1832,7 +1821,6 @@
             <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
-            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#RIGHT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
@@ -1894,8 +1882,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#image#0;n#SVGArea#0" expanded="false" />
+            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#DiamondPositionChangeListener#0" expanded="false" />
             <element signature="n#EllipsePositionChangeListener#0" expanded="false" />
             <element signature="n#ImagePositionChangeListener#0" expanded="false" />
             <element signature="n#TextPositionChangeListener#0" expanded="false" />
@@ -1967,7 +1955,6 @@
             <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
-            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#RIGHT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
@@ -2029,8 +2016,8 @@
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#image#0;n#SVGArea#0" expanded="false" />
+            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#DiamondPositionChangeListener#0" expanded="false" />
             <element signature="n#EllipsePositionChangeListener#0" expanded="false" />
             <element signature="n#ImagePositionChangeListener#0" expanded="false" />
             <element signature="n#TextPositionChangeListener#0" expanded="false" />
@@ -2058,30 +2045,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/look-and-feel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="138" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-          <folding>
-            <element signature="n#LookAndFeel#0" expanded="false" />
-            <element signature="n#!!block;n#constructor#0;n#LookAndFeel#0" expanded="false" />
-            <element signature="n#DefaultLookAndFeelFactory#0" expanded="false" />
-            <element signature="n#DefaultDrawer#0" expanded="false" />
-            <element signature="n#DefaultCircleDrawer#0" expanded="false" />
-            <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
-            <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
-            <element signature="n#DefaultTextDrawer#0" expanded="false" />
-            <element signature="n#DefaultLineDrawer#0" expanded="false" />
-            <element signature="n#DefaultImageDrawer#0" expanded="false" />
-            <element signature="n#DefaultVerticalGroupDrawer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/primitives.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="587" column="82" lean-forward="false" selection-start-line="587" selection-start-column="82" selection-end-line="587" selection-end-column="82" />
+        <state relative-caret-position="184">
+          <caret line="889" column="0" lean-forward="false" selection-start-line="889" selection-start-column="0" selection-end-line="889" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc;n#BoundingBox#0" expanded="false" />
             <element signature="n#BoundingBox#0" expanded="false" />
@@ -2102,7 +2069,6 @@
             <element signature="n#Text#0" expanded="false" />
             <element signature="n#Line#0" expanded="false" />
             <element signature="n#Image#0" expanded="false" />
-            <element signature="n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#RIGHT#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!doc;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
             <element signature="n#!!block;n#readjustDimensions#0;n#VerticalGroup#0" expanded="false" />
@@ -2157,15 +2123,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/PrimitiveTest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="115" column="38" lean-forward="true" selection-start-line="115" selection-start-column="38" selection-end-line="115" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/svg.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="136" column="79" lean-forward="false" selection-start-line="136" selection-start-column="79" selection-end-line="136" selection-end-column="79" />
+        <state relative-caret-position="289">
+          <caret line="280" column="0" lean-forward="false" selection-start-line="280" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#circle#0;n#SVGArea#0" expanded="false" />
             <element signature="n#!!block;n#image#0;n#SVGArea#0" expanded="false" />
+            <element signature="n#GeneralPositionChangeListener#0" expanded="false" />
             <element signature="n#RectanglePositionChangeListener#0" expanded="false" />
-            <element signature="n#DiamondPositionChangeListener#0" expanded="false" />
             <element signature="n#EllipsePositionChangeListener#0" expanded="false" />
             <element signature="n#ImagePositionChangeListener#0" expanded="false" />
             <element signature="n#TextPositionChangeListener#0" expanded="false" />
@@ -2185,11 +2159,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PrimitiveTest.html">
+    <entry file="file://$PROJECT_DIR$/look-and-feel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="443">
+          <caret line="140" column="37" lean-forward="false" selection-start-line="140" selection-start-column="37" selection-end-line="140" selection-end-column="37" />
+          <folding>
+            <element signature="n#LookAndFeel#0" expanded="false" />
+            <element signature="n#!!block;n#constructor#0;n#LookAndFeel#0" expanded="false" />
+            <element signature="n#DefaultLookAndFeelFactory#0" expanded="false" />
+            <element signature="n#DefaultDrawer#0" expanded="false" />
+            <element signature="n#DefaultCircleDrawer#0" expanded="false" />
+            <element signature="n#DefaultEllipseDrawer#0" expanded="false" />
+            <element signature="n#DefaultRectangleDrawer#0" expanded="false" />
+            <element signature="n#DefaultTextDrawer#0" expanded="false" />
+            <element signature="n#DefaultLineDrawer#0" expanded="false" />
+            <element signature="n#DefaultImageDrawer#0" expanded="false" />
+            <element signature="n#DefaultVerticalGroupDrawer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

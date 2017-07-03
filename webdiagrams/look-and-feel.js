@@ -134,7 +134,11 @@ class DefaultDiamondDrawer extends DefaultDrawer {
         coordinates += " " + middleX + "," + element.y;
         coordinates += " " + (element.x + element.width) + "," + middleY;
         coordinates += " " + middleX + "," + (element.y + element.height);
-        coordinates += " " + element.x + "," + middleY;
+        // The left diamond corner was not being drawn correctly because of the border.
+        // To correct that, it was necessary to use the Pythagoras' theorem to move
+        // a little bit up.
+        let adjustment = Math.sqrt(element.borderSize*element.borderSize/2);
+        coordinates += " " + (element.x - adjustment) + "," + (middleY - adjustment);
         newDiamond.setAttribute("d", coordinates);
         newDiamond.setAttribute("style", element.stylingAttributes.toString());
         newDiamond.setAttribute("shape-rendering", "geometricPrecision");

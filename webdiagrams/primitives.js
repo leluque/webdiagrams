@@ -887,7 +887,6 @@ class VerticalGroup extends GraphicalElement {
         if (this.frame !== null) {
             let contentBox = this.frame.contentBox(this.width, this.height);
             availableWidthForChildren = contentBox.width;
-            console.log(this.width + " - Available width:  " + contentBox.width);
             newX = contentBox.x1;
             newY = contentBox.y1;
             rightXLimit = contentBox.x2;
