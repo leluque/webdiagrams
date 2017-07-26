@@ -131,10 +131,10 @@ class SVGArea {
         return this.addElement(newRectangle);
     }
 
-    diamond(x1 = 10, y1 = 10, width = 50, height = 50, preserveAspectRatio = false) {
+    diamond(x1 = 10, y1 = 10, width = 50, height = 50, preserveAspectRatio = false, stylingAttributes = new StylingAttributes(3)) {
         //*****************************
         // Create a new diamond and set its id.
-        let newDiamong = new Diamond(x1, y1, width, height, preserveAspectRatio);
+        let newDiamong = new Diamond(x1, y1, width, height, preserveAspectRatio, stylingAttributes);
         newDiamong.id = this.generateId();
 
         //*****************************
@@ -209,6 +209,10 @@ class SVGArea {
         let newVGroup = new VerticalGroup(x, y, undefined, groupStyling);
         newVGroup.id = this.generateId();
 
+        //*****************************
+        // Add change listeners.
+        newVGroup.addChangeListener(new VGroupTransformationChangeListener());
+
         let lookAndFeel = new LookAndFeel();
         let drawer = lookAndFeel.getDrawerFor(newVGroup);
         drawer.svgArea = this;
@@ -220,10 +224,31 @@ class SVGArea {
         return this.addElement(newVGroup);
     }
 
-    line(x1 = 10, y1 = 10, x2 = 100, y2 = 10) {
+    linearGroup(x1 = 10, y1 = 10, x2 = 100, y2 = 100) {
+        //*****************************
+        // Create a new linear group and set its id.
+        let newLinearGroup = new LinearGroup(x1, y1, x2, y2, undefined, new GroupStylingAttributes(0, 0));
+        newLinearGroup.id = this.generateId();
+
+        //*****************************
+        // Add change listeners.
+        newLinearGroup.addChangeListener(new LinearGroupTransformationChangeListener());
+
+        let lookAndFeel = new LookAndFeel();
+        let drawer = lookAndFeel.getDrawerFor(newLinearGroup);
+        drawer.svgArea = this;
+        var drawnLinearGroup = drawer.draw(newLinearGroup);
+        this.svg.appendChild(drawnLinearGroup);
+
+        newLinearGroup.drawn = drawnLinearGroup;
+
+        return this.addElement(newLinearGroup);
+    }
+
+    line(x1 = 10, y1 = 10, x2 = 100, y2 = 10, stylingAttributes = new StylingAttributes(1)) {
         //*****************************
         // Create a new line and set its id.
-        let newLine = new Line(x1, y1, x2, y2);
+        let newLine = new Line(x1, y1, x2, y2, stylingAttributes);
         newLine.id = this.generateId();
 
         //*****************************
@@ -281,7 +306,7 @@ class DiamondPositionChangeListener extends GeneralPositionChangeListener {
         // The left diamond corner was not being drawn correctly because of the border.
         // To correct that, it was necessary to use the Pythagoras' theorem to move
         // a little bit up.
-        let adjustment = Math.sqrt(target.borderSize*target.borderSize/2);
+        let adjustment = Math.sqrt(target.borderSize * target.borderSize / 2);
         coordinates += " " + (target.x - adjustment) + "," + (middleY - adjustment);
         target.drawn.setAttribute("d", coordinates);
     }
@@ -315,10 +340,12 @@ class TextPositionChangeListener extends GeneralPositionChangeListener {
 }
 class LinePositionChangeListener extends GeneralPositionChangeListener {
     update(target) {
-        target.drawn.setAttribute("x1", target.x1);
-        target.drawn.setAttribute("y1", target.y1);
-        target.drawn.setAttribute("x2", target.x2);
-        target.drawn.setAttribute("y2", target.y2);
+        // (-borderSize) was used because (+borderSize * 2) was used at line constructor so that the line has at least one pixel even if their initial and final coordinate are equal.
+        // The difference between no product and * 2 is necessary to center the line.
+        target.drawn.setAttribute("x1", target.x1 + target.borderSize);
+        target.drawn.setAttribute("y1", target.y1 + target.borderSize);
+        target.drawn.setAttribute("x2", target.x2 - target.borderSize);
+        target.drawn.setAttribute("y2", target.y2 - target.borderSize);
     }
 }
 class CirclePositionChangeListener extends GeneralPositionChangeListener {
@@ -369,7 +396,7 @@ class DiamondDimensionChangeListener extends GeneralDimensionChangeListener {
         // The left diamond corner was not being drawn correctly because of the border.
         // To correct that, it was necessary to use the Pythagoras' theorem to move
         // a little bit up.
-        let adjustment = Math.sqrt(target.borderSize*target.borderSize/2);
+        let adjustment = Math.sqrt(target.borderSize * target.borderSize / 2);
         coordinates += " " + (target.x - adjustment) + "," + (middleY - adjustment);
         target.drawn.setAttribute("d", coordinates);
     }
@@ -404,15 +431,30 @@ class CircleDimensionChangeListener extends GeneralDimensionChangeListener {
 class LineDimensionChangeListener extends GeneralDimensionChangeListener {
 
     changeWidth(target) {
-        target.drawn.setAttribute("x2", target.x2);
+        // (-borderSize) was used because (+borderSize * 2) was used at line constructor so that the line has at least one pixel even if their initial and final coordinate are equal.
+        // The difference between no product and * 2 is necessary to center the line.
+        target.drawn.setAttribute("x2", target.x2 - target.borderSize);
     }
 
     changeHeight(target) {
-        target.drawn.setAttribute("y2", target.y2);
+        // (-borderSize) was used because (+borderSize * 2) was used at line constructor so that the line has at least one pixel even if their initial and final coordinate are equal.
+        // The difference between no product and * 2 is necessary to center the line.
+        target.drawn.setAttribute("y2", target.y2 - target.borderSize);
     }
 
 }
 
+class GeneralTransformationChangeListener extends ChangeListener {
+
+    update(target) {
+        target.drawn.setAttribute("transform", "rotate(" + target.rotation + " " + target.rotationCenterX + " " + target.rotationCenterY + ")");
+    }
+
+}
+class VGroupTransformationChangeListener extends GeneralTransformationChangeListener {
+}
+class LinearGroupTransformationChangeListener extends GeneralTransformationChangeListener {
+}
 class TextChangeListener extends ChangeListener {
     update(target) {
         target.drawn.textContent = target.text;

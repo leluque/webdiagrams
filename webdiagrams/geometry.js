@@ -70,7 +70,7 @@ class ChangeListener {
 
 }
 
-/**
+1/**
  * This class implements graphical elements.
  */
 class GraphicalElement {
@@ -1531,6 +1531,42 @@ class VerticalGroupChildChangeListener
 
 }
 
+class LinearGroup extends GraphicalElement {
+
+    constructor(x1 = 0, y1 = 0, x2 = 0, y2 = 0, stylingAttributes) {
+        super(x1, y1, x2 - x1, y2 - y1, stylingAttributes);
+        this._verticalGroup = new VerticalGroup(x1, y1, stylingAttributes, new GroupStylingAttributes(0, 0));
+    }
+
+    addChild(child, weight = 0, overlap = 0) {
+        this.verticalGroup.addChild(child, VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER, weight, overlap);
+        this.recalculate();
+    }
+
+    recalculate() {
+        let lineHeight = 1 + Math.abs(Math.abs(this.verticalGroup.height - Math.sqrt(Math.pow(this.width, 2) + Math.pow(this.height, 2))));
+        this.verticalGroup.increaseHeightBy(lineHeight);
+
+        let groupX = Math.min(this.x1, this.x2) + this.width / 2 - this.verticalGroup.width / 2;
+        let groupY = Math.min(this.y1, this.y2) - (this.verticalGroup.height - this.height) / 2;
+        this.verticalGroup.x = groupX;
+        this.verticalGroup.y = groupY;
+
+        let middleX = this.verticalGroup.x + this.verticalGroup.width / 2;
+        let angle = angleBetween2Lines(middleX, this.verticalGroup.y, middleX, this.verticalGroup.y + this.verticalGroup.height,
+            this.x, this.y, this.x, this.y2);
+        this.verticalGroup.rotation = -1 * angle;
+    }
+
+    get verticalGroup() {
+        return this._verticalGroup;
+    }
+
+    set verticalGroup(value) {
+        this._verticalGroup = value;
+    }
+}
+
 class StylingAttributes {
 
     constructor(strokeWidth = 3, strokeColor = 'black', fillColor = '#FFFFCC', strokeDashArray = null, target = null) {
@@ -1689,5 +1725,4 @@ class FontStylingAttributes {
         this._target = value;
         this.target.notifyListeners();
     }
-
 }

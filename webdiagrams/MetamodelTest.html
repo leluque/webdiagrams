@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Metamodel test</title>
+    <script src="node-and-link.js"></script>
+    <script src="uml-class-diagram.js"></script>
+    <script src="uml.js"></script>
+</head>
+<body>
+
+<script>
+
+    (function () {
+
+        let classDiagram = new UMLClassDiagram();
+        let customerClass = classDiagram.newClass("Customer");
+        customerClass.newAttribute(PRIVATE, "register", type = "String");
+        customerClass.newAttribute(PRIVATE, "firstName", type = "String");
+        customerClass.newAttribute(PRIVATE, "lastName", type = "String");
+
+        console.log(classDiagram.toString());
+
+    })();
+
+</script>
+
+</body>
+</html>

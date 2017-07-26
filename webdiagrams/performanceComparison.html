@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Performance Comparison</title>
+</head>
+<body>
+
+<script>
+
+    let howMany = 10000;
+
+    let startTime = new Date();
+    let obj = {};
+    for(let i = 0; i < howMany; i++) {
+        obj['at' + i] = i;
+    }
+    for(let i = 0; i < howMany; i++) {
+        let random = Math.floor(Math.random() * 999) + 0;
+        if(('at' + random) in obj) {
+            let x = 0; // A simple operation.
+        }
+    }
+    let endTime = new Date();
+    let timeDiff = (endTime - startTime)/1000; // ms.
+
+    console.log(timeDiff);
+
+    startTime = new Date();
+    let obj2 = [];
+    for(let i = 0; i < howMany; i++) {
+        obj2.push({key: 'at' + i, value: i});
+    }
+    for(let i = 0; i < howMany; i++) {
+        let random = Math.floor(Math.random() * 999) + 0;
+        for(let j = 0; j < howMany; j++) {
+            if(obj2[j].key == ('at' + random)) {
+                let x = 0;
+                break;
+            }
+        }
+    }
+    endTime = new Date();
+    timeDiff = (endTime - startTime)/1000; // ms.
+
+    console.log(timeDiff);
+
+</script>
+
+</body>
+</html>
