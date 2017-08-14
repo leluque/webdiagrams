@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Relationship Test</title>
     <script src="look-and-feel.js"></script>
-    <script src="geometry.js"></script>
     <script src="geometry_util.js"></script>
+    <script src="geometry.js"></script>
     <script src="svg.js"></script>
 
     <style>
@@ -54,6 +54,10 @@
         console.log(angleBetween2Vectors(1, 0, 0, -1)); // 90
         console.log(angleBetween2Vectors(1, 0, -1, -1)); // 135
         console.log(angleBetween2Vectors(1, 0, -1, 0)); // 180
+
+        let p = new Point(1, 0);
+        p.rotateAround(0, 0, 45);
+        console.log("(" + p.x + "," + p.y + ")");
     })();
 
 </script>

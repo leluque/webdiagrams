@@ -14,6 +14,14 @@ function angleBetween2Lines(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2) {
     return (Math.abs(angle1) - Math.abs(angle2)) * 180 / Math.PI;
 }
 
+/**
+ * This method calculates the angle between two vectors with origin at (0, 0).
+ * @param ax2 The x-coordinate of the second point (1st vector).
+ * @param ay2 The y-coordinate of the second point (1st vector).
+ * @param bx2 The x-coordinate of the second point (2nd vector).
+ * @param by2 The y-coordinate of the second point (2nd vector).
+ * @returns {number} The angle between the two vectors in degrees.
+ */
 function angleBetween2Vectors(ax2, ay2, bx2, by2) {
     // See http://www.wikihow.com/Find-the-Angle-Between-Two-Vectors
 
@@ -34,4 +42,14 @@ function angleBetween2Vectors(ax2, ay2, bx2, by2) {
     // Find the angle based on the arccosine.
     let angle = Math.acos(cosine);
     return angle * 180 / Math.PI;
+}
+
+// Converts from degrees to radians.
+function toRadians(degrees) {
+    return degrees * Math.PI / 180;
+}
+
+// Converts from radians to degrees.
+function toDegrees(radians) {
+    return radians * 180 / Math.PI;
 }
