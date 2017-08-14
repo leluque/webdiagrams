@@ -70,7 +70,7 @@ class ChangeListener {
 
 }
 
-1/**
+/**
  * This class implements graphical elements.
  */
 class GraphicalElement {
@@ -654,9 +654,9 @@ class Diamond extends GraphicalElement {
         // assuming that a = (y2 - y1)/(x2 - x1)
         // x = x1 + (y - y1)/a;
         let middleY = this.y + this.height / 2;
-        let middleX = this.x + this.width / 2;
+        //let middleX = this.x + this.width / 2;
         let a = this.height / this.width;
-        if (givenY == middleY) { // Middle.
+        if (givenY === middleY) { // Middle.
             return this.x;
         } else if (givenY < middleY) { // Use the top "/" line.
             return this.x + (givenY - this.y) / a;

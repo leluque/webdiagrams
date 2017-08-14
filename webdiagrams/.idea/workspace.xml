@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/RelationshipTest.html" line="53" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a1929db3-1812-4cc9-aa37-7efe9c446cd1" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -17,22 +20,95 @@
       <file leaf-file-name="node-and-link.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node-and-link.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
+            <state relative-caret-position="2057">
               <caret line="123" column="4" lean-forward="false" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="uml-class-diagram.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="uml-class-diagram.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uml-class-diagram.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
+            <state relative-caret-position="2635">
               <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc;n#UMLClassDiagram#0" expanded="false" />
                 <element signature="n#UMLClassAttribute#0" expanded="false" />
                 <element signature="n#UMLClassOperation#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="geometry.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/geometry.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="707" column="0" lean-forward="true" selection-start-line="707" selection-start-column="0" selection-end-line="707" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc;n#BoundingBox#0" expanded="false" />
+                <element signature="n#BoundingBox#0" expanded="false" />
+                <element signature="n#ChangeListener#0" expanded="false" />
+                <element signature="n#!!doc;n#GraphicalElement#0" expanded="false" />
+                <element signature="n#GraphicalElement#0" expanded="false" />
+                <element signature="n#!!doc;n#Circle#0" expanded="false" />
+                <element signature="n#Circle#0" expanded="false" />
+                <element signature="n#!!doc;n#Ellipse#0" expanded="false" />
+                <element signature="n#Ellipse#0" expanded="false" />
+                <element signature="n#Rectangle#0" expanded="false" />
+                <element signature="n#Text#0" expanded="false" />
+                <element signature="n#Line#0" expanded="false" />
+                <element signature="n#Image#0" expanded="false" />
+                <element signature="n#VerticalGroup#0" expanded="false" />
+                <element signature="n#VerticalGroupChildChangeListener#0" expanded="false" />
+                <element signature="n#LinearGroup#0" expanded="false" />
+                <element signature="n#StylingAttributes#0" expanded="false" />
+                <element signature="n#GroupStylingAttributes#0" expanded="false" />
+                <element signature="n#FontStylingAttributes#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PrimitiveTest.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PrimitiveTest.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RelationshipTest.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RelationshipTest.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="55" column="62" lean-forward="false" selection-start-line="55" selection-start-column="62" selection-end-line="55" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="geometry_util.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/geometry_util.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="svg.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/svg.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="463" column="48" lean-forward="false" selection-start-line="463" selection-start-column="48" selection-end-line="463" selection-end-column="48" />
+              <folding>
+                <element signature="n#FontChangeListener#0" expanded="false" />
+                <element signature="n#StyleChangeListener#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -79,6 +155,8 @@
       <find>Node</find>
       <find>attribute</find>
       <find>.map</find>
+      <find>atann</find>
+      <find>BoundingBox</find>
     </findStrings>
     <replaceStrings>
       <replace>.id</replace>
@@ -94,16 +172,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/look-and-feel.js" />
-        <option value="$PROJECT_DIR$/geometry.js" />
-        <option value="$PROJECT_DIR$/geometry_util.js" />
         <option value="$PROJECT_DIR$/svg.js" />
         <option value="$PROJECT_DIR$/PrimitiveTest.html" />
-        <option value="$PROJECT_DIR$/RelationshipTest.html" />
         <option value="$PROJECT_DIR$/performanceComparison.html" />
         <option value="$PROJECT_DIR$/node-and-link.js" />
         <option value="$PROJECT_DIR$/uml.js" />
         <option value="$PROJECT_DIR$/MetamodelTest.html" />
         <option value="$PROJECT_DIR$/uml-class-diagram.js" />
+        <option value="$PROJECT_DIR$/geometry.js" />
+        <option value="$PROJECT_DIR$/geometry_util.js" />
+        <option value="$PROJECT_DIR$/RelationshipTest.html" />
       </list>
     </option>
   </component>
@@ -182,7 +260,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.MetamodelTest.html">
+  <component name="RunManager" selected="JavaScript Debug.RelationshipTest.html">
     <configuration name="MetamodelTest.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webdiagrams/MetamodelTest.html" />
     <configuration name="PrimitiveTest.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webdiagrams/PrimitiveTest.html" />
     <configuration name="RelationshipTest.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webdiagrams/RelationshipTest.html" />
@@ -260,10 +338,10 @@
     </list>
     <recent_temporary>
       <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.MetamodelTest.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.performanceComparison.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.RelationshipTest.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.PrimitiveTest.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.RelationshipTest.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.PrimitiveTest.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.MetamodelTest.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.performanceComparison.html" />
       </list>
     </recent_temporary>
   </component>
@@ -287,17 +365,18 @@
       <workItem from="1501075210546" duration="3224000" />
       <workItem from="1501078745479" duration="113000" />
       <workItem from="1501100263541" duration="1634000" />
-      <workItem from="1502743371719" duration="523000" />
+      <workItem from="1502743371719" duration="3087000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18068000" />
+    <option name="totallyTimeSpent" value="20632000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18667643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18667643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -305,7 +384,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39936608" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39936608" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -341,7 +420,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -554,49 +633,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/geometry.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="1727" column="1" lean-forward="false" selection-start-line="1727" selection-start-column="1" selection-end-line="1727" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/svg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="477" column="0" lean-forward="true" selection-start-line="477" selection-start-column="0" selection-end-line="477" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/geometry_util.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/performanceComparison.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
           <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PrimitiveTest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RelationshipTest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -623,23 +663,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node-and-link.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="123" column="4" lean-forward="false" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uml-class-diagram.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
+        <state relative-caret-position="2635">
           <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc;n#UMLClassDiagram#0" expanded="false" />
             <element signature="n#UMLClassAttribute#0" expanded="false" />
             <element signature="n#UMLClassOperation#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="463" column="48" lean-forward="false" selection-start-line="463" selection-start-column="48" selection-end-line="463" selection-end-column="48" />
+          <folding>
+            <element signature="n#FontChangeListener#0" expanded="false" />
+            <element signature="n#StyleChangeListener#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node-and-link.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2057">
+          <caret line="123" column="4" lean-forward="false" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geometry.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="707" column="0" lean-forward="true" selection-start-line="707" selection-start-column="0" selection-end-line="707" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc;n#BoundingBox#0" expanded="false" />
+            <element signature="n#BoundingBox#0" expanded="false" />
+            <element signature="n#ChangeListener#0" expanded="false" />
+            <element signature="n#!!doc;n#GraphicalElement#0" expanded="false" />
+            <element signature="n#GraphicalElement#0" expanded="false" />
+            <element signature="n#!!doc;n#Circle#0" expanded="false" />
+            <element signature="n#Circle#0" expanded="false" />
+            <element signature="n#!!doc;n#Ellipse#0" expanded="false" />
+            <element signature="n#Ellipse#0" expanded="false" />
+            <element signature="n#Rectangle#0" expanded="false" />
+            <element signature="n#Text#0" expanded="false" />
+            <element signature="n#Line#0" expanded="false" />
+            <element signature="n#Image#0" expanded="false" />
+            <element signature="n#VerticalGroup#0" expanded="false" />
+            <element signature="n#VerticalGroupChildChangeListener#0" expanded="false" />
+            <element signature="n#LinearGroup#0" expanded="false" />
+            <element signature="n#StylingAttributes#0" expanded="false" />
+            <element signature="n#GroupStylingAttributes#0" expanded="false" />
+            <element signature="n#FontStylingAttributes#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geometry_util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PrimitiveTest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RelationshipTest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="55" column="62" lean-forward="false" selection-start-line="55" selection-start-column="62" selection-end-line="55" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>

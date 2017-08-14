@@ -5,6 +5,7 @@
     <title>Relationship Test</title>
     <script src="look-and-feel.js"></script>
     <script src="geometry.js"></script>
+    <script src="geometry_util.js"></script>
     <script src="svg.js"></script>
 
     <style>
@@ -49,6 +50,10 @@
         svgArea.line(10, 30, 100, 30, new StylingAttributes(2, 'black', '#FFFFCC', "5 5"));
         //****************************
 
+        console.log(angleBetween2Vectors(1, 0, 1, -1)); // 45
+        console.log(angleBetween2Vectors(1, 0, 0, -1)); // 90
+        console.log(angleBetween2Vectors(1, 0, -1, -1)); // 135
+        console.log(angleBetween2Vectors(1, 0, -1, 0)); // 180
     })();
 
 </script>
