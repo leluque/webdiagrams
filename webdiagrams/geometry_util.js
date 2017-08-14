@@ -11,7 +11,7 @@
 function angleBetween2Lines(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2) {
     let angle1 = Math.atan2(ay1 - ay2, ax1 - ax2);
     let angle2 = Math.atan2(by1 - by2, bx1 - bx2);
-    return (Math.abs(angle1) - Math.abs(angle2)) * 180 / Math.PI;
+    return toDegrees(Math.abs(angle1) - Math.abs(angle2));
 }
 
 /**
@@ -41,7 +41,7 @@ function angleBetween2Vectors(ax2, ay2, bx2, by2) {
 
     // Find the angle based on the arccosine.
     let angle = Math.acos(cosine);
-    return angle * 180 / Math.PI;
+    return toDegrees(angle);
 }
 
 // Converts from degrees to radians.
