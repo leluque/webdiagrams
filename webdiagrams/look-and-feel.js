@@ -45,6 +45,8 @@ class DefaultLookAndFeelFactory {
             return new DefaultEllipseDrawer();
         } else if (element instanceof Rectangle) {
             return new DefaultRectangleDrawer();
+        } else if (element instanceof Diamond) {
+            return new DefaultDiamondDrawer();
         } else if (element instanceof Text) {
             return new DefaultTextDrawer();
         } else if (element instanceof VerticalGroup) {
@@ -117,6 +119,26 @@ class DefaultRectangleDrawer extends DefaultDrawer {
         newRectangle.setAttributeNS(null, "style", element.stylingAttributes.toString());
         newRectangle.setAttributeNS(null, "shape-rendering", "geometricPrecision");
         return newRectangle;
+    }
+
+}
+
+class DefaultDiamondDrawer extends DefaultDrawer {
+
+    draw(element) {
+        let newDiamond = document.createElementNS(this.svgArea.namespace, "path");
+        newDiamond.setAttribute("id", element.id);
+        let middleX = element.x + element.width / 2;
+        let middleY = element.y + element.height / 2;
+        let coordinates = "M " + element.x + "," + middleY;
+        coordinates += " " + middleX + "," + element.y;
+        coordinates += " " + (element.x + element.width) + "," + middleY;
+        coordinates += " " + middleX + "," + (element.y + element.height);
+        coordinates += " " + element.x + "," + middleY;
+        newDiamond.setAttribute("d", coordinates);
+        newDiamond.setAttribute("style", element.stylingAttributes.toString());
+        newDiamond.setAttribute("shape-rendering", "geometricPrecision");
+        return newDiamond;
     }
 
 }

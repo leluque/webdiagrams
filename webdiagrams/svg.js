@@ -131,6 +131,29 @@ class SVGArea {
         return this.addElement(newRectangle);
     }
 
+    diamond(x1 = 10, y1 = 10, width = 50, height = 50, preserveAspectRatio = false) {
+        //*****************************
+        // Create a new diamond and set its id.
+        let newDiamong = new Diamond(x1, y1, width, height, preserveAspectRatio);
+        newDiamong.id = this.generateId();
+
+        //*****************************
+        // Add change listeners.
+        newDiamong.addChangeListener(new DiamondDimensionChangeListener());
+        newDiamong.addChangeListener(new DiamondPositionChangeListener());
+        newDiamong.addChangeListener(new StyleChangeListener());
+
+        let lookAndFeel = new LookAndFeel();
+        let drawer = lookAndFeel.getDrawerFor(newDiamong);
+        drawer.svgArea = this;
+        var drawnDiamong = drawer.draw(newDiamong);
+        this.svg.appendChild(drawnDiamong);
+
+        newDiamong.drawn = drawnDiamong;
+
+        return this.addElement(newDiamong);
+    }
+
     text(x = 10, y = 10, text = "This is an example text", fontStylingAttributes = new FontStylingAttributes()) {
         //*****************************
         // Create a new text and set its id.
@@ -238,6 +261,28 @@ class GeneralPositionChangeListener extends ChangeListener {
 }
 class RectanglePositionChangeListener extends GeneralPositionChangeListener {
 }
+class DiamondPositionChangeListener extends GeneralPositionChangeListener {
+
+    changeX(target) {
+        this.updateCoordinates(target);
+    }
+
+    changeY(target) {
+        this.updateCoordinates(target);
+    }
+
+    updateCoordinates(target) {
+        let middleX = target.x + target.width / 2;
+        let middleY = target.y + target.height / 2;
+        let coordinates = "M " + target.x + "," + middleY;
+        coordinates += " " + middleX + "," + target.y;
+        coordinates += " " + (target.x + target.width) + "," + middleY;
+        coordinates += " " + middleX + "," + (target.y + target.height);
+        coordinates += " " + target.x + "," + middleY;
+        target.drawn.setAttribute("d", coordinates);
+    }
+
+}
 class EllipsePositionChangeListener extends GeneralPositionChangeListener {
 
     changeX(target) {
@@ -299,6 +344,28 @@ class GeneralDimensionChangeListener extends ChangeListener {
 
 }
 class RectangleDimensionChangeListener extends GeneralDimensionChangeListener {
+}
+class DiamondDimensionChangeListener extends GeneralDimensionChangeListener {
+
+    changeWidth(target) {
+        this.updateCoordinates(target);
+    }
+
+    changeHeight(target) {
+        this.updateCoordinates(target);
+    }
+
+    updateCoordinates(target) {
+        let middleX = target.x + target.width / 2;
+        let middleY = target.y + target.height / 2;
+        let coordinates = "M " + target.x + "," + middleY;
+        coordinates += " " + middleX + "," + target.y;
+        coordinates += " " + (target.x + target.width) + "," + middleY;
+        coordinates += " " + middleX + "," + (target.y + target.height);
+        coordinates += " " + target.x + "," + middleY;
+        target.drawn.setAttribute("d", coordinates);
+    }
+
 }
 class EllipseDimensionChangeListener extends GeneralDimensionChangeListener {
 

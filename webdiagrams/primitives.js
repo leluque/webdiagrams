@@ -564,7 +564,6 @@ class Rectangle extends GraphicalElement {
     }
 
     contentBox(width, height) { // For rectangles, it does not matter the current width/height of a group they may be a frame of.
-        // The stroke width is divided by 2 because its thickness is divided 50% to the left and 50% to the right.
         let border = this.borderSize;
         let boundingBox = new BoundingBox(this.x + border, this.y + border, this.x + this.width - border, this.y + this.height - border);
         return boundingBox;
@@ -582,6 +581,95 @@ class Rectangle extends GraphicalElement {
         return boundingBoxHeight;
     }
 
+}
+
+class Diamond extends GraphicalElement {
+
+    constructor(x1 = 0, y1 = 0, width = 0, height = 0, preserveAspectRatio = false, stylingAttributes) {
+        let horizontalDiagonal = Math.sqrt(2 * Math.pow(width, 2));
+        let verticalDiagonal = Math.sqrt(2 * Math.pow(height, 2));
+        super(x1, y1, horizontalDiagonal, verticalDiagonal, stylingAttributes);
+        this._preserveAspectRatio = preserveAspectRatio;
+    }
+
+    get width() {
+        return super.width;
+    }
+
+    set width(value) {
+        super.width = value;
+        if(this.preserveAspectRatio) {
+            super.height = value;
+        }
+    }
+
+    get height() {
+        return super.height;
+    }
+
+    set height(value) {
+        super.height = value;
+        if(this.preserveAspectRatio) {
+            super.width = value;
+        }
+    }
+
+    boundaryX1For(givenY) {
+        // Using the line equation for two points:
+        // y - y1 = (y2 - y1)/(x2 - x1) * (x - x1)
+        // assuming that a = (y2 - y1)/(x2 - x1)
+        // x = x1 + (y - y1)/a;
+        let middleY = this.y + this.height / 2;
+        let middleX = this.x + this.width / 2;
+        let a = this.height / this.width;
+        if (givenY == middleY) { // Middle.
+            return this.x;
+        } else if (givenY < middleY) { // Use the top "/" line.
+            return this.x + (givenY - this.y) / a;
+        } else { // Use the bottom "\" line.
+            return this.x + (givenY - middleY) / a;
+        }
+    }
+
+    boundaryX2For(givenY) {
+        // Using the line equation for two points:
+        // y - y1 = (y2 - y1)/(x2 - x1) * (x - x1)
+        // assuming that a = (y2 - y1)/(x2 - x1)
+        // x = x1 + (y - y1)/a;
+        let middleY = this.y + this.height / 2;
+        let middleX = this.x + this.width / 2;
+        let a = this.height / this.width;
+        if (givenY == middleY) { // Middle.
+            return this.x + this.width;
+        } else if (givenY < middleY) { // Use the top "\" line.
+            return middleX + (givenY - this.y) / a;
+        } else { // Use the bottom "/" line.
+            return middleX + (givenY - middleY) / a;
+        }
+    }
+
+    contentBox(width, height) { // For diamonds, it does not matter the current width/height of a group they may be a frame of.
+        let deltaX = this.width / 4;
+        let deltaY = this.height / 4
+        let boundingBox = new BoundingBox(this.x + deltaX, this.y + deltaY, this.x + this.width - deltaX, this.y + this.height - deltaY);
+        return boundingBox;
+    }
+
+    widthToFit(boundingBox) {
+        return 2 * boundingBox.width;
+    }
+
+    heightToFit(boundingBox) {
+        return 2 * boundingBox.height;
+    }
+
+    get preserveAspectRatio() {
+        return this._preserveAspectRatio;
+    }
+
+    set preserveAspectRatio(value) {
+        this._preserveAspectRatio = value;
+    }
 }
 
 class Text extends GraphicalElement {
