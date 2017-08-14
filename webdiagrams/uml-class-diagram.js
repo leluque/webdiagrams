@@ -34,7 +34,7 @@ class UMLClassDiagram {
     }
 
     getClasses() {
-        this._model.findChildrenByType(CLASS).map(function (element) {
+        return this._model.findChildrenByType(CLASS).map(function (element) {
             return new UMLClass(element);
         });
     }
@@ -83,10 +83,14 @@ class UMLClassDiagram {
         let result = "Class diagram '" + this.name + "'\n";
         result += "==============================\n";
         result += "Classes:\n\n";
-        this.getClasses().forEach(function print(element, index, array) {
-            result += element.toString();
-            result += "\n\n";
-        }, this);
+
+        if(this.getClasses()) {
+            this.getClasses().forEach(function print(element, index, array) {
+                result += element.toString();
+                result += "\n\n";
+            }, this);
+        }
+        return result;
     }
 
 }
@@ -148,6 +152,12 @@ class UMLClass {
         let attr = UMLClassAttribute.newAttribute(visibility, name, type, initialValue, isStatic, isReadOnly);
         this.element.addChild(attr.element);
         return attr;
+    }
+
+    toString() {
+        let result = this.element.name;
+        result += "\n";
+        return result;
     }
 
 }
