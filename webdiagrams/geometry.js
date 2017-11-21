@@ -42,7 +42,6 @@ class Point {
      */
     rotateAround(centerX, centerY, angle) {
         // See https://stackoverflow.com/questions/22491178/how-to-rotate-a-point-around-another-point
-
         let x1 = this.x - centerX;
         let y1 = this.y - centerY;
 
@@ -100,15 +99,18 @@ class BoundingBox {
     }
 
     get width() {
-        return this.x2 - this.x1;
+        return Math.abs(this.x2 - this.x1);
     }
 
     get height() {
-        return this.y2 - this.y1;
+        return Math.abs(this.y2 - this.y1);
     }
 
 }
 
+/**
+ * This class implements a listener for changes in graphical elements.
+ */
 class ChangeListener {
 
     update(target) {
@@ -118,7 +120,8 @@ class ChangeListener {
 }
 
 /**
- * This class implements graphical elements.
+ * This class implements the default behaviour of graphical elements.
+ * It is the base class for all graphical elements.
  */
 class GraphicalElement {
 
@@ -132,20 +135,12 @@ class GraphicalElement {
         this._stylingAttributes = stylingAttributes;
         this._stylingAttributes.target = this; // Bidirectional navigation.
         this._id = id;
-        this._drawn = null; // A reference to the shape drawn on an area.
-        this._changeListeners = [];
-        this._changeNotificationsEnabled = true;
-        this._rotation = 0;
-        this._rotationCenterX = this.x + this.width / 2;
-        this._rotationCenterY = this.y + this.height / 2;
-    }
-
-    disableChangeNotifications() {
-        this.changeNotificationsEnabled = false;
-    }
-
-    enableChangeNotifications() {
-        this.changeNotificationsEnabled = true;
+        this._drawn = null; // A reference to the shape drawn on a drawing area.
+        this._changeListeners = []; // A graphical element may have many change listeners.
+        this._changeNotificationsEnabled = true; // Must listeners be notified about changes?
+        this._rotation = 0; // Rotation angle in degrees.
+        this._rotationCenterX = this.x + this.width / 2; // The rotation point x coordinate.
+        this._rotationCenterY = this.y + this.height / 2; // The rotation point y coordinate.
     }
 
     get changeNotificationsEnabled() {
@@ -193,7 +188,7 @@ class GraphicalElement {
     set minWidth(value) {
         this._minWidth = value;
         if (this.width < this.minWidth) {
-            this.width = this.minWidth;
+            this.width = this.minWidth; // If the width changes, listeners will be notified.
         }
     }
 
@@ -214,7 +209,7 @@ class GraphicalElement {
     set minHeight(value) {
         this._minHeight = value;
         if (this.height < this.minHeight) {
-            this.height = this.minHeight;
+            this.height = this.minHeight; // If the height changes, listeners will be notified.
         }
     }
 
@@ -253,7 +248,9 @@ class GraphicalElement {
         if (value < this.x) {
             // Invert x1 and x2.
             let temp = this.x;
+            this.disableChangeNotifications(); // Avoid unnecessary repeated notifications.
             this.x = value;
+            this.enableChangeNotifications();
             this.width += temp - this.x;
         } else {
             this.width = value - this.x;
@@ -268,29 +265,13 @@ class GraphicalElement {
         if (value < this.y) {
             // Invert y1 and y2.
             let temp = this.y;
+            this.disableChangeNotifications(); // Avoid unnecessary repeated notifications.
             this.y = value;
+            this.enableChangeNotifications();
             this.height += temp - this.y;
         } else {
             this.height = value - this.y;
         }
-    }
-
-    /**
-     * Returns the minimum value of X that stays inside the geometric shape for
-     * the specified y value.
-     * @param givenY The y value.
-     */
-    boundaryX1For(givenY) {
-        return this.x;
-    }
-
-    /**
-     * Returns the maximum value of X that stays inside the geometric shape for
-     * the specified y value.
-     * @param givenY The y value.
-     */
-    boundaryX2For(givenY) {
-        return this.x2;
     }
 
     get stylingAttributes() {
@@ -309,33 +290,67 @@ class GraphicalElement {
         }
     }
 
-    get
-    id() {
+    get id() {
         return this._id;
     }
 
-    set
-    id(value) {
+    set id(value) {
         this._id = value;
     }
 
-    get
-    drawn() {
+    get drawn() {
         return this._drawn;
     }
 
-    set
-    drawn(value) {
+    set drawn(value) {
         this._drawn = value;
     }
 
+    get changeListeners() {
+        return this._changeListeners;
+    }
+
+    set changeListeners(value) {
+        this._changeListeners = value;
+    }
+
+    disableChangeNotifications() {
+        this.changeNotificationsEnabled = false;
+    }
+
+    enableChangeNotifications() {
+        this.changeNotificationsEnabled = true;
+    }
+
+    /**
+     * Returns the minimum value of X that stays inside the geometric shape for
+     * the specified y value.
+     * @param givenY The y value.
+     */
+    boundaryX1For(givenY) {
+        return this.x; // Assume, by default, a rectangular shape.
+    }
+
+    /**
+     * Returns the maximum value of X that stays inside the geometric shape for
+     * the specified y value.
+     * @param givenY The y value.
+     */
+    boundaryX2For(givenY) {
+        return this.x2; // Assume, by default, a rectangular shape.
+    }
+
     moveTo(newX, newY) {
+        this.disableChangeNotifications(); // Avoid unnecessary repeated notifications.
         this.x = newX;
+        this.enableChangeNotifications();
         this.y = newY;
     }
 
     resize(newWidth, newHeight) {
+        this.disableChangeNotifications(); // Avoid unnecessary repeated notifications.
         this.width = newWidth;
+        this.enableChangeNotifications();
         this.height = newHeight;
     }
 
@@ -368,16 +383,6 @@ class GraphicalElement {
      */
     heightToFit(boundingBox) {
         return null;
-    }
-
-    get
-    changeListeners() {
-        return this._changeListeners;
-    }
-
-    set
-    changeListeners(value) {
-        this._changeListeners = value;
     }
 
     addChangeListener(value) {
@@ -413,7 +418,7 @@ class Circle
     }
 
     get centerY() {
-        return this.y + (this.width / 2);
+        return this.y + (this.height / 2);
     }
 
     get radius() {
@@ -518,7 +523,9 @@ class Ellipse extends GraphicalElement {
     }
 
     set width(value) {
+        this.disableChangeNotifications(); // Avoid unnecessary repeated notifications.
         super.width = value;
+        this.enableChangeNotifications();
         super.height = value / 2; // Keep the proportion.
     }
 
@@ -527,7 +534,9 @@ class Ellipse extends GraphicalElement {
     }
 
     set height(value) {
+        this.disableChangeNotifications(); // Avoid unnecessary repeated notifications.
         super.height = value;
+        this.enableChangeNotifications();
         super.width = value * 2; // Keep the proportion.
     }
 
@@ -638,6 +647,9 @@ class Ellipse extends GraphicalElement {
 
 }
 
+/**
+ * This class implements rectangles.
+ */
 class Rectangle extends GraphicalElement {
 
     constructor(x1 = 0, y1 = 0, x2 = 0, y2 = 0, stylingAttributes) {
@@ -664,12 +676,14 @@ class Rectangle extends GraphicalElement {
 
 }
 
+/**
+ * This class implements diamonds.
+ */
 class Diamond extends GraphicalElement {
 
     constructor(x1 = 0, y1 = 0, width = 0, height = 0, preserveAspectRatio = false, stylingAttributes) {
-        let horizontalDiagonal = Math.sqrt(2 * Math.pow(width, 2));
-        let verticalDiagonal = Math.sqrt(2 * Math.pow(height, 2));
-        super(x1, y1, horizontalDiagonal, verticalDiagonal, stylingAttributes);
+        // The third parameter is the horizontal diagonal and the fourth one is the vertical diagonal.
+        super(x1, y1, Math.sqrt(2 * Math.pow(width, 2)), Math.sqrt(2 * Math.pow(height, 2)), stylingAttributes);
         this._preserveAspectRatio = preserveAspectRatio;
     }
 
@@ -678,10 +692,13 @@ class Diamond extends GraphicalElement {
     }
 
     set width(value) {
+        this.disableChangeNotifications(); // Avoid unnecessary repeated notifications.
         super.width = value;
         if (this.preserveAspectRatio) {
             super.height = value;
         }
+        this.enableChangeNotifications();
+        this.notifyListeners();
     }
 
     get height() {
@@ -689,10 +706,21 @@ class Diamond extends GraphicalElement {
     }
 
     set height(value) {
+        this.disableChangeNotifications(); // Avoid unnecessary repeated notifications.
         super.height = value;
         if (this.preserveAspectRatio) {
             super.width = value;
         }
+        this.enableChangeNotifications();
+        this.notifyListeners();
+    }
+
+    get preserveAspectRatio() {
+        return this._preserveAspectRatio;
+    }
+
+    set preserveAspectRatio(value) {
+        this._preserveAspectRatio = value;
     }
 
     boundaryX1For(givenY) {
@@ -743,16 +771,11 @@ class Diamond extends GraphicalElement {
     heightToFit(boundingBox) {
         return 2 * boundingBox.height;
     }
-
-    get preserveAspectRatio() {
-        return this._preserveAspectRatio;
-    }
-
-    set preserveAspectRatio(value) {
-        this._preserveAspectRatio = value;
-    }
 }
 
+/**
+ * This class implements texts.
+ */
 class Text extends GraphicalElement {
 
     constructor(x = 10, y = 10, text = "Text", stylingAttributes = new StylingAttributes(1, "black", "black"), fontStylingAttributes = new FontStylingAttributes()) {
@@ -782,15 +805,6 @@ class Text extends GraphicalElement {
         this.calculateDimensions();
     }
 
-    calculateDimensions() {
-        try {
-            this.width = this.minWidth;
-            this.height = this.minHeight;
-        }
-        catch (error) {
-        }
-    }
-
     get fontStylingAttributes() {
         return this._fontStylingAttributes;
     }
@@ -799,6 +813,15 @@ class Text extends GraphicalElement {
         this._fontStylingAttributes = value;
         this.fontStylingAttributes.target = this;
         this.notifyListeners();
+    }
+
+    calculateDimensions() {
+        try {
+            this.width = this.minWidth;
+            this.height = this.minHeight;
+        }
+        catch (error) {
+        }
     }
 
 }
@@ -868,10 +891,6 @@ class Image extends GraphicalElement {
         this._boundingBoxFunction = value;
     }
 
-    defaultBoundingBox(width, height) {
-        return new BoundingBox(this.x, this.y, this.x2, this.y2);
-    }
-
     get widthToFitFunction() {
         return this._widthToFitFunction;
     }
@@ -880,16 +899,20 @@ class Image extends GraphicalElement {
         this._widthToFitFunction = value;
     }
 
-    defaultWidthToFit(boundingBox) {
-        return boundingBox.width;
-    }
-
     get heightToFitFunction() {
         return this._heightToFitFunction;
     }
 
     set heightToFitFunction(value) {
         this._heightToFitFunction = value;
+    }
+
+    defaultBoundingBox(width, height) {
+        return new BoundingBox(this.x, this.y, this.x2, this.y2);
+    }
+
+    defaultWidthToFit(boundingBox) {
+        return boundingBox.width;
     }
 
     defaultHeightToFit(boundingBox) {
@@ -911,6 +934,21 @@ class Image extends GraphicalElement {
 }
 
 class VerticalGroup extends GraphicalElement {
+
+    constructor(x = 0, y = 0, stylingAttributes, groupStylingAttributes = new GroupStylingAttributes()) {
+        super(x, y, 0, 0, stylingAttributes);
+        this._groupStylingAttributes = groupStylingAttributes;
+        this._children = [];
+        this._resizePolicy = [];
+        this._gravity = [];
+        this._weight = [];
+        this._overlap = [];
+        this._frame = null;
+        this._dimensionReadjustmentEnabled = true;
+        // Does the group must fit its content?
+        // If the user resize it, for example, this attribute may be changed to false.
+        this._fitContent = true;
+    }
 
     // It goes further the content area and touches the frame borders.
     static get MATCH_PARENT() {
@@ -943,19 +981,355 @@ class VerticalGroup extends GraphicalElement {
         return 2;
     }
 
-    constructor(x = 0, y = 0, stylingAttributes, groupStylingAttributes = new GroupStylingAttributes()) {
-        super(x, y, 0, 0, stylingAttributes);
-        this._groupStylingAttributes = groupStylingAttributes;
+    /**
+     * Returns the group x coordinate.
+     * @returns {number} The group x coordinate.
+     */
+    get x() {
+        return super.x;
+    }
+
+    /**
+     * Sets the group x coordinate.
+     * @param {number} value The new x coordinate.
+     */
+    set x(value) {
+        // Calculate the difference between the current x value and the new one.
+        let delta = value - this.x;
+
+        super.x = value;
+        if (this.frame !== null) {
+            this.frame.x = this.x;
+        }
+
+        //*****************************
+        // Move all children.
+        this.disableDimensionReadjustment(); // The dimension does not have to change in this case.
+        for (let child of this.children) {
+            child.x += delta;
+        }
+        this.enableDimensionReadjustment();
+    }
+
+    /**
+     * Returns the group y coordinate.
+     * @returns {number} The group y coordinate.
+     */
+    get y() {
+        return super.y;
+    }
+
+    /**
+     * Changes the group y coordinate.
+     * @param {number} value The new y coordinate.
+     */
+    set y(value) {
+        // Calculate the difference between the current y value and the new one.
+        let delta = value - this.y;
+
+        super.y = value;
+        if (this.frame !== null) {
+            this.frame.y = this.y;
+        }
+
+        //*****************************
+        // Move all children.
+        this.disableDimensionReadjustment(); // The dimension does not have to change in this case.
+        for (let child of this.children) {
+            child.y += delta;
+        }
+        this.enableDimensionReadjustment();
+    }
+
+    /**
+     * Returns the group width.
+     * @returns {number} The group width.
+     */
+    get width() {
+        return super.width;
+    }
+
+    /**
+     * Sets the group width.
+     * If the new width is smaller than the minimum required width to display the group, return without changing anything.
+     * @param {number} value The new width.
+     */
+    set width(value) {
+        let oldChangeNotificationsStatus = this.changeNotificationsEnabled;
+        let oldDimensionReadjustmentStatus = this.dimensionReadjustmentEnabled;
+        this.disableChangeNotifications(); // Prevent stack overflow.
+        this.disableDimensionReadjustment(); // Prevent stack overflow.
+        let minimumRequiredWidth = this.minContentWidth;
+        if (this.frame !== null) {
+            let boundingBox = new BoundingBox(this.x, this.y, this.x + minimumRequiredWidth, this.y2);
+            minimumRequiredWidth = this.frame.widthToFit(boundingBox);
+        }
+        if (value < minimumRequiredWidth) { // Do not resize if the content does not fit the new width.
+            return;
+        }
+
+        super.width = value;
+
+        // Check whether the height must be changed.
+        // It must be necessary if the frame is a circle or a square, for example.
+        if (this.frame !== null) {
+            this.frame.width = this.width;
+            super.height = this.frame.height;
+        }
+
+        this.adjustChildrenPositionAndDimension();
+
+        this.changeNotificationsEnabled = oldChangeNotificationsStatus;
+        this.dimensionReadjustmentEnabled = oldDimensionReadjustmentStatus;
+    }
+
+    /**
+     * Calculates and returns the minimum width required to display the group content.
+     * @returns {number} The minimum width required to display the group content.
+     */
+    get minContentWidth() {
+        let calcMinWidth = 0;
+        // Get the biggest child min width and add the horizontal margin when necessary.
+        for (let i = 0; i < this.countChildren(); i++) {
+            let child = this.getChildAt(i);
+            if (child.minWidth > calcMinWidth) {
+                calcMinWidth = child.minWidth;
+                // MATCH_CONTENT_AREA does not use horizontal margins for elements.
+                // It is used for lines, for example.
+                if (this.resizePolicy[i] !== VerticalGroup.MATCH_CONTENT_AREA &&
+                    this.resizePolicy[i] !== VerticalGroup.MATCH_PARENT) {
+                    calcMinWidth += 2 * this.horMargin;
+                }
+            }
+        }
+        return calcMinWidth;
+    }
+
+    /**
+     * Calculates and returns the minimum width required to display the group frame and its content.
+     * @returns {number} The minimum width required to display the group frame and its content.
+     */
+    get minWidth() {
+        let calcMinWidth = this.minContentWidth;
+
+        if (this.frame !== null) {
+            let boundingBox = new BoundingBox(this.x, this.y, this.x + calcMinWidth, this.y2);
+            let frameWidth = this.frame.widthToFit(boundingBox);
+            return frameWidth;
+        }
+
+        return calcMinWidth;
+    }
+
+    /**
+     * Returns the group height.
+     * @returns {number} The group height.
+     */
+    get height() {
+        return super.height;
+    }
+
+    /**
+     * Sets the group height.
+     * @param {number} value The group height.
+     */
+    set height(value) {
+        let oldChangeNotificationsStatus = this.changeNotificationsEnabled;
+        let oldDimensionReadjustmentStatus = this.dimensionReadjustmentEnabled;
+
+        this.disableChangeNotifications();
+        this.disableDimensionReadjustment(); // Prevent stack overflow.
+        let minimumRequiredHeight = this.minHeight;
+        if (value < minimumRequiredHeight) {
+            return;
+        }
+
+        super.height = value;
+
+        // Check whether the width must be changed.
+        // It must be necessary if the frame is a circle or a square, for example.
+        if (this.frame !== null) {
+            this.frame.height = this.height;
+            super.width = this.frame.width;
+        }
+
+        this.adjustChildrenPositionAndDimension();
+
+        this.changeNotificationsEnabled = oldChangeNotificationsStatus;
+        this.dimensionReadjustmentEnabled = oldDimensionReadjustmentStatus;
+    }
+
+    /**
+     * Calculates and returns the minimum height required to display the group content.
+     * @returns {number} The minimum height required to display the group content.
+     */
+    get minContentHeight() {
+        let contentMinHeight = 0;
+        let i = 0;
+        for (let child of this.children) {
+            contentMinHeight += this.verMargin;
+            contentMinHeight += child.minHeight + this.overlap[i];
+            i++;
+        }
+        if (this.countChildren() > 0) {
+            contentMinHeight += this.verMargin;
+        }
+
+        return contentMinHeight;
+    }
+
+    /**
+     * Calculates and returns the minimum height required to display the group frame and its content.
+     * @returns {number} The minimum height required to display the group frame and its content.
+     */
+    get minHeight() {
+        let calcMinHeight = this.minContentHeight;
+
+        if (this.frame !== null) {
+            let boundingBox = new BoundingBox(this.x, this.y, this.x2, this.y + calcMinHeight);
+            let frameHeight = this.frame.heightToFit(boundingBox);
+            return frameHeight;
+        }
+
+        return calcMinHeight;
+    }
+
+    /**
+     * Returns the children.
+     * @returns {Array} The children.
+     */
+    get children() {
+        return this._children;
+    }
+
+    /**
+     * Sets the children.
+     * @param {Array} value The children array.
+     */
+    set children(value) {
         this._children = [];
-        this._resizePolicy = [];
-        this._gravity = [];
-        this._weight = [];
-        this._overlap = [];
-        this._frame = null;
-        this._dimensionReadjustmentEnabled = true;
-        // Does the group must fit its content?
-        // If the user resize it, for example, this attribute may be changed to false.
-        this._fitContent = true;
+        for (let child of value) {
+            this.add(child);
+        }
+    }
+
+    /**
+     * Returns the frame.
+     * @returns {GeometricShape|null} The frame.
+     */
+    get frame() {
+        return this._frame;
+    }
+
+    // TODO: What to do when a frame is removed?
+    /**
+     * Sets the frame.
+     * @param {GeometricShape|null} value value The new frame.
+     */
+    set frame(value) {
+        this.disableChangeNotifications();
+
+        // Change the group width and height to accommodate the frame border.
+        this.width += value.borderSize * 2;
+        this.height += value.borderSize * 2;
+
+        this._frame = value;
+        this.drawn.appendChild(this.frame.drawn);
+        this.frame.x = this.x;
+        this.frame.y = this.y;
+        this.frame.width = this.width;
+        this.frame.height = this.height;
+
+        this.adjustChildrenPositionAndDimension();
+        this.enableChangeNotifications();
+
+        this.frame.notifyListeners();
+        this.notifyListeners();
+    }
+
+    get dimensionReadjustmentEnabled() {
+        return this._dimensionReadjustmentEnabled;
+    }
+
+    set dimensionReadjustmentEnabled(value) {
+        this._dimensionReadjustmentEnabled = value;
+    }
+
+    get fitContent() {
+        return this._fitContent;
+    }
+
+    set fitContent(value) {
+        this._fitContent = value;
+    }
+
+    get groupStylingAttributes() {
+        return this._groupStylingAttributes;
+    }
+
+    set groupStylingAttributes(value) {
+        this._groupStylingAttributes = value;
+        this.notifyListeners();
+    }
+
+    /**
+     * Returns the horizontal margin.
+     * @returns {number} The horizontal margin.
+     */
+    get horMargin() {
+        if (this.groupStylingAttributes !== null) {
+            return this.groupStylingAttributes.horMargin;
+        }
+        return 0;
+    }
+
+    /**
+     * Returns the vertical margin.
+     * @returns {number} The vertical margin.
+     */
+    get verMargin() {
+        if (this.groupStylingAttributes !== null) {
+            return this.groupStylingAttributes.verMargin;
+        }
+        return 0;
+    }
+
+    get borderSize() {
+        if (this.frame !== null) {
+            return this.frame.borderSize;
+        }
+    }
+
+    get resizePolicy() {
+        return this._resizePolicy;
+    }
+
+    set resizePolicy(value) {
+        this._resizePolicy = value;
+    }
+
+    get gravity() {
+        return this._gravity;
+    }
+
+    set gravity(value) {
+        this._gravity = value;
+    }
+
+    get weight() {
+        return this._weight;
+    }
+
+    set weight(value) {
+        this._weight = value;
+    }
+
+    get overlap() {
+        return this._overlap;
+    }
+
+    set overlap(value) {
+        this._overlap = value;
     }
 
     /**
@@ -1079,114 +1453,6 @@ class VerticalGroup extends GraphicalElement {
     }
 
     /**
-     * Returns the group x coordinate.
-     * @returns {number} The group x coordinate.
-     */
-    get
-    x() {
-        return super.x;
-    }
-
-    /**
-     * Sets the group x coordinate.
-     * @param {number} value The new x coordinate.
-     */
-    set
-    x(value) {
-        // Calculate the difference between the current x value and the new one.
-        let delta = value - this.x;
-
-        super.x = value;
-        if (this.frame !== null) {
-            this.frame.x = this.x;
-        }
-
-        //*****************************
-        // Move all children.
-        this.disableDimensionReadjustment(); // The dimension does not have to change in this case.
-        for (let child of this.children) {
-            child.x += delta;
-        }
-        this.enableDimensionReadjustment();
-    }
-
-    /**
-     * Returns the group y coordinate.
-     * @returns {number} The group y coordinate.
-     */
-    get
-    y() {
-        return super.y;
-    }
-
-    /**
-     * Changes the group y coordinate.
-     * @param {number} value The new y coordinate.
-     */
-    set
-    y(value) {
-        // Calculate the difference between the current y value and the new one.
-        let delta = value - this.y;
-
-        super.y = value;
-        if (this.frame !== null) {
-            this.frame.y = this.y;
-        }
-
-        //*****************************
-        // Move all children.
-        this.disableDimensionReadjustment(); // The dimension does not have to change in this case.
-        for (let child of this.children) {
-            child.y += delta;
-        }
-        this.enableDimensionReadjustment();
-    }
-
-    /**
-     * Returns the group width.
-     * @returns {number} The group width.
-     */
-    get
-    width() {
-        return super.width;
-    }
-
-    /**
-     * Sets the group width.
-     * If the new width is smaller than the minimum required width to display the group, return without changing anything.
-     * @param {number} value The new width.
-     */
-    set
-    width(value) {
-        let oldChangeNotificationsStatus = this.changeNotificationsEnabled;
-        let oldDimensionReadjustmentStatus = this.dimensionReadjustmentEnabled;
-        this.disableChangeNotifications(); // Prevent stack overflow.
-        this.disableDimensionReadjustment(); // Prevent stack overflow.
-        let minimumRequiredWidth = this.minContentWidth;
-        if (this.frame !== null) {
-            let boundingBox = new BoundingBox(this.x, this.y, this.x + minimumRequiredWidth, this.y2);
-            minimumRequiredWidth = this.frame.widthToFit(boundingBox);
-        }
-        if (value < minimumRequiredWidth) { // Do not resize if the content does not fit the new width.
-            return;
-        }
-
-        super.width = value;
-
-        // Check whether the height must be changed.
-        // It must be necessary if the frame is a circle or a square, for example.
-        if (this.frame !== null) {
-            this.frame.width = this.width;
-            super.height = this.frame.height;
-        }
-
-        this.adjustChildrenPositionAndDimension();
-
-        this.changeNotificationsEnabled = oldChangeNotificationsStatus;
-        this.dimensionReadjustmentEnabled = oldDimensionReadjustmentStatus;
-    }
-
-    /**
      * Increases the width value by the specified parameter value.
      * @param {number} value The width delta.
      */
@@ -1195,149 +1461,11 @@ class VerticalGroup extends GraphicalElement {
     }
 
     /**
-     * Calculates and returns the minimum width required to display the group content.
-     * @returns {number} The minimum width required to display the group content.
-     */
-    get
-    minContentWidth() {
-        let calcMinWidth = 0;
-        // Get the biggest child min width and add the horizontal margin when necessary.
-        for (let i = 0; i < this.countChildren(); i++) {
-            let child = this.getChildAt(i);
-            if (child.minWidth > calcMinWidth) {
-                calcMinWidth = child.minWidth;
-                // MATCH_CONTENT_AREA does not use horizontal margins for elements.
-                // It is used for lines, for example.
-                if (this.resizePolicy[i] !== VerticalGroup.MATCH_CONTENT_AREA &&
-                    this.resizePolicy[i] !== VerticalGroup.MATCH_PARENT) {
-                    calcMinWidth += 2 * this.horMargin;
-                }
-            }
-        }
-        return calcMinWidth;
-    }
-
-    /**
-     * Calculates and returns the minimum width required to display the group frame and its content.
-     * @returns {number} The minimum width required to display the group frame and its content.
-     */
-    get
-    minWidth() {
-        let calcMinWidth = this.minContentWidth;
-
-        if (this.frame !== null) {
-            let boundingBox = new BoundingBox(this.x, this.y, this.x + calcMinWidth, this.y2);
-            let frameWidth = this.frame.widthToFit(boundingBox);
-            return frameWidth;
-        }
-
-        return calcMinWidth;
-    }
-
-    /**
-     * Returns the group height.
-     * @returns {number} The group height.
-     */
-    get
-    height() {
-        return super.height;
-    }
-
-    /**
-     * Calculates and returns the minimum height required to display the group content.
-     * @returns {number} The minimum height required to display the group content.
-     */
-    get
-    minContentHeight() {
-        let contentMinHeight = 0;
-        let i = 0;
-        for (let child of this.children) {
-            contentMinHeight += this.verMargin;
-            contentMinHeight += child.minHeight + this.overlap[i];
-            i++;
-        }
-        if (this.countChildren() > 0) {
-            contentMinHeight += this.verMargin;
-        }
-
-        return contentMinHeight;
-    }
-
-    /**
-     * Calculates and returns the minimum height required to display the group frame and its content.
-     * @returns {number} The minimum height required to display the group frame and its content.
-     */
-    get
-    minHeight() {
-        let calcMinHeight = this.minContentHeight;
-
-        if (this.frame !== null) {
-            let boundingBox = new BoundingBox(this.x, this.y, this.x2, this.y + calcMinHeight);
-            let frameHeight = this.frame.heightToFit(boundingBox);
-            return frameHeight;
-        }
-
-        return calcMinHeight;
-    }
-
-    /**
-     * Sets the group height.
-     * @param {number} value The group height.
-     */
-    set
-    height(value) {
-        let oldChangeNotificationsStatus = this.changeNotificationsEnabled;
-        let oldDimensionReadjustmentStatus = this.dimensionReadjustmentEnabled;
-
-        this.disableChangeNotifications();
-        this.disableDimensionReadjustment(); // Prevent stack overflow.
-        let minimumRequiredHeight = this.minHeight;
-        if (value < minimumRequiredHeight) {
-            return;
-        }
-
-        super.height = value;
-
-        // Check whether the width must be changed.
-        // It must be necessary if the frame is a circle or a square, for example.
-        if (this.frame !== null) {
-            this.frame.height = this.height;
-            super.width = this.frame.width;
-        }
-
-        this.adjustChildrenPositionAndDimension();
-
-        this.changeNotificationsEnabled = oldChangeNotificationsStatus;
-        this.dimensionReadjustmentEnabled = oldDimensionReadjustmentStatus;
-    }
-
-    /**
      * Increases the height value by the specified parameter value.
      * @param {number} value The height delta.
      */
     increaseHeightBy(value) {
         this.height += value;
-    }
-
-    /**
-     * Returns the children.
-     * @returns {Array} The children.
-     */
-    get
-    children() {
-        return this._children;
-    }
-
-    /**
-     * Sets the children.
-     * @param {Array} value The children array.
-     */
-    set
-    children(value) {
-        this._children = [];
-        for (let child of value) {
-            this.add(child);
-        }
     }
 
     /**
@@ -1408,52 +1536,6 @@ class VerticalGroup extends GraphicalElement {
         return this._children[i];
     }
 
-    /**
-     * Returns the frame.
-     * @returns {GeometricShape|null} The frame.
-     */
-    get
-    frame() {
-        return this._frame;
-    }
-
-    // TODO: What to do when a frame is removed?
-    /**
-     * Sets the frame.
-     * @param {GeometricShape|null} value value The new frame.
-     */
-    set
-    frame(value) {
-        this.disableChangeNotifications();
-
-        // Change the group width and height to accommodate the frame border.
-        this.width += value.borderSize * 2;
-        this.height += value.borderSize * 2;
-
-        this._frame = value;
-        this.drawn.appendChild(this.frame.drawn);
-        this.frame.x = this.x;
-        this.frame.y = this.y;
-        this.frame.width = this.width;
-        this.frame.height = this.height;
-
-        this.adjustChildrenPositionAndDimension();
-        this.enableChangeNotifications();
-
-        this.frame.notifyListeners();
-        this.notifyListeners();
-    }
-
-    get
-    dimensionReadjustmentEnabled() {
-        return this._dimensionReadjustmentEnabled;
-    }
-
-    set
-    dimensionReadjustmentEnabled(value) {
-        this._dimensionReadjustmentEnabled = value;
-    }
-
     disableDimensionReadjustment() {
         this._dimensionReadjustmentEnabled = false;
     }
@@ -1462,97 +1544,9 @@ class VerticalGroup extends GraphicalElement {
         this._dimensionReadjustmentEnabled = true;
     }
 
-    get
-    fitContent() {
-        return this._fitContent;
-    }
-
-    set
-    fitContent(value) {
-        this._fitContent = value;
-    }
-
     forceFitContent() {
         this.fitContent = true;
         this.readjustDimensions();
-    }
-
-    get
-    groupStylingAttributes() {
-        return this._groupStylingAttributes;
-    }
-
-    set
-    groupStylingAttributes(value) {
-        this._groupStylingAttributes = value;
-        this.notifyListeners();
-    }
-
-    /**
-     * Returns the horizontal margin.
-     * @returns {number} The horizontal margin.
-     */
-    get
-    horMargin() {
-        if (this.groupStylingAttributes !== null) {
-            return this.groupStylingAttributes.horMargin;
-        }
-        return 0;
-    }
-
-    /**
-     * Returns the vertical margin.
-     * @returns {number} The vertical margin.
-     */
-    get
-    verMargin() {
-        if (this.groupStylingAttributes !== null) {
-            return this.groupStylingAttributes.verMargin;
-        }
-        return 0;
-    }
-
-    get
-    borderSize() {
-        if (this.frame !== null) {
-            return this.frame.borderSize;
-        }
-    }
-
-    get
-    resizePolicy() {
-        return this._resizePolicy;
-    }
-
-    set
-    resizePolicy(value) {
-        this._resizePolicy = value;
-    }
-
-    get
-    gravity() {
-        return this._gravity;
-    }
-
-    set
-    gravity(value) {
-        this._gravity = value;
-    }
-
-    get weight() {
-        return this._weight;
-    }
-
-    set weight(value) {
-        this._weight = value;
-    }
-
-    get overlap() {
-        return this._overlap;
-    }
-
-    set overlap(value) {
-        this._overlap = value;
     }
 }
 
@@ -1585,6 +1579,14 @@ class LinearGroup extends GraphicalElement {
         this._verticalGroup = new VerticalGroup(x1, y1, stylingAttributes, new GroupStylingAttributes(0, 0));
     }
 
+    get verticalGroup() {
+        return this._verticalGroup;
+    }
+
+    set verticalGroup(value) {
+        this._verticalGroup = value;
+    }
+
     addChild(child, weight = 0, overlap = 0) {
         this.verticalGroup.addChild(child, VerticalGroup.WRAP_CONTENT, VerticalGroup.CENTER, weight, overlap);
         this.recalculate();
@@ -1603,14 +1605,6 @@ class LinearGroup extends GraphicalElement {
         let angle = angleBetween2Lines(middleX, this.verticalGroup.y, middleX, this.verticalGroup.y + this.verticalGroup.height,
             this.x, this.y, this.x, this.y2);
         this.verticalGroup.rotation = -1 * angle;
-    }
-
-    get verticalGroup() {
-        return this._verticalGroup;
-    }
-
-    set verticalGroup(value) {
-        this._verticalGroup = value;
     }
 }
 
@@ -1721,20 +1715,20 @@ class GroupStylingAttributes {
 }
 
 class FontStylingAttributes {
-    get style() {
-        return this._style;
-    }
-
-    set style(value) {
-        this._style = value;
-    }
-
     constructor(family = "'Roboto', sans-serif", size = 13, weight = "100", style = "normal", target = null) {
         this._family = family;
         this._size = size;
         this._weight = weight;
         this._target = target;
         this._style = style;
+    }
+
+    get style() {
+        return this._style;
+    }
+
+    set style(value) {
+        this._style = value;
     }
 
     get family() {

@@ -8,6 +8,18 @@
 
 'use strict';
 
+/**
+ * This method returns the angle in degrees between two lines.
+ * @param ax1 The first line x1 coordinate.
+ * @param ay1 The first line y1 coordinate.
+ * @param ax2 The first line x2 coordinate.
+ * @param ay2 The first line y2 coordinate.
+ * @param bx1 The second line x1 coordinate.
+ * @param by1 The second line y1 coordinate.
+ * @param bx2 The second line x2 coordinate.
+ * @param by2 The second line y2 coordinate.
+ * @returns {number} The angle in degrees between the two lines.
+ */
 function angleBetween2Lines(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2) {
     let angle1 = Math.atan2(ay1 - ay2, ax1 - ax2);
     let angle2 = Math.atan2(by1 - by2, bx1 - bx2);
@@ -15,7 +27,7 @@ function angleBetween2Lines(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2) {
 }
 
 /**
- * This method calculates the angle between two vectors with origin at (0, 0).
+ * This method calculates the angle in degrees between two vectors with origin at (0, 0).
  * @param ax2 The x-coordinate of the second point (1st vector).
  * @param ay2 The y-coordinate of the second point (1st vector).
  * @param bx2 The x-coordinate of the second point (2nd vector).
@@ -30,14 +42,14 @@ function angleBetween2Vectors(ax2, ay2, bx2, by2) {
     by2 *= -1;
 
     // Calculate the length of each vector.
-    let lengthV1 = Math.sqrt(ax2*ax2 + ay2*ay2);
-    let lengthV2 = Math.sqrt(bx2*bx2 + by2*by2);
+    let lengthV1 = Math.sqrt(ax2 * ax2 + ay2 * ay2);
+    let lengthV2 = Math.sqrt(bx2 * bx2 + by2 * by2);
 
     // Calculate the scalar product of the two vectors.
-    let scalarProduct = ax2*bx2 + ay2*by2;
+    let scalarProduct = ax2 * bx2 + ay2 * by2;
 
     // Calculate the cosine of the angle between the two vectors.
-    let cosine = scalarProduct/(lengthV1*lengthV2);
+    let cosine = scalarProduct / (lengthV1 * lengthV2);
 
     // Find the angle based on the arccosine.
     let angle = Math.acos(cosine);
