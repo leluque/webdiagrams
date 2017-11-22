@@ -128,9 +128,9 @@ class GraphicalElement {
     constructor(x = 0, y = 0, width = 0, height = 0, stylingAttributes = new StylingAttributes(), id) {
         this._x = x;
         this._y = y;
-        this._minWidth = 10;
+        this._minWidth = 1;
         this._width = width;
-        this._minHeight = 10;
+        this._minHeight = 1;
         this._height = height;
         this._stylingAttributes = stylingAttributes;
         this._stylingAttributes.target = this; // Bidirectional navigation.
@@ -172,13 +172,18 @@ class GraphicalElement {
     }
 
     get width() {
+        if (this._width < this.minWidth) {
+            return this.minWidth;
+        }
         return this._width;
     }
 
     set width(value) {
-        this._width = value;
-        this.rotationCenterX = this.x + this.width / 2;
-        this.notifyListeners();
+        if (value >= this.minWidth) {
+            this._width = value;
+            this.rotationCenterX = this.x + this.width / 2;
+            this.notifyListeners();
+        }
     }
 
     get minWidth() {
@@ -193,13 +198,18 @@ class GraphicalElement {
     }
 
     get height() {
+        if (this._height < this.minHeight) {
+            return this.minHeight;
+        }
         return this._height;
     }
 
     set height(value) {
-        this._height = value;
-        this.rotationCenterY = this.y + this.height / 2;
-        this.notifyListeners();
+        if (value >= this.minHeight) {
+            this._height = value;
+            this.rotationCenterY = this.y + this.height / 2;
+            this.notifyListeners();
+        }
     }
 
     get minHeight() {
@@ -785,16 +795,6 @@ class Text extends GraphicalElement {
         this._fontStylingAttributes.target = this;
     }
 
-    get minWidth() {
-        let boundingBox = this.drawn.getBBox();
-        return boundingBox.width;
-    }
-
-    get minHeight() {
-        let boundingBox = this.drawn.getBBox();
-        return boundingBox.height;
-    }
-
     get text() {
         return this._text;
     }
@@ -802,7 +802,6 @@ class Text extends GraphicalElement {
     set text(value) {
         this._text = value;
         this.notifyListeners();
-        this.calculateDimensions();
     }
 
     get fontStylingAttributes() {
@@ -813,15 +812,6 @@ class Text extends GraphicalElement {
         this._fontStylingAttributes = value;
         this.fontStylingAttributes.target = this;
         this.notifyListeners();
-    }
-
-    calculateDimensions() {
-        try {
-            this.width = this.minWidth;
-            this.height = this.minHeight;
-        }
-        catch (error) {
-        }
     }
 
 }

@@ -25,10 +25,6 @@ class SVGArea {
         this._idCount = value;
     }
 
-    generateId() {
-        return "element_" + (this._idCount++);
-    }
-
     get svg() {
         return this._svg;
     }
@@ -51,6 +47,10 @@ class SVGArea {
 
     set elements(value) {
         this._elements = value;
+    }
+
+    generateId() {
+        return "element_" + (this._idCount++);
     }
 
     addElement(element) {
@@ -284,8 +284,10 @@ class GeneralPositionChangeListener extends ChangeListener {
         target.drawn.setAttribute("y", target.y);
     }
 }
+
 class RectanglePositionChangeListener extends GeneralPositionChangeListener {
 }
+
 class DiamondPositionChangeListener extends GeneralPositionChangeListener {
 
     changeX(target) {
@@ -312,6 +314,7 @@ class DiamondPositionChangeListener extends GeneralPositionChangeListener {
     }
 
 }
+
 class EllipsePositionChangeListener extends GeneralPositionChangeListener {
 
     changeX(target) {
@@ -323,8 +326,10 @@ class EllipsePositionChangeListener extends GeneralPositionChangeListener {
     }
 
 }
+
 class ImagePositionChangeListener extends GeneralPositionChangeListener {
 }
+
 class TextPositionChangeListener extends GeneralPositionChangeListener {
 
     changeY(target) {
@@ -338,6 +343,7 @@ class TextPositionChangeListener extends GeneralPositionChangeListener {
     }
 
 }
+
 class LinePositionChangeListener extends GeneralPositionChangeListener {
     update(target) {
         // (-borderSize) was used because (+borderSize * 2) was used at line constructor so that the line has at least one pixel even if their initial and final coordinate are equal.
@@ -348,6 +354,7 @@ class LinePositionChangeListener extends GeneralPositionChangeListener {
         target.drawn.setAttribute("y2", target.y2 - target.borderSize);
     }
 }
+
 class CirclePositionChangeListener extends GeneralPositionChangeListener {
     changeX(target) {
         target.drawn.setAttribute("cx", target.centerX);
@@ -374,8 +381,10 @@ class GeneralDimensionChangeListener extends ChangeListener {
     }
 
 }
+
 class RectangleDimensionChangeListener extends GeneralDimensionChangeListener {
 }
+
 class DiamondDimensionChangeListener extends GeneralDimensionChangeListener {
 
     changeWidth(target) {
@@ -402,6 +411,7 @@ class DiamondDimensionChangeListener extends GeneralDimensionChangeListener {
     }
 
 }
+
 class EllipseDimensionChangeListener extends GeneralDimensionChangeListener {
 
     changeWidth(target) {
@@ -413,10 +423,13 @@ class EllipseDimensionChangeListener extends GeneralDimensionChangeListener {
     }
 
 }
+
 class ImageDimensionChangeListener extends GeneralDimensionChangeListener {
 }
+
 class TextDimensionChangeListener extends GeneralDimensionChangeListener {
 }
+
 class CircleDimensionChangeListener extends GeneralDimensionChangeListener {
 
     changeWidth(target) {
@@ -428,6 +441,7 @@ class CircleDimensionChangeListener extends GeneralDimensionChangeListener {
     }
 
 }
+
 class LineDimensionChangeListener extends GeneralDimensionChangeListener {
 
     changeWidth(target) {
@@ -451,13 +465,20 @@ class GeneralTransformationChangeListener extends ChangeListener {
     }
 
 }
+
 class VGroupTransformationChangeListener extends GeneralTransformationChangeListener {
 }
+
 class LinearGroupTransformationChangeListener extends GeneralTransformationChangeListener {
 }
+
 class TextChangeListener extends ChangeListener {
     update(target) {
         target.drawn.textContent = target.text;
+        // As the text changed, the graphical element minimum width and height must be updated.
+        let boundingBox = target.drawn.getBoundingClientRect();
+        target.minWidth = boundingBox.width;
+        target.minHeight = boundingBox.height;
     }
 }
 
