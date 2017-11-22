@@ -10,10 +10,10 @@ WebDiagrams is a client-side Javascript library to draw and work with node-and-l
  * Support different look-and-feels.
  
 ## Documentation
- * [Quick tour](https://github.com/leluque/webdiagrams/docs/quickTour.md)
+ * [Quick tour](https://github.com/leluque/webdiagrams/blob/master/docs/quickTour.md)
 
 ## Contributing
- * See [Contributing](https://github.com/leluque/webdiagrams/docs/contributing.md)
+ * See [Contributing](https://github.com/leluque/webdiagrams/blob/master/docs/contributing.md)
 
 [license-image]: http://img.shields.io/badge/license-MIT-blue.svg
 [license]: LICENSE
