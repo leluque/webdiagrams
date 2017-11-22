@@ -1,4 +1,4 @@
-# webdiagrams
+# WebDiagrams
 
 [![MIT License][license-image]][license]
 
