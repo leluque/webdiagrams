@@ -157,7 +157,7 @@ class SVGArea {
     text(x = 10, y = 10, text = "This is an example text", fontStylingAttributes = new FontStylingAttributes()) {
         //*****************************
         // Create a new text and set its id.
-        let newText = new Text(x, y, text, undefined, fontStylingAttributes);
+        let newText = new Text(x, y, "", undefined, fontStylingAttributes);
         newText.id = this.generateId();
 
         //*****************************
@@ -175,7 +175,8 @@ class SVGArea {
         this.svg.appendChild(drawnText);
 
         newText.drawn = drawnText;
-        newText.calculateDimensions();
+        newText.text = text; // Recalculate the text width calling a listener.
+        //newText.calculateDimensions();
 
         return this.addElement(newText);
     }
@@ -459,13 +460,13 @@ class TextChangeListener extends ChangeListener {
     update(target) {
         target.drawn.textContent = target.text;
         // As the text changed, the graphical element minimum width and height must be updated.
-/*
         let boundingBox = target.drawn.getBoundingClientRect();
+        target.disableChangeNotifications(); // Avoid stack overflow.
         target.minWidth = boundingBox.width;
         target.minHeight = boundingBox.height;
         target.width = boundingBox.width;
         target.height = boundingBox.height;
-*/
+        target.enableChangeNotifications();
     }
 }
 

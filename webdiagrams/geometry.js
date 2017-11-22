@@ -137,19 +137,25 @@ class GraphicalElement {
         this._id = id;
         this._drawn = null; // A reference to the shape drawn on a drawing area.
         this._changeListeners = []; // A graphical element may have many change listeners.
-        this._changeNotificationsEnabled = true; // Must listeners be notified about changes?
+        //this._changeNotificationsEnabled = true; // Must listeners be notified about changes?
+        this._changeNotificationsEnabled = 0; // Must listeners be notified about changes?
+                                              // 0 means yes.
+                                              // Any value greater than 0 means a recursive call to
+                                              // disable change notifications.
         this._rotation = 0; // Rotation angle in degrees.
         this._rotationCenterX = this.x + this.width / 2; // The rotation point x coordinate.
         this._rotationCenterY = this.y + this.height / 2; // The rotation point y coordinate.
     }
 
     get changeNotificationsEnabled() {
-        return this._changeNotificationsEnabled;
+        return this._changeNotificationsEnabled === 0;
     }
 
+/*
     set changeNotificationsEnabled(value) {
         this._changeNotificationsEnabled = value;
     }
+*/
 
     get x() {
         return this._x;
@@ -323,11 +329,13 @@ class GraphicalElement {
     }
 
     disableChangeNotifications() {
-        this.changeNotificationsEnabled = false;
+        //this.changeNotificationsEnabled = false;
+        this._changeNotificationsEnabled++;
     }
 
     enableChangeNotifications() {
-        this.changeNotificationsEnabled = true;
+        //this.changeNotificationsEnabled = true;
+        this._changeNotificationsEnabled--;
     }
 
     /**
@@ -794,7 +802,7 @@ class Text extends GraphicalElement {
     }
 
 
-    get minWidth() {
+    /*get minWidth() {
         let boundingBox = this.drawn.getBBox();
         return boundingBox.width;
     }
@@ -802,7 +810,7 @@ class Text extends GraphicalElement {
     get minHeight() {
         let boundingBox = this.drawn.getBBox();
         return boundingBox.height;
-    }
+    }*/
 
 
     get text() {
@@ -812,7 +820,7 @@ class Text extends GraphicalElement {
     set text(value) {
         this._text = value;
         this.notifyListeners();
-        this.calculateDimensions();
+        //this.calculateDimensions();
     }
 
     get fontStylingAttributes() {
@@ -825,15 +833,14 @@ class Text extends GraphicalElement {
         this.notifyListeners();
     }
 
-    calculateDimensions() {
-        try {
-            this.width = this.minWidth;
-            this.height = this.minHeight;
-        }
-        catch (error) {
-        }
-    }
-
+    /*  calculateDimensions() {
+          try {
+              this.width = this.minWidth;
+              this.height = this.minHeight;
+          }
+          catch (error) {
+          }
+      }*/
 
 }
 
@@ -955,7 +962,10 @@ class VerticalGroup extends GraphicalElement {
         this._weight = [];
         this._overlap = [];
         this._frame = null;
-        this._dimensionReadjustmentEnabled = true;
+        this._dimensionReadjustmentEnabled = 0; // Must listeners be notified about changes?
+                                                // 0 means yes.
+                                                // Any value greater than 0 means a recursive call to
+                                                // disable change notifications.
         // Does the group must fit its content?
         // If the user resize it, for example, this attribute may be changed to false.
         this._fitContent = true;
@@ -1066,8 +1076,8 @@ class VerticalGroup extends GraphicalElement {
      * @param {number} value The new width.
      */
     set width(value) {
-        let oldChangeNotificationsStatus = this.changeNotificationsEnabled;
-        let oldDimensionReadjustmentStatus = this.dimensionReadjustmentEnabled;
+        //let oldChangeNotificationsStatus = this.changeNotificationsEnabled;
+        //let oldDimensionReadjustmentStatus = this.dimensionReadjustmentEnabled;
         this.disableChangeNotifications(); // Prevent stack overflow.
         this.disableDimensionReadjustment(); // Prevent stack overflow.
         let minimumRequiredWidth = this.minContentWidth;
@@ -1090,8 +1100,10 @@ class VerticalGroup extends GraphicalElement {
 
         this.adjustChildrenPositionAndDimension();
 
-        this.changeNotificationsEnabled = oldChangeNotificationsStatus;
-        this.dimensionReadjustmentEnabled = oldDimensionReadjustmentStatus;
+        this.enableChangeNotifications();
+        this.enableDimensionReadjustment();
+        //this.changeNotificationsEnabled = oldChangeNotificationsStatus;
+        //this.dimensionReadjustmentEnabled = oldDimensionReadjustmentStatus;
     }
 
     /**
@@ -1145,8 +1157,8 @@ class VerticalGroup extends GraphicalElement {
      * @param {number} value The group height.
      */
     set height(value) {
-        let oldChangeNotificationsStatus = this.changeNotificationsEnabled;
-        let oldDimensionReadjustmentStatus = this.dimensionReadjustmentEnabled;
+        //let oldChangeNotificationsStatus = this.changeNotificationsEnabled;
+        //let oldDimensionReadjustmentStatus = this.dimensionReadjustmentEnabled;
 
         this.disableChangeNotifications();
         this.disableDimensionReadjustment(); // Prevent stack overflow.
@@ -1166,8 +1178,10 @@ class VerticalGroup extends GraphicalElement {
 
         this.adjustChildrenPositionAndDimension();
 
-        this.changeNotificationsEnabled = oldChangeNotificationsStatus;
-        this.dimensionReadjustmentEnabled = oldDimensionReadjustmentStatus;
+        //this.changeNotificationsEnabled = oldChangeNotificationsStatus;
+        this.enableChangeNotifications();
+        this.enableDimensionReadjustment();
+        //this.dimensionReadjustmentEnabled = oldDimensionReadjustmentStatus;
     }
 
     /**
@@ -1259,12 +1273,14 @@ class VerticalGroup extends GraphicalElement {
     }
 
     get dimensionReadjustmentEnabled() {
-        return this._dimensionReadjustmentEnabled;
+        return this._dimensionReadjustmentEnabled === 0;
     }
 
+/*
     set dimensionReadjustmentEnabled(value) {
         this._dimensionReadjustmentEnabled = value;
     }
+*/
 
     get fitContent() {
         return this._fitContent;
@@ -1409,7 +1425,7 @@ class VerticalGroup extends GraphicalElement {
 
         // Adjust children's position and dimension.
         for (i = 0; i < this.countChildren(); i++) {
-            let oldChangeNotificationsStatus = this.children[i].changeNotificationsEnabled;
+            //let oldChangeNotificationsStatus = this.children[i].changeNotificationsEnabled;
             this.children[i].disableChangeNotifications(); // Prevent cascade readjustments: parent changes child and child changes parent.
 
             if (this.resizePolicy[i] === VerticalGroup.WRAP_CONTENT) {
@@ -1442,7 +1458,8 @@ class VerticalGroup extends GraphicalElement {
             this.children[i].y = newY;
             newY += this.children[i].height + this.verMargin;
 
-            this.children[i].changeNotificationsEnabled = oldChangeNotificationsStatus;
+            //this.children[i].changeNotificationsEnabled = oldChangeNotificationsStatus;
+            this.children[i].enableChangeNotifications();
             this.children[i].notifyListeners();
         }
     }
@@ -1486,8 +1503,8 @@ class VerticalGroup extends GraphicalElement {
      * @param gravity The child horizontal gravity.
      */
     addChild(child, resizePolicy = VerticalGroup.WRAP_CONTENT, gravity = VerticalGroup.LEFT, weight = 0, overlap = 0) {
-        let oldChangeNotificationsStatus = this.changeNotificationsEnabled;
-        let oldDimensionReadjustmentStatus = this.dimensionReadjustmentEnabled;
+        //let oldChangeNotificationsStatus = this.changeNotificationsEnabled;
+        //let oldDimensionReadjustmentStatus = this.dimensionReadjustmentEnabled;
         this.disableChangeNotifications(); // Avoid unnecessary change notifications.
         this.disableDimensionReadjustment(); // Avoid unnecessary readjustments.
 
@@ -1525,9 +1542,11 @@ class VerticalGroup extends GraphicalElement {
         // Add the group as a child change listener.
         child.addChangeListener(new VerticalGroupChildChangeListener(this));
 
-        this.changeNotificationsEnabled = oldChangeNotificationsStatus;
+        //this.changeNotificationsEnabled = oldChangeNotificationsStatus;
+        this.enableChangeNotifications();
         this.adjustChildrenPositionAndDimension();
-        this.dimensionReadjustmentEnabled = oldDimensionReadjustmentStatus;
+        this.enableDimensionReadjustment();
+        //this.dimensionReadjustmentEnabled = oldDimensionReadjustmentStatus;
     }
 
     /**
@@ -1548,11 +1567,11 @@ class VerticalGroup extends GraphicalElement {
     }
 
     disableDimensionReadjustment() {
-        this._dimensionReadjustmentEnabled = false;
+        this._dimensionReadjustmentEnabled++;
     }
 
     enableDimensionReadjustment() {
-        this._dimensionReadjustmentEnabled = true;
+        this._dimensionReadjustmentEnabled--;
     }
 
     forceFitContent() {
