@@ -58,10 +58,6 @@ class SVGArea {
         return element;
     }
 
-    // TODO: in all methods below, register listener events for all
-    // relevant events and register Circle (or the appropriate class)
-    // EVENThappened method as a callback function. This function
-    // just inform the event listeners that the event happened.
     circle(centerX = 50, centerY = 50, radius = 100) {
         //*****************************
         // Create a new circle and set its id.

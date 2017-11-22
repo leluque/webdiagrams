@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed9db2d7-b2ba-4c3d-83f6-330c629febab" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webdiagrams/primitives.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webdiagrams/geometry.js" afterPath="$PROJECT_DIR$/webdiagrams/graphical_primitives.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webdiagrams/geometry_util.js" afterPath="$PROJECT_DIR$/webdiagrams/graphics_util.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webdiagrams/primitives-look-and-feel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webdiagrams/uml-class-diagram-look-and-feel.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webdiagrams/svg.js" afterPath="$PROJECT_DIR$/webdiagrams/primitives-svg.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webdiagrams/PrimitiveTest.html" afterPath="$PROJECT_DIR$/webdiagrams/PrimitiveTest.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webdiagrams/RelationshipTest.html" afterPath="$PROJECT_DIR$/webdiagrams/RelationshipTest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webdiagrams/look-and-feel.js" afterPath="$PROJECT_DIR$/webdiagrams/look-and-feel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webdiagrams/metamodel.js" afterPath="$PROJECT_DIR$/webdiagrams/metamodel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webdiagrams/uml-class-diagram.js" afterPath="$PROJECT_DIR$/webdiagrams/uml-class-diagram.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webdiagrams/uml.js" afterPath="$PROJECT_DIR$/webdiagrams/uml.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,33 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="graphics_util.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webdiagrams/graphics_util.js">
+      <file leaf-file-name="uml-class-diagram-look-and-feel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webdiagrams/uml-class-diagram-look-and-feel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="look-and-feel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webdiagrams/look-and-feel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1377">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding>
-                <marker date="1511351114768" expanded="true" signature="10469:10475" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="svg.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webdiagrams/svg.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="467" column="0" lean-forward="false" selection-start-line="467" selection-start-column="0" selection-end-line="467" selection-end-column="0" />
+            <state relative-caret-position="352">
+              <caret line="71" column="74" lean-forward="false" selection-start-line="71" selection-start-column="74" selection-end-line="71" selection-end-column="74" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -56,13 +37,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graphical_primitives.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webdiagrams/graphical_primitives.js">
+      <file leaf-file-name="uml-class-diagram.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webdiagrams/uml-class-diagram.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22661">
-              <caret line="1504" column="74" lean-forward="false" selection-start-line="1504" selection-start-column="74" selection-end-line="1504" selection-end-column="74" />
+            <state relative-caret-position="408">
+              <caret line="162" column="17" lean-forward="false" selection-start-line="162" selection-start-column="17" selection-end-line="162" selection-end-column="17" />
               <folding>
-                <element signature="n#ChangeListener#0" expanded="false" />
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="primitives-svg.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webdiagrams/primitives-svg.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="metamodel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webdiagrams/metamodel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="505">
+              <caret line="224" column="18" lean-forward="false" selection-start-line="224" selection-start-column="18" selection-end-line="224" selection-end-column="18" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,26 +76,21 @@
       <file leaf-file-name="PrimitiveTest.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webdiagrams/PrimitiveTest.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="79" column="46" lean-forward="false" selection-start-line="79" selection-start-column="46" selection-end-line="79" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="metamodel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webdiagrams/metamodel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -114,6 +114,7 @@
       <find>dimensionRead</find>
       <find>enableDimension</find>
       <find>oldDimension</find>
+      <find>getValue(</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -123,10 +124,18 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/webdiagrams/geometry_util.js" />
-        <option value="$PROJECT_DIR$/webdiagrams/look-and-feel.js" />
         <option value="$PROJECT_DIR$/webdiagrams/svg.js" />
         <option value="$PROJECT_DIR$/webdiagrams/geometry.js" />
+        <option value="$PROJECT_DIR$/webdiagrams/uml.js" />
+        <option value="$PROJECT_DIR$/webdiagrams/uml-class-look-and-feel.js" />
+        <option value="$PROJECT_DIR$/webdiagrams/look-and-feel.js" />
+        <option value="$PROJECT_DIR$/webdiagrams/primitives-look-and-feel.js" />
+        <option value="$PROJECT_DIR$/webdiagrams/PrimitiveTest.html" />
+        <option value="$PROJECT_DIR$/webdiagrams/RelationshipTest.html" />
+        <option value="$PROJECT_DIR$/webdiagrams/primitives-svg.js" />
         <option value="$PROJECT_DIR$/webdiagrams/metamodel.js" />
+        <option value="$PROJECT_DIR$/webdiagrams/uml-class-diagram-look-and-feel.js" />
+        <option value="$PROJECT_DIR$/webdiagrams/uml-class-diagram.js" />
       </list>
     </option>
   </component>
@@ -136,14 +145,13 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="10" />
-    <option name="y" value="20" />
-    <option name="width" value="1346" />
-    <option name="height" value="688" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="676" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -173,7 +181,22 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="webdiagrams" type="cbb8eebc:String" user="webdiagrams" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="webdiagrams" type="cbb8eebc:String" user="webdiagrams" />
+              <item name="webdiagrams" type="cbb8eebc:String" user="webdiagrams" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scratches" />
     </panes>
   </component>
@@ -195,10 +218,16 @@
     </option>
   </component>
   <component name="RunManager" selected="JavaScript Debug.PrimitiveTest.html">
+    <configuration name="MetamodelTest.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webdiagrams/webdiagrams/MetamodelTest.html" />
     <configuration name="PrimitiveTest.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webdiagrams/webdiagrams/PrimitiveTest.html" />
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.PrimitiveTest.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.MetamodelTest.html" />
+    </list>
     <recent_temporary>
-      <list size="1">
+      <list size="2">
         <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.PrimitiveTest.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.MetamodelTest.html" />
       </list>
     </recent_temporary>
   </component>
@@ -213,15 +242,15 @@
       <option name="presentableId" value="Default" />
       <updated>1511288394493</updated>
       <workItem from="1511288397843" duration="790000" />
-      <workItem from="1511350369940" duration="4675000" />
+      <workItem from="1511350369940" duration="7999000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6017000" />
+    <option name="totallyTimeSpent" value="9341000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -261,12 +290,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webdiagrams/look-and-feel.js">
+    <entry file="file://$PROJECT_DIR$/webdiagrams/primitives-look-and-feel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4369">
           <caret line="257" column="0" lean-forward="true" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
           <folding>
-            <marker date="1511351114768" expanded="true" signature="10469:10475" ph="{...}" />
+            <marker date="1511355769408" expanded="true" signature="10256:10262" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -289,7 +318,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webdiagrams/svg.js">
+    <entry file="file://$PROJECT_DIR$/webdiagrams/primitives-svg.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2652">
           <caret line="156" column="4" lean-forward="false" selection-start-line="156" selection-start-column="4" selection-end-line="156" selection-end-column="4" />
@@ -333,23 +362,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webdiagrams/look-and-feel.js">
+    <entry file="file://$PROJECT_DIR$/webdiagrams/primitives.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1377">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <marker date="1511351114768" expanded="true" signature="10469:10475" ph="{...}" />
-          </folding>
+        <state relative-caret-position="442">
+          <caret line="1525" column="0" lean-forward="true" selection-start-line="1525" selection-start-column="0" selection-end-line="1525" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webdiagrams/svg.js">
+    <entry file="file://$PROJECT_DIR$/webdiagrams/uml.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="467" column="0" lean-forward="false" selection-start-line="467" selection-start-column="0" selection-end-line="467" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webdiagrams/MetamodelTest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="53" lean-forward="false" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webdiagrams/RelationshipTest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="44" lean-forward="false" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -363,18 +404,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webdiagrams/primitives.js">
+    <entry file="file://$PROJECT_DIR$/webdiagrams/primitives-look-and-feel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="1525" column="0" lean-forward="true" selection-start-line="1525" selection-start-column="0" selection-end-line="1525" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="221">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <marker date="1511355769408" expanded="true" signature="10256:10262" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webdiagrams/look-and-feel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webdiagrams/uml-class-diagram-look-and-feel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="71" column="74" lean-forward="false" selection-start-line="71" selection-start-column="74" selection-end-line="71" selection-end-column="74" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webdiagrams/metamodel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="505">
+          <caret line="224" column="18" lean-forward="false" selection-start-line="224" selection-start-column="18" selection-end-line="224" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webdiagrams/primitives-svg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webdiagrams/uml-class-diagram.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="162" column="17" lean-forward="false" selection-start-line="162" selection-start-column="17" selection-end-line="162" selection-end-column="17" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -383,8 +466,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webdiagrams/PrimitiveTest.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="79" column="46" lean-forward="false" selection-start-line="79" selection-start-column="46" selection-end-line="79" selection-end-column="46" />
           <folding />
         </state>
       </provider>

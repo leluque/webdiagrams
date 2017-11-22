@@ -1,5 +1,5 @@
 /**
- * Created by luque on 24/07/17.
+ * Created by Leandro Luque on 24/07/17.
  */
 
 /* JSHint configurations */
@@ -15,6 +15,7 @@ class UMLClassDiagram {
 
     constructor(name = "unnamed") {
         this._model = new CElement(name, MODEL);
+        this._idCount = 1;
     }
 
     get name() {
@@ -23,6 +24,14 @@ class UMLClassDiagram {
 
     set name(value) {
         this._model.name = value;
+    }
+
+    get idCount() {
+        return this._idCount;
+    }
+
+    set idCount(value) {
+        this._idCount = value;
     }
 
     addClass(newClass) {
@@ -72,11 +81,15 @@ class UMLClassDiagram {
      */
     findInterfaces(namePart) {
         let elements = this._model.findChildrenByOther(function (child) {
-            return (child.name.contains(namePart) && child.type === CLASS && child.getValue(STEREOTYPE) === INTERFACE);
+            return (child.name.contains(namePart) && child.type === CLASS && child.isInterface);
         });
         return elements.map(function (element) {
             return new UMLClass(element);
         });
+    }
+
+    generateId() {
+        return "element_" + (this._idCount++);
     }
 
     toString() {
@@ -84,7 +97,7 @@ class UMLClassDiagram {
         result += "==============================\n";
         result += "Classes:\n\n";
 
-        if(this.getClasses()) {
+        if (this.getClasses()) {
             this.getClasses().forEach(function print(element, index, array) {
                 result += element.toString();
                 result += "\n\n";
@@ -102,6 +115,26 @@ class UMLClass {
 
     constructor(element = new CElement("unnamed", CLASS)) {
         this._element = element;
+    }
+
+    get element() {
+        return this._element;
+    }
+
+    set element(value) {
+        this._element = value;
+    }
+
+    get stereotypes() {
+        let stereotypes = this.element.getChildByName(STEREOTYPE);
+        if (stereotypes === null) {
+            return null;
+        }
+        return stereotypes.values();
+    }
+
+    get isInterface() {
+        return this.hasStereotype(INTERFACE);
     }
 
     static newInstance(name = "unnamed", stereotype, visibility = PUBLIC, isAbstract = false, isLeaf = false, isStatic = false) {
@@ -124,12 +157,39 @@ class UMLClass {
         return new UMLClass(newClass);
     }
 
-    get element() {
-        return this._element;
+    addStereotype(stereotype) {
+        let stereotypes = this.element.getChildByName(STEREOTYPE);
+        if (stereotypes === null) {
+            this.element.addChild(new VElement(STEREOTYPE, STEREOTYPE, stereotype));
+        } else {
+            stereotypes.addValue(stereotype);
+        }
     }
 
-    set element(value) {
-        this._element = value;
+    countStereotypes() {
+        let stereotypes = this.element.getChildByName(STEREOTYPE);
+        if (stereotypes === null) {
+            return 0;
+        } else {
+            return stereotypes.countValues();
+        }
+    }
+
+    stereotypeAt(index) {
+        let stereotypes = this.element.getChildByName(STEREOTYPE);
+        if (stereotypes === null) {
+            return null;
+        } else {
+            return stereotypes.getValueAt(index);
+        }
+    }
+
+    hasStereotype(stereotype) {
+        let stereotypes = this.element.getChildByName(STEREOTYPE);
+        if (stereotypes === null) {
+            return false;
+        }
+        return (stereotypes.contains(stereotype));
     }
 
     /**
@@ -168,6 +228,34 @@ class UMLClassAttribute {
         this._element = element;
     }
 
+    get element() {
+        return this._element;
+    }
+
+    set element(value) {
+        this._element = value;
+    }
+
+    get visibility() {
+        return this.element.getValue(VISIBILITY);
+    }
+
+    get type() {
+        return this.element.getValue(TYPE);
+    }
+
+    get initialValue() {
+        return this.element.getValue(INITIAL_VALUE);
+    }
+
+    get isStatic() {
+        return this.element.getValue(IS_STATIC);
+    }
+
+    get isReadOnly() {
+        return this.element.getValue(IS_READ_ONLY);
+    }
+
     static newAttribute(visibility = PRIVATE, name = "unnamed", type = "String", initialValue, isStatic = false, isReadOnly = false) {
         let attr = new CElement(name, ATTRIBUTE);
         if (visibility !== null) {
@@ -189,47 +277,36 @@ class UMLClassAttribute {
         return new UMLClassAttribute(attr);
     }
 
-    get
-    element() {
-        return this._element;
-    }
-
-    set
-    element(value) {
-        this._element = value;
-    }
-
-    get
-    visibility() {
-        return this.element.getValue(VISIBILITY);
-    }
-
-    get
-    type() {
-        return this.element.getValue(TYPE);
-    }
-
-    get
-    initialValue() {
-        return this.element.getValue(INITIAL_VALUE);
-    }
-
-    get
-    isStatic() {
-        return this.element.getValue(IS_STATIC);
-    }
-
-    get
-    isReadOnly() {
-        return this.element.getValue(IS_READ_ONLY);
-    }
-
 }
 
 class UMLClassOperation {
 
     constructor(element = new CElement("unnamed", OPERATION)) {
         this._element = element;
+    }
+
+    get element() {
+        return this._element;
+    }
+
+    set element(value) {
+        this._element = value;
+    }
+
+    get visibility() {
+        return this.element.getValue(VISIBILITY);
+    }
+
+    get returnType() {
+        return this.element.getValue(RETURN_TYPE);
+    }
+
+    get isStatic() {
+        return this.element.getValue(IS_STATIC);
+    }
+
+    get isLeaf() {
+        return this.element.getValue(IS_LEAF);
     }
 
     static newInstance(visibility = PRIVATE, name = "unnamed", returnType = "void", isStatic = false, isLeaf = false) {
@@ -248,36 +325,6 @@ class UMLClassOperation {
         }
 
         return new UMLClassOperation(operation);
-    }
-
-    get
-    element() {
-        return this._element;
-    }
-
-    set
-    element(value) {
-        this._element = value;
-    }
-
-    get
-    visibility() {
-        return this.element.getValue(VISIBILITY);
-    }
-
-    get
-    returnType() {
-        return this.element.getValue(RETURN_TYPE);
-    }
-
-    get
-    isStatic() {
-        return this.element.getValue(IS_STATIC);
-    }
-
-    get
-    isLeaf() {
-        return this.element.getValue(IS_LEAF);
     }
 
 }

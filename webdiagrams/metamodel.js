@@ -100,7 +100,7 @@ class CElement extends Element {
     }
 
     addChild(child) {
-        // If does not exist an child with the same name, add it.
+        // If does not exist a child with the same name, add it.
         if (child.name in this._children) {
             return false;
         }
@@ -205,6 +205,10 @@ class VElement extends Element {
         return this._values.length;
     }
 
+    containsValue(value) {
+        return this._values.includes(value);
+    }
+
     getValueAt(position) {
         if (position >= 0 && position < countValues()) {
             return this._values[position];
@@ -216,6 +220,10 @@ class VElement extends Element {
         if (this.countValues() > 0) {
             return this._values[0];
         }
+    }
+
+    get values() {
+        return this._values;
     }
 
 }

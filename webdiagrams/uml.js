@@ -1,5 +1,5 @@
 /**
- * Created by luque on 24/07/17.
+ * Created by Leandro Luque on 24/07/17.
  */
 
 /* JSHint configurations */
@@ -7,8 +7,6 @@
 /* jshint -W097 */
 
 'use strict';
-
-
 
 // A.
 const ATTRIBUTE = "A1";
