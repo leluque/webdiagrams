@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed9db2d7-b2ba-4c3d-83f6-330c629febab" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webdiagrams/geometry.js" afterPath="$PROJECT_DIR$/webdiagrams/geometry.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webdiagrams/svg.js" afterPath="$PROJECT_DIR$/webdiagrams/svg.js" />
     </list>
@@ -43,8 +42,8 @@
       <file leaf-file-name="svg.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webdiagrams/svg.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="480" column="45" lean-forward="false" selection-start-line="480" selection-start-column="45" selection-end-line="480" selection-end-column="45" />
+            <state relative-caret-position="471">
+              <caret line="177" column="0" lean-forward="false" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -55,10 +54,9 @@
       <file leaf-file-name="geometry.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webdiagrams/geometry.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="804" column="0" lean-forward="false" selection-start-line="804" selection-start-column="0" selection-end-line="804" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="180" column="87" lean-forward="false" selection-start-line="180" selection-start-column="87" selection-end-line="180" selection-end-column="87" />
               <folding>
-                <element signature="n#Point#0" expanded="false" />
                 <element signature="n#BoundingBox#0" expanded="false" />
                 <element signature="n#ChangeListener#0" expanded="false" />
               </folding>
@@ -69,8 +67,8 @@
       <file leaf-file-name="PrimitiveTest.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webdiagrams/PrimitiveTest.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="75" column="35" lean-forward="false" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
+            <state relative-caret-position="340">
+              <caret line="93" column="43" lean-forward="false" selection-start-line="93" selection-start-column="43" selection-end-line="93" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -84,8 +82,13 @@
       <find>width</find>
       <find>Text</find>
       <find>height</find>
-      <find>class Text</find>
+      <find>children</find>
       <find>minWidth</find>
+      <find>TextLis</find>
+      <find>rotation</find>
+      <find>class Text</find>
+      <find>text</find>
+      <find>stack</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -184,12 +187,12 @@
       <option name="presentableId" value="Default" />
       <updated>1511288394493</updated>
       <workItem from="1511288397843" duration="790000" />
-      <workItem from="1511350369940" duration="1445000" />
+      <workItem from="1511350369940" duration="2719000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2787000" />
+    <option name="totallyTimeSpent" value="4061000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -247,7 +250,6 @@
         <state relative-caret-position="13396">
           <caret line="788" column="26" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1768" selection-end-column="1" />
           <folding>
-            <element signature="n#Point#0" expanded="false" />
             <element signature="n#BoundingBox#0" expanded="false" />
             <element signature="n#ChangeListener#0" expanded="false" />
           </folding>
@@ -285,7 +287,6 @@
         <state relative-caret-position="199">
           <caret line="792" column="26" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1772" selection-end-column="1" />
           <folding>
-            <element signature="n#Point#0" expanded="false" />
             <element signature="n#BoundingBox#0" expanded="false" />
             <element signature="n#ChangeListener#0" expanded="false" />
           </folding>
@@ -308,6 +309,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webdiagrams/PrimitiveTest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="93" column="43" lean-forward="false" selection-start-line="93" selection-start-column="43" selection-end-line="93" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webdiagrams/look-and-feel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1377">
@@ -320,28 +329,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webdiagrams/svg.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="480" column="45" lean-forward="false" selection-start-line="480" selection-start-column="45" selection-end-line="480" selection-end-column="45" />
+        <state relative-caret-position="471">
+          <caret line="177" column="0" lean-forward="false" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webdiagrams/PrimitiveTest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="75" column="35" lean-forward="false" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webdiagrams/geometry.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="804" column="0" lean-forward="false" selection-start-line="804" selection-start-column="0" selection-end-line="804" selection-end-column="0" />
+        <state relative-caret-position="204">
+          <caret line="180" column="87" lean-forward="false" selection-start-line="180" selection-start-column="87" selection-end-line="180" selection-end-column="87" />
           <folding>
-            <element signature="n#Point#0" expanded="false" />
             <element signature="n#BoundingBox#0" expanded="false" />
             <element signature="n#ChangeListener#0" expanded="false" />
           </folding>

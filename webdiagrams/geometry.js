@@ -172,16 +172,15 @@ class GraphicalElement {
     }
 
     get width() {
-        if (this._width < this.minWidth) {
-            return this.minWidth;
-        }
         return this._width;
     }
 
     set width(value) {
         if (value >= this.minWidth) {
             this._width = value;
+            this.disableChangeNotifications(); // Avoid unnecessary repeated notifications.
             this.rotationCenterX = this.x + this.width / 2;
+            this.enableChangeNotifications();
             this.notifyListeners();
         }
     }
@@ -198,16 +197,15 @@ class GraphicalElement {
     }
 
     get height() {
-        if (this._height < this.minHeight) {
-            return this.minHeight;
-        }
         return this._height;
     }
 
     set height(value) {
         if (value >= this.minHeight) {
             this._height = value;
+            this.disableChangeNotifications(); // Avoid unnecessary repeated notifications.
             this.rotationCenterY = this.y + this.height / 2;
+            this.enableChangeNotifications();
             this.notifyListeners();
         }
     }
@@ -795,6 +793,18 @@ class Text extends GraphicalElement {
         this._fontStylingAttributes.target = this;
     }
 
+
+    get minWidth() {
+        let boundingBox = this.drawn.getBBox();
+        return boundingBox.width;
+    }
+
+    get minHeight() {
+        let boundingBox = this.drawn.getBBox();
+        return boundingBox.height;
+    }
+
+
     get text() {
         return this._text;
     }
@@ -802,6 +812,7 @@ class Text extends GraphicalElement {
     set text(value) {
         this._text = value;
         this.notifyListeners();
+        this.calculateDimensions();
     }
 
     get fontStylingAttributes() {
@@ -813,6 +824,16 @@ class Text extends GraphicalElement {
         this.fontStylingAttributes.target = this;
         this.notifyListeners();
     }
+
+    calculateDimensions() {
+        try {
+            this.width = this.minWidth;
+            this.height = this.minHeight;
+        }
+        catch (error) {
+        }
+    }
+
 
 }
 
