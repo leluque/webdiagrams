@@ -15,14 +15,14 @@ The WebDiagrams library has been developed having in mind some design requiremen
 
 # Structure
 
-Aiming at fulfilling the aforementioned design and usage requirements, the library was organized in layers, as described next.
+Aiming at fulfilling the aforementioned design and usage requirements, the library was organized in components, as described next.
 
 <pre><code>
 ┌──────────────────────────────────────────────────────────┐
 │                  WebDiagrams Structure                   │
 │                                                          │
 │  ┌────────────────────────────────────────────────────┐  │
-│  │          Specific Metamodels and Drawing           │  │
+│  │          Specific Metamodels and Drawers           │  │
 │  │ ┌────────────────────────────────────────────────┐ │  │
 │  │ │               UML Class Diagram                │ │  │
 |  | | ┌───────────┐ ┌──────────────────────────────┐ | |  |
@@ -52,3 +52,19 @@ The Node-and-Link Generic Metamodel (NLGM) implements a very generic metamodel t
 The **Element** class is the base class for all metamodel elements. It contains the basic attributes of all elements: name and type. The most basic type of element is the value element (**VElement**). It simply adds values to the basic element definition. It can store one or more values. A value can be a String, a Number, an object, or any other valid value. A composed element (**CElement**) can have other composed elements or value elements. It contains utility methods to find its children by type, name etc.
 
 **As an example**, a class diagram may be represented by a composed element (CElement) that contains other CElement, representing classes. A class may use value elements to represent its direct properties (is final? is abstract? etc.) and other composed elements to represent attributes and methods.
+
+## Graphics Primitives Metamodel
+
+The Graphics Primitives Metamodel (GPM) implements graphics primitives such as rectangles, circles, ellipses, lines, diamonds, texts, as well as groups of elements such as vertical groups. This component does not draw primitives but only stores information for drawing (position, dimension, content etc.). When the GPM changes, it notifies listeners about the changes. These listeners must be implemented by the Graphics Primitives Drawer (GPD), described next.
+
+## Graphics Primitives Drawer
+
+The Graphics Primitives Drawer (GPD) implements a drawer using a specific technology (SVG, canvas or other). It creates GPM primitives and implements listeners to change the graphical representation when GPM elements change.
+
+## Graphics Primitives Drawer
+
+The Graphics Primitives Drawer (GPD) implements a drawer using a specific technology (SVG, canvas or other). It creates GPM primitives and implements listeners to change the graphical representation when GPM elements change. The primitives drawing is based factories (Factory design pattern) on strategies (Strategy design pattern). A drawer implements a look-and-feel and defines a factory of strategies - each strategy knows how to draw a specific primitive for the look-and-feel.
+
+## Specific Metamodels and Drawers
+
+The Specific Metamodels and Drawers (SMD) implements specific node-and-link diagrams metamodels and drawers. Each node-and-link diagram implements a metamodel built upon the generic metamodel. In addition to the model information, a node-and-link diagram contains information about each element position and dimension. The graphics-related information is inherited from some basic node-and-link diagram classes (from the NLGM). As the model information is implemented through the delegate pattern, implemented with an association, the same model may be associated with different diagrams.
