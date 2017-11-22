@@ -1,5 +1,5 @@
 /**
- * Created by luque on 24/07/17.
+ * Created by Leandro Luque on 24/07/17.
  */
 
 /* JSHint configurations */
