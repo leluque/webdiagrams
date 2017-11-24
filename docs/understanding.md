@@ -43,3 +43,15 @@ classDiagram.onNewAttribute(new function(e) {
 ```
 
 Considering these usages, we decided to establish the architecture described next.
+
+## DrawingArea
+
+The drawing area must recognize the type of element selected and instantiate the appropriate drawer (e.g.: a drawer for SVG, for canvas or other). The default drawers uses the default LookAndFeel. We decided to understand each drawer as a strategy (Strategy design pattern) and to create a factory (Factory Design Pattern), called by DrawingArea, to create the appropriate drawer. This factory receives two arguments: the selector and the look and feel. If no drawer is found for the argument combination, an exception is thrown.
+
+When the look and feel changes, this factory is used again to get a new drawer. If primitives are drawn on the drawing area, this drawer must redraw the primitives.
+
+The drawing area has methods to create primitives and it just delegates the feature to the related drawer. When a primitive is created, the drawer returns a primitive metamodel that contains its metadata (e.g. position, dimension etc.). This metamodel is stored in the drawing area and returned to the user to be manipulated. When a primitive is manipulated (e.g. position changed, redimensioned), the drawer updates the drawing. This is done through callbacks defined by drawers to listen changing events on primitives. When the drawer is draws on a canvas, a new drawing must redraw all primitives. To do that, the drawer must store a reference to the drawing area to get all primitives and draw all of them. If the drawer draws on a svg, this is not necessary since each element can be manipulated individually.
+
+## Graphics Primitives.
+
+A graphics primitive may responde to events. An event listener is registered through the primitive metamodel, but its implementation depend on the technology on which the drawer is based. For example, if it is a canvas, the events are registered to the whole canvas. If it is a SVG, each element may have its own events. A drawer always adds handlers for every event to all primitives and call the primitive method when the event happens. The primitive itself may call a callback when the user defines one.
