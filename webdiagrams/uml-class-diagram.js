@@ -139,31 +139,27 @@ class UMLClass {
 
     static newInstance(name = "unnamed", stereotype, visibility = PUBLIC, isAbstract = false, isLeaf = false, isStatic = false) {
         let newClass = new CElement(name, CLASS);
-        if (stereotype !== null) {
+        if (stereotype !== undefined) {
+            console.log(name + " woohoo")
             newClass.addChild(new VElement(STEREOTYPE, STEREOTYPE, stereotype));
         }
-        if (visibility !== null) {
+        if (visibility !== undefined) {
             newClass.addChild(new VElement(VISIBILITY, VISIBILITY, visibility));
         }
-        if (isAbstract !== null) {
+        if (isAbstract !== undefined) {
             newClass.addChild(new VElement(IS_ABSTRACT, IS_ABSTRACT, isAbstract));
         }
-        if (isLeaf !== null) {
+        if (isLeaf !== undefined) {
             newClass.addChild(new VElement(IS_LEAF, IS_LEAF, isLeaf));
         }
-        if (isStatic !== null) {
+        if (isStatic !== undefined) {
             newClass.addChild(new VElement(IS_STATIC, IS_STATIC, isStatic));
         }
         return new UMLClass(newClass);
     }
 
     addStereotype(stereotype) {
-        let stereotypes = this.element.findChildrenByType(STEREOTYPE);
-        if (stereotypes === null) {
-            this.element.addChild(new VElement(STEREOTYPE, STEREOTYPE, stereotype));
-        } else {
-            stereotypes.push(stereotype);
-        }
+        this.element.addChild(new VElement(STEREOTYPE, STEREOTYPE, stereotype));
     }
 
     countStereotypes() {
