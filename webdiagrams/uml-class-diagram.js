@@ -140,7 +140,6 @@ class UMLClass {
     static newInstance(name = "unnamed", stereotype, visibility = PUBLIC, isAbstract = false, isLeaf = false, isStatic = false) {
         let newClass = new CElement(name, CLASS);
         if (stereotype !== undefined) {
-            console.log(name + " woohoo")
             newClass.addChild(new VElement(STEREOTYPE, STEREOTYPE, stereotype));
         }
         if (visibility !== undefined) {
