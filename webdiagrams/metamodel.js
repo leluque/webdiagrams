@@ -158,7 +158,7 @@ class CElement extends Element {
     }
 
     getValue(name) {
-        let child = findChild(name);
+        let child = findChildByName(name); 
         if(child !== null && child.value !== null) {
             return child.value;
         }
