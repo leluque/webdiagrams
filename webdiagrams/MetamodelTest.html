@@ -16,7 +16,7 @@
         let classDiagram = new UMLClassDiagram("New Class Diagram 1");
         let personClass = classDiagram.newClass("Person");
         personClass.addStereotype("Abstract");
-        personClass.addStereotype("Abstract");
+        personClass.addStereotype("Interface");
         personClass.newAttribute(PRIVATE, "document", type = "String");
         personClass.newAttribute(PRIVATE, "firstName", type = "String");
         personClass.newAttribute(PRIVATE, "lastName", type = "String");
@@ -24,6 +24,7 @@
         let customerClass = classDiagram.newClass("Customer");
         customerClass.newAttribute(PRIVATE, "register", type = "String");
 
+        console.log(classDiagram.getClasses())
         console.log(classDiagram.toString());
 
     })();
