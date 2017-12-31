@@ -126,11 +126,11 @@ class UMLClass {
     }
 
     get stereotypes() {
-        let stereotypes = this.element.getChildByName(STEREOTYPE);
+        let stereotypes = this.element.findChildrenByType(STEREOTYPE);
         if (stereotypes === null) {
             return null;
         }
-        return stereotypes.values();
+        return stereotypes;
     }
 
     get isInterface() {
@@ -158,34 +158,34 @@ class UMLClass {
     }
 
     addStereotype(stereotype) {
-        let stereotypes = this.element.getChildByName(STEREOTYPE);
+        let stereotypes = this.element.findChildrenByType(STEREOTYPE);
         if (stereotypes === null) {
             this.element.addChild(new VElement(STEREOTYPE, STEREOTYPE, stereotype));
         } else {
-            stereotypes.addValue(stereotype);
+            stereotypes.push(stereotype);
         }
     }
 
     countStereotypes() {
-        let stereotypes = this.element.getChildByName(STEREOTYPE);
+        let stereotypes = this.element.findChildrenByType(STEREOTYPE);
         if (stereotypes === null) {
             return 0;
         } else {
-            return stereotypes.countValues();
+            return stereotypes.length;
         }
     }
 
     stereotypeAt(index) {
-        let stereotypes = this.element.getChildByName(STEREOTYPE);
+        let stereotypes = this.element.findChildrenByType(STEREOTYPE);
         if (stereotypes === null) {
             return null;
         } else {
-            return stereotypes.getValueAt(index);
+            return stereotypes[index];
         }
     }
 
     hasStereotype(stereotype) {
-        let stereotypes = this.element.getChildByName(STEREOTYPE);
+        let stereotypes = this.element.findChildrenByType(STEREOTYPE);
         if (stereotypes === null) {
             return false;
         }
@@ -216,6 +216,12 @@ class UMLClass {
 
     toString() {
         let result = this.element.name;
+        if(this.countStereotypes() > 0) {
+            for(let i = 0; i < this.countStereotypes(); i++) {
+                result += " << " + this.stereotypeAt(i).value + " >>"
+            }
+        }
+        
         result += "\n";
         
         let attributes = this.element.findChildrenByType(ATTRIBUTE);
@@ -227,7 +233,8 @@ class UMLClass {
             result += "\n";
         }
         
-        return result;
+        // Eliminating the last \n
+        return result.substr(0, result.length - 1);
     }
 
 }
