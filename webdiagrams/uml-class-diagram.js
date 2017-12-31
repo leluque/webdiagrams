@@ -217,6 +217,16 @@ class UMLClass {
     toString() {
         let result = this.element.name;
         result += "\n";
+        
+        let attributes = this.element.findChildrenByType(ATTRIBUTE);
+        for(let i = 0; i < attributes.length; i++) {
+            let visibility = attributes[i].getValue(VISIBILITY);
+            let type = attributes[i].getValue(TYPE);
+            
+            result += visibility + " " + attributes[i].name + ": " + type;
+            result += "\n";
+        }
+        
         return result;
     }
 
