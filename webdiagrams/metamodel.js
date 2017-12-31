@@ -210,7 +210,7 @@ class VElement extends Element {
     }
 
     getValueAt(position) {
-        if (position >= 0 && position < countValues()) {
+        if (position >= 0 && position < this.countValues()) {
             return this._values[position];
         }
         return null;
