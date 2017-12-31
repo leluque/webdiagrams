@@ -102,7 +102,8 @@ class CElement extends Element {
     addChild(child) {
         // If does not exist a child with the same name, add it.
         if (child.name in this._children) {
-            return false;
+            this._children[child.name]._values.push(child.value)
+            return true;
         }
         this._children[child.name] = child;
         return true;
