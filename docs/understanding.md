@@ -2,8 +2,8 @@
 
 WebDiagrams was planned based on a simple usage pattern as examplified next.
 
-```
-// ********** PRIMITIVES.
+#### Drawing primitives
+```javascript
 // Create a new drawing area (may be a SVG, canvas or div).
 let drawingArea = new DrawingArea("#area"); // Any valid selector may be used here.
 drawingArea.lookAndFeel = LookAndFeel.DEFAULT; // Different look and feel may be implemented.
@@ -18,15 +18,14 @@ circle.move(50, 50);
 // Change the circle radius. It updates the drawing area.
 circle.radius = 50;
 ```
-```
-// ********** DIAGRAMS.
-
+#### Drawing diagrams
+```javascript
 // Create a new diagram area (may be a SVG, canvas or div).
 let diagramArea = new DiagramArea("#area"); 
 diagramArea.lookAndFeel = LookAndFeel.DEFAULT; // Different look and feel may be implemented.
 
 // Customize callback functions (if necessary).
-diagramArea.onClick(new function() {
+diagramArea.onClick(function(e) {
   e.preventDefault();
 });
 
@@ -34,10 +33,11 @@ diagramArea.onClick(new function() {
 classDiagram.drawOn(diagramArea);
 
 // Customize callback functions (if necessary).
-classDiagram.onNewClass(new function(e) {
+classDiagram.onNewClass(function(e) {
   e.preventDefault();
 });
-classDiagram.onNewAttribute(new function(e) {
+
+classDiagram.onNewAttribute(function(e) {
   e.preventDefault();
 });
 ```
