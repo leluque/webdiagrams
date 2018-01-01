@@ -91,6 +91,10 @@ class UMLClassDiagram {
     generateId() {
         return "element_" + (this._idCount++);
     }
+    
+    drawOn(drawingArea) {
+        // TODO: Draw whole diagram here
+    }
 
     toString() {
         let result = "Class diagram '" + this.name + "'\n";
