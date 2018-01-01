@@ -158,12 +158,12 @@ class UMLClass {
     }
 
     addStereotype(stereotype) {
-        this.element.addChild(new VElement(STEREOTYPE, STEREOTYPE, stereotype));
+        this.element.addChild(new VElement(stereotype, STEREOTYPE, stereotype));
     }
 
     countStereotypes() {
         let stereotypes = this.element.findChildrenByType(STEREOTYPE);
-        if (stereotypes === null) {
+        if (!stereotypes.length) {
             return 0;
         } else {
             return stereotypes.length;
@@ -172,7 +172,7 @@ class UMLClass {
 
     stereotypeAt(index) {
         let stereotypes = this.element.findChildrenByType(STEREOTYPE);
-        if (stereotypes === null) {
+        if (!stereotypes.length) {
             return null;
         } else {
             return stereotypes[index];
@@ -181,7 +181,7 @@ class UMLClass {
 
     hasStereotype(stereotype) {
         let stereotypes = this.element.findChildrenByType(STEREOTYPE);
-        if (stereotypes === null) {
+        if (!stereotypes.length) {
             return false;
         }
         return (stereotypes.contains(stereotype));
@@ -213,7 +213,7 @@ class UMLClass {
         let result = this.element.name;
         if(this.countStereotypes() > 0) {
             for(let i = 0; i < this.countStereotypes(); i++) {
-                result += " << " + this.stereotypeAt(i).value + " >>"
+                result += " <<" + this.stereotypeAt(i).value + ">>"
             }
         }
         
