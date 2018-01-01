@@ -133,6 +133,22 @@ class UMLClass {
         return stereotypes;
     }
 
+    get attributes() {
+        let attributes = this.element.findChildrenByType(ATTRIBUTE);
+        if (attributes === null) {
+            return null;
+        }
+        return attributes;
+    }
+
+    get operations() {
+        let operations = this.element.findChildrenByType(OPERATION);
+        if (operations === null) {
+            return null;
+        }
+        return operations;
+    }
+
     get isInterface() {
         return this.hasStereotype(INTERFACE);
     }
@@ -209,6 +225,12 @@ class UMLClass {
         return attr;
     }
 
+    newOperation(visibility = PRIVATE, name = "unnamed", returnType = "void", isStatic = false, isLeaf = false) {
+        let operation = UMLClassOperation.newInstance(visibility, name, returnType, isStatic, isLeaf);
+        this.element.addChild(operation.element);
+        return operation;
+    }
+
     toString() {
         let result = this.element.name;
         if(this.countStereotypes() > 0) {
@@ -219,15 +241,44 @@ class UMLClass {
         
         result += "\n";
         
-        let attributes = this.element.findChildrenByType(ATTRIBUTE);
-        for(let i = 0; i < attributes.length; i++) {
-            let visibility = attributes[i].getValue(VISIBILITY);
-            let type = attributes[i].getValue(TYPE);
+        let attributes = this.attributes;
+        if(attributes.length > 0) {
+            result += "| Attributes\n";
             
-            result += visibility + " " + attributes[i].name + ": " + type;
-            result += "\n";
+            for(let i = 0; i < attributes.length; i++) {
+                let visibility = attributes[i].getValue(VISIBILITY);
+                let type = attributes[i].getValue(TYPE);
+
+                result += "| " + visibility + " " + attributes[i].name + "\t: " + type;
+                result += "\n";
+            }
         }
         
+        let operations = this.operations;
+        if(operations.length > 0) {
+            result += "| ---\n| Operations\n";
+            
+            for(let i = 0; i < operations.length; i++) {
+                let umlOperation = new UMLClassOperation(operations[i]);
+                
+                let visibility = umlOperation.visibility;
+                let returns = umlOperation.returnType;
+                
+                let params = "";
+                if(umlOperation.hasParameters()) {
+                    let parameters = umlOperation.parameters;
+                    for(let i = 0; i < parameters.length; i++) {
+                        params += parameters[i].name + ": " + parameters[i].value + " ";
+                    }
+                    
+                    params = params.substr(0, params.length - 1);
+                }
+
+                result += "| " + visibility + " " + operations[i].name + "(" + params + ")\t: " + returns;
+                result += "\n";
+            }
+        }
+         
         // Eliminating the last \n
         return result.substr(0, result.length - 1);
     }
@@ -296,6 +347,10 @@ class UMLClassOperation {
     constructor(element = new CElement("unnamed", OPERATION)) {
         this._element = element;
     }
+    
+    addParameter(name = "unnamed", type = "int") {
+        this.element.addChild(new VElement(name, PARAMETER, type));
+    }
 
     get element() {
         return this._element;
@@ -319,6 +374,16 @@ class UMLClassOperation {
 
     get isLeaf() {
         return this.element.getValue(IS_LEAF);
+    }
+    
+    get parameters() {
+        let parameters = this.element.findChildrenByType(PARAMETER);
+        return parameters;
+    }
+    
+    hasParameters() {
+        let parameters = this.parameters;
+        return parameters.length && parameters.length != 0;
     }
 
     static newInstance(visibility = PRIVATE, name = "unnamed", returnType = "void", isStatic = false, isLeaf = false) {

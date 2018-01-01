@@ -21,6 +21,9 @@
         personClass.newAttribute(PRIVATE, "firstName", type = "String");
         personClass.newAttribute(PRIVATE, "lastName", type = "String");
         
+        let operation = personClass.newOperation(PUBLIC, "eat", "void");
+        operation.addParameter("thing", "Food");
+        
         let customerClass = classDiagram.newClass("Customer");
         customerClass.newAttribute(PRIVATE, "register", type = "String");
 
