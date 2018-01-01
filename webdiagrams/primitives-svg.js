@@ -10,11 +10,12 @@
 
 class SVGArea {
 
-    constructor(svgSelector = "#svg") {
+    constructor(svgSelector = "#svg", lookAndFeel = new LookAndFeel()) {
         this._idCount = 1;
         this._svg = document.querySelector(svgSelector);
         this._namespace = "http://www.w3.org/2000/svg";
         this._elements = [];
+        this._lookAndFeel = lookAndFeel;
     }
 
     get idCount() {
@@ -52,6 +53,14 @@ class SVGArea {
     set elements(value) {
         this._elements = value;
     }
+    
+    get lookAndFeel() {
+        return this._lookAndFeel;
+    }
+    
+    set lookAndFeel(value) {
+        this._lookAndFeel = value;
+    }
 
     addElement(element) {
         this._elements.push(element);
@@ -70,8 +79,7 @@ class SVGArea {
         newCircle.addChangeListener(new CirclePositionChangeListener());
         newCircle.addChangeListener(new StyleChangeListener());
 
-        let lookAndFeel = new LookAndFeel();
-        let drawer = lookAndFeel.getDrawerFor(newCircle);
+        let drawer = this.lookAndFeel.getDrawerFor(newCircle);
         drawer.svgArea = this;
         var drawnCircle = drawer.draw(newCircle);
         this.svg.appendChild(drawnCircle);
@@ -93,8 +101,7 @@ class SVGArea {
         newEllipse.addChangeListener(new EllipsePositionChangeListener());
         newEllipse.addChangeListener(new StyleChangeListener());
 
-        let lookAndFeel = new LookAndFeel();
-        let drawer = lookAndFeel.getDrawerFor(newEllipse);
+        let drawer = this.lookAndFeel.getDrawerFor(newEllipse);
         drawer.svgArea = this;
         var drawnEllipse = drawer.draw(newEllipse);
         this.svg.appendChild(drawnEllipse);
@@ -116,8 +123,7 @@ class SVGArea {
         newRectangle.addChangeListener(new RectanglePositionChangeListener());
         newRectangle.addChangeListener(new StyleChangeListener());
 
-        let lookAndFeel = new LookAndFeel();
-        let drawer = lookAndFeel.getDrawerFor(newRectangle);
+        let drawer = this.lookAndFeel.getDrawerFor(newRectangle);
         drawer.svgArea = this;
         var drawnRectangle = drawer.draw(newRectangle);
         this.svg.appendChild(drawnRectangle);
@@ -139,8 +145,7 @@ class SVGArea {
         newDiamong.addChangeListener(new DiamondPositionChangeListener());
         newDiamong.addChangeListener(new StyleChangeListener());
 
-        let lookAndFeel = new LookAndFeel();
-        let drawer = lookAndFeel.getDrawerFor(newDiamong);
+        let drawer = this.lookAndFeel.getDrawerFor(newDiamong);
         drawer.svgArea = this;
         var drawnDiamong = drawer.draw(newDiamong);
         this.svg.appendChild(drawnDiamong);
@@ -164,8 +169,7 @@ class SVGArea {
         newText.addChangeListener(new FontChangeListener());
         newText.addChangeListener(new StyleChangeListener());
 
-        let lookAndFeel = new LookAndFeel();
-        let drawer = lookAndFeel.getDrawerFor(newText);
+        let drawer = this.lookAndFeel.getDrawerFor(newText);
         drawer.svgArea = this;
         var drawnText = drawer.draw(newText);
         this.svg.appendChild(drawnText);
@@ -189,8 +193,7 @@ class SVGArea {
         newImage.addChangeListener(new ImagePositionChangeListener());
         newImage.addChangeListener(new StyleChangeListener());
 
-        let lookAndFeel = new LookAndFeel();
-        let drawer = lookAndFeel.getDrawerFor(newImage);
+        let drawer = this.lookAndFeel.getDrawerFor(newImage);
         drawer.svgArea = this;
         var drawnText = drawer.draw(newImage);
         this.svg.appendChild(drawnText);
@@ -210,8 +213,7 @@ class SVGArea {
         // Add change listeners.
         newVGroup.addChangeListener(new VGroupTransformationChangeListener());
 
-        let lookAndFeel = new LookAndFeel();
-        let drawer = lookAndFeel.getDrawerFor(newVGroup);
+        let drawer = this.lookAndFeel.getDrawerFor(newVGroup);
         drawer.svgArea = this;
         var drawnVGroup = drawer.draw(newVGroup);
         this.svg.appendChild(drawnVGroup);
@@ -231,8 +233,7 @@ class SVGArea {
         // Add change listeners.
         newLinearGroup.addChangeListener(new LinearGroupTransformationChangeListener());
 
-        let lookAndFeel = new LookAndFeel();
-        let drawer = lookAndFeel.getDrawerFor(newLinearGroup);
+        let drawer = this.lookAndFeel.getDrawerFor(newLinearGroup);
         drawer.svgArea = this;
         var drawnLinearGroup = drawer.draw(newLinearGroup);
         this.svg.appendChild(drawnLinearGroup);
@@ -254,8 +255,7 @@ class SVGArea {
         newLine.addChangeListener(new LinePositionChangeListener());
         newLine.addChangeListener(new StyleChangeListener());
 
-        let lookAndFeel = new LookAndFeel();
-        let drawer = lookAndFeel.getDrawerFor(newLine);
+        let drawer = this.lookAndFeel.getDrawerFor(newLine);
         drawer.svgArea = this;
         var drawnLine = drawer.draw(newLine);
         this.svg.appendChild(drawnLine);
