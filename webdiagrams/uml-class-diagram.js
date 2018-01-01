@@ -250,11 +250,9 @@ class UMLClass {
             result += "| Attributes\n";
             
             for(let i = 0; i < attributes.length; i++) {
-                let visibility = attributes[i].getValue(VISIBILITY);
-                let type = attributes[i].getValue(TYPE);
-
-                result += "| " + visibility + " " + attributes[i].name + "\t: " + type;
-                result += "\n";
+                let attr = new UMLClassAttribute(attributes[i]);
+                
+                result += "| " + attr.toString() + "\n";
             }
         }
         
@@ -265,21 +263,7 @@ class UMLClass {
             for(let i = 0; i < operations.length; i++) {
                 let umlOperation = new UMLClassOperation(operations[i]);
                 
-                let visibility = umlOperation.visibility;
-                let returns = umlOperation.returnType;
-                
-                let params = "";
-                if(umlOperation.hasParameters()) {
-                    let parameters = umlOperation.parameters;
-                    for(let i = 0; i < parameters.length; i++) {
-                        params += parameters[i].name + ": " + parameters[i].value + " ";
-                    }
-                    
-                    params = params.substr(0, params.length - 1);
-                }
-
-                result += "| " + visibility + " " + operations[i].name + "(" + params + ")\t: " + returns;
-                result += "\n";
+                result += "| " + umlOperation.toString() + "\n";
             }
         }
          
@@ -301,6 +285,10 @@ class UMLClassAttribute {
 
     set element(value) {
         this._element = value;
+    }
+    
+    get name() {
+        return this.element.name;
     }
 
     get visibility() {
@@ -342,6 +330,10 @@ class UMLClassAttribute {
         }
 
         return new UMLClassAttribute(attr);
+    }
+    
+    toString() {
+        return this.visibility + " " + this.name + "\t: " + this.type;
     }
 
 }
@@ -406,6 +398,21 @@ class UMLClassOperation {
         }
 
         return new UMLClassOperation(operation);
+    }
+    
+    toString() {
+        let params = "";
+        if(this.hasParameters()) {
+            let parameters = this.parameters;
+            for(let i = 0; i < parameters.length; i++) {
+                params += parameters[i].name + ": " + parameters[i].value + ", ";
+            }
+
+            // Removing the last ' ,'
+            params = params.substr(0, params.length - 2);
+        }
+
+        return this.visibility + " " + this._element.name + "(" + params + ")\t: " + this.returnType;
     }
 
 }
