@@ -126,11 +126,11 @@ class UMLClass {
     }
 
     get stereotypes() {
-        let stereotypes = this.element.getChildByName(STEREOTYPE);
+        let stereotypes = this.element.findChildrenByType(STEREOTYPE);
         if (stereotypes === null) {
             return null;
         }
-        return stereotypes.values();
+        return stereotypes;
     }
 
     get isInterface() {
@@ -139,54 +139,49 @@ class UMLClass {
 
     static newInstance(name = "unnamed", stereotype, visibility = PUBLIC, isAbstract = false, isLeaf = false, isStatic = false) {
         let newClass = new CElement(name, CLASS);
-        if (stereotype !== null) {
+        if (stereotype !== undefined) {
             newClass.addChild(new VElement(STEREOTYPE, STEREOTYPE, stereotype));
         }
-        if (visibility !== null) {
+        if (visibility !== undefined) {
             newClass.addChild(new VElement(VISIBILITY, VISIBILITY, visibility));
         }
-        if (isAbstract !== null) {
+        if (isAbstract !== undefined) {
             newClass.addChild(new VElement(IS_ABSTRACT, IS_ABSTRACT, isAbstract));
         }
-        if (isLeaf !== null) {
+        if (isLeaf !== undefined) {
             newClass.addChild(new VElement(IS_LEAF, IS_LEAF, isLeaf));
         }
-        if (isStatic !== null) {
+        if (isStatic !== undefined) {
             newClass.addChild(new VElement(IS_STATIC, IS_STATIC, isStatic));
         }
         return new UMLClass(newClass);
     }
 
     addStereotype(stereotype) {
-        let stereotypes = this.element.getChildByName(STEREOTYPE);
-        if (stereotypes === null) {
-            this.element.addChild(new VElement(STEREOTYPE, STEREOTYPE, stereotype));
-        } else {
-            stereotypes.addValue(stereotype);
-        }
+        this.element.addChild(new VElement(stereotype, STEREOTYPE, stereotype));
     }
 
     countStereotypes() {
-        let stereotypes = this.element.getChildByName(STEREOTYPE);
-        if (stereotypes === null) {
+        let stereotypes = this.element.findChildrenByType(STEREOTYPE);
+        if (!stereotypes.length) {
             return 0;
         } else {
-            return stereotypes.countValues();
+            return stereotypes.length;
         }
     }
 
     stereotypeAt(index) {
-        let stereotypes = this.element.getChildByName(STEREOTYPE);
-        if (stereotypes === null) {
+        let stereotypes = this.element.findChildrenByType(STEREOTYPE);
+        if (!stereotypes.length) {
             return null;
         } else {
-            return stereotypes.getValueAt(index);
+            return stereotypes[index];
         }
     }
 
     hasStereotype(stereotype) {
-        let stereotypes = this.element.getChildByName(STEREOTYPE);
-        if (stereotypes === null) {
+        let stereotypes = this.element.findChildrenByType(STEREOTYPE);
+        if (!stereotypes.length) {
             return false;
         }
         return (stereotypes.contains(stereotype));
@@ -216,8 +211,25 @@ class UMLClass {
 
     toString() {
         let result = this.element.name;
+        if(this.countStereotypes() > 0) {
+            for(let i = 0; i < this.countStereotypes(); i++) {
+                result += " <<" + this.stereotypeAt(i).value + ">>"
+            }
+        }
+        
         result += "\n";
-        return result;
+        
+        let attributes = this.element.findChildrenByType(ATTRIBUTE);
+        for(let i = 0; i < attributes.length; i++) {
+            let visibility = attributes[i].getValue(VISIBILITY);
+            let type = attributes[i].getValue(TYPE);
+            
+            result += visibility + " " + attributes[i].name + ": " + type;
+            result += "\n";
+        }
+        
+        // Eliminating the last \n
+        return result.substr(0, result.length - 1);
     }
 
 }

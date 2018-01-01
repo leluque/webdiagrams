@@ -102,7 +102,8 @@ class CElement extends Element {
     addChild(child) {
         // If does not exist a child with the same name, add it.
         if (child.name in this._children) {
-            return false;
+            this._children[child.name]._values.push(child.value)
+            return true;
         }
         this._children[child.name] = child;
         return true;
@@ -158,7 +159,7 @@ class CElement extends Element {
     }
 
     getValue(name) {
-        let child = findChild(name);
+        let child = this.getChildByName(name); 
         if(child !== null && child.value !== null) {
             return child.value;
         }
@@ -210,7 +211,7 @@ class VElement extends Element {
     }
 
     getValueAt(position) {
-        if (position >= 0 && position < countValues()) {
+        if (position >= 0 && position < this.countValues()) {
             return this._values[position];
         }
         return null;
