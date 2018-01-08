@@ -2,13 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Metamodel test</title>
+    <title>Class Diagram Test</title>
     <script src="metamodel.js"></script>
     <script src="uml-class-diagram.js"></script>
     <script src="uml.js"></script>
+    
+    <script src="look-and-feel.js"></script>
+    <script src="primitives-look-and-feel.js"></script>
+    <script src="graphical_primitives.js"></script>
+    <script src="primitives-svg.js"></script>
 </head>
 <body>
 
+<svg id="svg" width="1024" height="768"></svg>
+    
 <script>
 
     (function () {
@@ -20,7 +27,6 @@
         personClass.newAttribute(PRIVATE, "document", type = "String");
         personClass.newAttribute(PRIVATE, "firstName", type = "String");
         personClass.newAttribute(PRIVATE, "lastName", type = "String");
-        personClass.newAttribute(PRIVATE, "age", type = "int");
         
         let operation = personClass.newOperation(PUBLIC, "eat", "void");
         operation.addParameter("thing", "Food");
@@ -28,7 +34,12 @@
         let customerClass = classDiagram.newClass("Customer");
         customerClass.newAttribute(PRIVATE, "register", type = "String");
 
-        console.log(classDiagram.toString());
+        let svgArea = new SVGArea("#svg");
+        console.log(svgArea)
+        
+        svgArea.circle()
+        
+        classDiagram.drawOn(svgArea);
 
     })();
 

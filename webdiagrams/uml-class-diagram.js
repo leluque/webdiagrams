@@ -133,6 +133,22 @@ class UMLClass {
         return stereotypes;
     }
 
+    get attributes() {
+        let attributes = this.element.findChildrenByType(ATTRIBUTE);
+        if (attributes === null) {
+            return null;
+        }
+        return attributes;
+    }
+
+    get operations() {
+        let operations = this.element.findChildrenByType(OPERATION);
+        if (operations === null) {
+            return null;
+        }
+        return operations;
+    }
+
     get isInterface() {
         return this.hasStereotype(INTERFACE);
     }
@@ -209,6 +225,12 @@ class UMLClass {
         return attr;
     }
 
+    newOperation(visibility = PRIVATE, name = "unnamed", returnType = "void", isStatic = false, isLeaf = false) {
+        let operation = UMLClassOperation.newInstance(visibility, name, returnType, isStatic, isLeaf);
+        this.element.addChild(operation.element);
+        return operation;
+    }
+
     toString() {
         let result = this.element.name;
         if(this.countStereotypes() > 0) {
@@ -219,15 +241,28 @@ class UMLClass {
         
         result += "\n";
         
-        let attributes = this.element.findChildrenByType(ATTRIBUTE);
-        for(let i = 0; i < attributes.length; i++) {
-            let visibility = attributes[i].getValue(VISIBILITY);
-            let type = attributes[i].getValue(TYPE);
+        let attributes = this.attributes;
+        if(attributes.length > 0) {
+            result += "| Attributes\n";
             
-            result += visibility + " " + attributes[i].name + ": " + type;
-            result += "\n";
+            for(let i = 0; i < attributes.length; i++) {
+                let attr = new UMLClassAttribute(attributes[i]);
+                
+                result += "| " + attr.toString() + "\n";
+            }
         }
         
+        let operations = this.operations;
+        if(operations.length > 0) {
+            result += "| ---\n| Operations\n";
+            
+            for(let i = 0; i < operations.length; i++) {
+                let umlOperation = new UMLClassOperation(operations[i]);
+                
+                result += "| " + umlOperation.toString() + "\n";
+            }
+        }
+         
         // Eliminating the last \n
         return result.substr(0, result.length - 1);
     }
@@ -246,6 +281,10 @@ class UMLClassAttribute {
 
     set element(value) {
         this._element = value;
+    }
+    
+    get name() {
+        return this.element.name;
     }
 
     get visibility() {
@@ -288,6 +327,10 @@ class UMLClassAttribute {
 
         return new UMLClassAttribute(attr);
     }
+    
+    toString() {
+        return this.visibility + " " + this.name + "\t: " + this.type;
+    }
 
 }
 
@@ -295,6 +338,10 @@ class UMLClassOperation {
 
     constructor(element = new CElement("unnamed", OPERATION)) {
         this._element = element;
+    }
+    
+    addParameter(name = "unnamed", type = "int") {
+        this.element.addChild(new VElement(name, PARAMETER, type));
     }
 
     get element() {
@@ -320,6 +367,16 @@ class UMLClassOperation {
     get isLeaf() {
         return this.element.getValue(IS_LEAF);
     }
+    
+    get parameters() {
+        let parameters = this.element.findChildrenByType(PARAMETER);
+        return parameters;
+    }
+    
+    hasParameters() {
+        let parameters = this.parameters;
+        return parameters.length && parameters.length != 0;
+    }
 
     static newInstance(visibility = PRIVATE, name = "unnamed", returnType = "void", isStatic = false, isLeaf = false) {
         let operation = new CElement(name, OPERATION);
@@ -337,6 +394,21 @@ class UMLClassOperation {
         }
 
         return new UMLClassOperation(operation);
+    }
+    
+    toString() {
+        let params = "";
+        if(this.hasParameters()) {
+            let parameters = this.parameters;
+            for(let i = 0; i < parameters.length; i++) {
+                params += parameters[i].name + ": " + parameters[i].value + ", ";
+            }
+
+            // Removing the last ' ,'
+            params = params.substr(0, params.length - 2);
+        }
+
+        return this.visibility + " " + this._element.name + "(" + params + ")\t: " + this.returnType;
     }
 
 }

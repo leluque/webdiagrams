@@ -35,6 +35,7 @@ const OPERATION = "O1";
 const PRIVATE   = "-";
 const PROTECTED = "#";
 const PUBLIC    = "+";
+const PARAMETER = "P1"
 
 // R.
 const RETURN_TYPE = "R1";
